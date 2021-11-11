@@ -1,0 +1,56 @@
+.b-shops
+	&__wrapper
+		padding 10px 0 0
+	&__row
+		padding	51px 0 92px
+		display flex
+		justify-content space-between
+		@media $phone
+			padding 50px 0 50px
+	&__column
+		width 39%
+		@media $phone
+			width 100%
+		&:last-child
+			width 59%
+			@media $phone
+				display none
+	&__list
+		border-top 1px solid #dad0c7
+		border-bottom 1px solid #dad0c7
+		height 625px
+		max-height 625px
+		overflow-y scroll
+		@media $phone
+			height auto
+			max-height none
+	&__item
+		padding 20px 20px
+		border-top 1px solid #dad0c7
+		cursor pointer
+		@media $phone
+			padding 20px 10px
+		&:first-child
+			border-top none
+		&:hover, &.is-active
+			background $done
+			@media $phone
+				background $white
+	&__map
+		height 100%
+	&__title
+		font-family $MuseocyrM
+		font-weight bold
+		font-size 16px
+		line-height 1.1
+		padding-bottom 5px
+	&__info
+		display none
+		@media $phone
+			padding-top 15px
+			display block
+
+
+
+
+

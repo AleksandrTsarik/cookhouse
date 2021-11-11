@@ -1,0 +1,67 @@
+extends layouts/default
+
+block pageVar
+	-pageTitle = 'Программа лояльности';
+
+block content
+	.page-container
+		.b-loyalty
+			.b-loyalty__wrapper
+				.b-loyalty__title Правила бонусной программы COOKHOUSE
+				.b-loyalty__desc Клубная программа COOKHOUSE&nbsp;&mdash; это накопительная бонусная программа, с&nbsp;которой&nbsp;Вы сможете совершать выгодные покупки в&nbsp;магазинах COOKHOUSE и&nbsp;на&nbsp;сайте cookhouse.ru, а&nbsp;также пользоваться дополнительными преимуществами.
+
+				.b-loyalty__block
+					h2.b-loyalty__subtitle Преимущества
+					.b-benifit
+						.b-benifit__item.b-benifit__item--p1 Приветственные бонусы для участников старой программы лояльности
+						.b-benifit__item.b-benifit__item--p2 Начисление большего числа бонусов за&nbsp;покупки в&nbsp;специальных акциях
+						.b-benifit__item.b-benifit__item--p3 Подарочные бонусы ко&nbsp;Дню рождения*
+						.b-benifit__item.b-benifit__item--p4 Увеличение процента начисления бонусов в&nbsp;зависимости от&nbsp;суммы накоплений на&nbsp;карте
+						.b-benifit__item.b-benifit__item--p5 Индивидуальные специальные предложения
+						.b-benifit__item.b-benifit__item--p6 Приглашение на&nbsp;участие в&nbsp;специальных акциях и&nbsp;закрытых распродажах
+						.b-benifit__item.b-benifit__item--p7 Оплата товаров бонусами в&nbsp;интернет-магазине
+
+					.b-benifit__label *Если при активации карты указывалась дата рождения.
+
+				.b-loyalty__block
+					h2.b-loyalty__subtitle Как стать участником
+					.b-loyalty__desc &bull; Если у&nbsp;вас есть дисконтная карта COOKHOUSE, переход на&nbsp;новую программу осуществился уже автоматически.
+					.b-loyalty__desc &bull; Получите карту при любой покупке в&nbsp;магазинах COOKHOUSE.
+
+				.b-loyalty__block
+					h2.b-loyalty__subtitle Как накопить бонусы
+					.b-loyalty__desc Процент начисления бонусов зависит от&nbsp;суммы накопленных покупок по&nbsp;карте
+					.b-loyalty__table
+						.b-loyalty__table-caption Накопления
+						.b-loyalty__table-row.b-loyalty__table-row--header
+							.b-loyalty__table-column
+								span.b-loyalty__table-text
+									i.b-price_rub o
+									| 70 000
+							.b-loyalty__table-column
+								span.b-loyalty__table-text
+									i.b-price_rub o
+									| 150 000
+							.b-loyalty__table-column
+						.b-loyalty__table-row.b-loyalty__table-row--graph
+							.b-loyalty__table-column 5%
+							.b-loyalty__table-column 10%
+							.b-loyalty__table-column 15%
+						.b-loyalty__table-legend Кол-во начисляемых бонусов<br>
+							span (от суммы покупки)
+
+					.b-loyalty__desc &bull; 1&nbsp;бонус = 1&nbsp;рубль
+					.b-loyalty__desc &bull; Начисленными бонусами можно воспользоваться на&nbsp;15&nbsp;день после покупки
+					.b-loyalty__desc &bull; Участвуйте в&nbsp;специальных акциях и&nbsp;получайте дополнительные бонусы за&nbsp;покупки определенных товаров
+					.b-loyalty__desc &bull; Начисленные бонусы действуют в&nbsp;течение 12&nbsp;месяцев с&nbsp;момента зачисления, по&nbsp;истечении этого срока неиспользованные бонусы сгорают
+					.b-loyalty__desc &bull; Если вы&nbsp;забыли свою клубную карту COOKHOUSE, не&nbsp;огорчайтесь&nbsp;&mdash; вы&nbsp;все равно можете получить бонусы за&nbsp;покупку по&nbsp;номеру телефона, указанному при активации карты
+					.b-loyalty__desc &bull; Проверить баланс на&nbsp;вашей карты вы&nbsp;можете в&nbsp;любом розничном магазине COOKHOUSE
+
+				.b-loyalty__block
+					h2.b-loyalty__subtitle Как потратить бонусы
+					.b-loyalty__desc Предъявите при оплате покупок на&nbsp;кассе вашу карту или назовите номер телефона, который указывали при активации карты. Назовите количество баллов, которое хотите потратить. На&nbsp;указанный Вами при получении карты телефон придет сообщение с&nbsp;кодом, который Вам нужно будет сообщить сотруднику магазина на&nbsp;кассе.
+					.b-loyalty__desc
+						b 1&nbsp;бонус = 1&nbsp;рубль
+					.b-loyalty__desc Бонусами можно оплатить до&nbsp;40% покупки в&nbsp;розничных магазинах сети COOKHOUSE и&nbsp;интернет магазине cookhouse.ru, кроме товара, участвующего в&nbsp;акциях и&nbsp;распродажах.
+
+

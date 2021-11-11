@@ -1,0 +1,66 @@
+extends layouts/default
+
+block pageVar
+	-pageTitle = 'Условия доставки';
+
+block content
+	.page-container
+		+breadcrumbs({path:[
+			{title:'Главная', href:'#'},
+			{title:'Условия доставки', href:''}
+		]})
+		.content-wrapper
+			h1.page-container__title Условия доставки
+
+			.b-delivery
+				.b-delivery__wrapper.js-tabs-parent
+					.b-delivery-tabs
+						.b-delivery-tabs__move
+							.b-delivery-tabs__item.b-delivery-tabs__item--delivery.js-tab-caption.is-active Доставка
+							.b-delivery-tabs__item.b-delivery-tabs__item--express.js-tab-caption Экспресс-доставка
+							.b-delivery-tabs__item.b-delivery-tabs__item--pickup.js-tab-caption Самовывоз
+					.b-delivery__box
+						.b-delivery__block.js-tab-block.is-active
+							.b-delivery__content
+								.b-delivery__title(data-symbol="М") Москва и&nbsp;область
+								.b-delivery__text
+									p
+										b 1. Курьером по&nbsp;Москве и&nbsp;Московской области до&nbsp;30&nbsp;км от&nbsp;МКАД:
+									ul
+										li до&nbsp;4&nbsp;000 рублей стоимость доставки 290&nbsp;руб.
+										li свыше 4&nbsp;000 рублей доставка бесплатная!
+									p
+										b 2. Курьером по&nbsp;Москве и&nbsp;Московской области на&nbsp;расстояние от&nbsp;30&nbsp;км от&nbsp;МКАД до&nbsp;Малого Бетонного Кольца (трасса А-107):
+									ul
+										li до&nbsp;4&nbsp;000 рублей стоимость доставки 290&nbsp;руб.+&nbsp;35&nbsp;руб.&nbsp;за&nbsp;каждый километр, начиная с&nbsp;30&nbsp;км от&nbsp;МКАД. Расстояние определяет менеджер интернет&nbsp;&mdash; магазина с&nbsp;использованием общедоступных электронных карт
+										li свыше 4&nbsp;000 рублей доставка бесплатная)
+									p
+										b 3. Курьером по&nbsp;Московской области за&nbsp;Малым Бетонным Кольцом (трасса А-107):
+									ul
+										li стоимость доставки 290&nbsp;руб.+&nbsp;35&nbsp;руб.&nbsp;за&nbsp;каждый километр, начиная с&nbsp;30&nbsp;км от&nbsp;МКАД. Расстояние определяет менеджер интернет&nbsp;&mdash; магазина с&nbsp;использованием общедоступных электронных карт
+
+								.b-delivery__title(data-symbol="СП") Санкт-Петербург и&nbsp;область
+								.b-delivery__text
+									p
+										b 1. Курьером по&nbsp;Санкт-Петербургу и&nbsp;Ленинградской области до&nbsp;20&nbsp;км от&nbsp;КАД:
+									ul
+										li до&nbsp;4&nbsp;000 рублей стоимость доставки 349&nbsp;руб.
+										li свыше 4&nbsp;000 рублей доставка бесплатная
+									p
+										b 2. Курьером по&nbsp;Санкт-Петербургу и&nbsp;Ленинградской области на&nbsp;расстояние от&nbsp;20&nbsp;до&nbsp;40&nbsp;км от&nbsp;КАД:
+									ul
+										li до&nbsp;4&nbsp;000 рублей стоимость доставки 349&nbsp;руб.
+										li свыше 4&nbsp;000 рублей доставка бесплатная
+									p
+										b 3. Курьером по&nbsp;Ленинградской области на&nbsp;расстояние свыше 40&nbsp;км от&nbsp;КАД:
+									ul
+										li стоимость доставки 349&nbsp;руб.+&nbsp;35&nbsp;руб.&nbsp;за&nbsp;каждый километр, начиная с&nbsp;20&nbsp;км от&nbsp;КАД. Расстояние определяет менеджер интернет&nbsp;&mdash; магазина с&nbsp;использованием общедоступных электронных карт
+
+								.b-delivery__title.b-delivery__title--black(data-symbol="Р") Регионы
+								.b-delivery__text
+									p Производится на&nbsp;общих условиях курьерской службы.<br>Стоимость доставки будет зависеть от&nbsp;веса заказанных товаров, региона доставки и&nbsp;будет рассчитана менеджером интернет&nbsp;&mdash; магазина индивидуально при подтверждении Вашего заказа.
+									p Доставка в&nbsp;регионы осуществляется при условии 100% предоплаты.
+
+
+						.b-delivery__block.js-tab-block Экспресс-доставка
+						.b-delivery__block.js-tab-block Самовывоз

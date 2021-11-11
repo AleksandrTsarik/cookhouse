@@ -1,0 +1,62 @@
+.b-catalog-sort
+	&__wrapper
+		border-top 1px solid $backFont
+		padding 42px 0 36px
+		display flex
+		justify-content space-between
+		@media $tablet
+			padding 32px 0 36px
+		@media $phone
+			flex-direction column
+	&__column
+		display flex
+		align-items center
+		@media $phone
+			justify-content space-between
+			align-items flex-start
+			flex-direction column
+		&--controls
+			@media $phone
+				flex-direction row
+				align-items center
+	&__item
+		display flex
+		padding-left 20px
+		@media $tablet
+			flex-direction column
+		@media $phone
+			padding-top 10px
+			padding-left 0
+			width 100%
+		&--shops
+			@media $phone
+				display none
+		&--categories
+			display none
+			@media $phone
+				display block
+	&__button
+		display none
+		width 95px
+		height 30px
+		background $orange
+		border-radius 3px
+		font-size 14px
+		line-height 30px
+		text-align center
+		color $white
+		transition background .1s, color .1s
+		cursor pointer
+		@media $phone
+			display block
+	&__count
+		font-size 16px
+		line-height 28px
+		color $backFont
+	&__title
+		font-size 16px
+		line-height 28px
+		padding-right 14px
+		@media $tablet
+			font-size 14px
+			line-height 20px

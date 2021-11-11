@@ -1,0 +1,76 @@
+extends layouts/default
+
+block pageVar
+	-pageTitle = 'Контактная информация';
+
+block content
+	.page-container
+		+breadcrumbs({path:[
+			{title:'Главная', href:'#'},
+			{title:'Контактная информация', href:''}
+		]})
+		.content-wrapper
+			h1.page-container__title Контактная информация
+
+		.b-contacts
+			.b-contacts__wrapper
+				.content-wrapper
+					.b-contacts__layout
+						.b-contacts__block
+							.b-contacts__item.b-contacts__item--phone
+								| Интернет-магазин:
+								b +7 (495) 783-85-21
+								span 9.00-21.00 Пн-Вс
+							.b-contacts__item
+								| Офис в Москве:
+								b +7 (495) 783-85-21
+								span 10.00-19.00 Пн-Пт
+							.b-contacts__item.b-contacts__item--whatsapp
+								| Интернет-магазин:
+								b +7 (903) 159-70-99
+								span 9.00-21.00 Пн-Вс
+							.b-contacts__item.b-contacts__item--telegram
+								| Интернет-магазин:
+								b +7 (903) 159-70-99
+								span 9.00-21.00 Пн-Вс
+							.b-contacts__item.b-contacts__item--mail
+								| Для жалоб и предложений:
+								b istore@ideas4retail.ru
+							.b-contacts__item.b-contacts__item--marker
+								| Адрес офиса:
+								strong г. Москва, ул.&nbsp;1905&nbsp;года, д.7, стр.1
+		-
+			var gArray = [
+				['Юр. адрес:','123022, г. Москва, ул.&nbsp;1905&nbsp;года, д.7, стр.1'],
+				['ОГРН:','1107746567686'],
+				['ИНН/КПП:','7716667870/770301001'],
+				['ОКАТО:','45280577000'],
+				['ОКВЭД:','47.5'],
+				['Р/с:','40702810302200001913'],
+				['К/с:','30101810200000000593'],
+				['БИК:','044525593'],
+				['Банк:','АО&nbsp;&laquo;Альфа-банк&raquo;'],
+			]
+		-;
+		.b-contact
+			.content-wrapper
+				.b-contact__wrapper
+					.b-contact__title Банковские реквизиты:
+					.b-contact__table
+						each item in gArray
+							.b-contact__row
+								.b-contact__column!= item[0]
+								.b-contact__column!= item[1]
+
+
+
+
+
+
+
+
+
+
+
+
+

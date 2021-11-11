@@ -1,0 +1,147 @@
+extends layouts/default
+
+block pageVar
+	-pageTitle = 'Оформление заказа';
+
+block content
+	.page-container
+		+breadcrumbs({path:[
+			{title:'главная', href:'#'},
+			{title:'oформление заказа', href:''}
+		]})
+		.content-wrapper
+			h1.page-container__title Оформление заказа 
+		.b-order
+			.content-wrapper
+				.b-order__wrapper
+					.b-order__row
+						.b-order__column
+							.b-order-step.js-val-container
+								.b-order-step__wrapper
+									.b-order-step__title Информация о&nbsp;заказчике
+									.b-order-step__row
+										.b-order-step__column
+											+formField({type:'input', mode:'name required', placeholder:'Имя*'})
+										.b-order-step__column
+											+formField({type:'input', mode:'name required', placeholder:'Фамилия*'})
+									.b-order-step__row
+										.b-order-step__column
+											+formField({type:'input', mode:'email required', placeholder:'E-mail*', error:'Неверный формат'})
+										.b-order-step__column
+											+formField({type:'input', mode:'phone js-phone-mask', placeholder:'Телефон'})
+									.b-order-step__row
+										.b-order-step__column.b-order-step__column--x2
+											+formField({type:'suggest', mode:'suggest required', placeholder:'Город*', suggest:[
+												{value:1, option:'Город А 1'},
+												{value:2, option:'Город Б 2'},
+												{value:3, option:'Город В 3'},
+												{value:4, option:'Город Г 4'},
+												{value:5, option:'Город Д 5'},
+												{value:6, option:'Город Е 6'},
+												{value:7, option:'Город Ж 7'},
+												{value:8, option:'Город З 8'},
+												{value:9, option:'Город И 9'},
+												{value:10, option:'Город К 10'},
+												{value:11, option:'Город Л 11'},
+												{value:12, option:'Город М 12'},
+											]})
+							.b-order-step
+								.b-order-step__wrapper.js-delivery
+									.b-order-step__title Способ доставки
+									.b-order-step__row
+										.b-order-step__column.b-order-step__column--x2
+											+formField({type:'radio', mode:'radio',class:'js-delivery-type',name:'delivery',options:['Курьером', 'Самовывоз']})
+									.b-order-step__row
+										.b-order-step__column.b-order-step__column--x2
+											.b-order-step__block(data-type="1").is-show.js-delivery-option
+												.b-order-step__block-title Доставка курьером по&nbsp;России
+												.b-order-step__block-desc
+													span.b-price_rub o
+													| 500 
+													span (от 3 до 8 рабочих дней)
+												+formField({type:'suggest', mode:'suggest required', placeholder:'Введите ваш адрес*', suggest:[
+													{value:1, option:'Город А 1'},
+													{value:2, option:'Город Б 2'},
+													{value:3, option:'Город В 3'},
+													{value:4, option:'Город Г 4'},
+													{value:5, option:'Город Д 5'},
+													{value:6, option:'Город Е 6'},
+													{value:7, option:'Город Ж 7'},
+													{value:8, option:'Город З 8'},
+													{value:9, option:'Город И 9'},
+													{value:10, option:'Город К 10'},
+													{value:11, option:'Город Л 11'},
+													{value:12, option:'Город М 12'},
+												]})
+												.b-order-date
+													.b-order-date__datepicker
+														label.b-order-date__datepicker-label
+															input(type="text" data-range="true" id="calendar" class="calebdar-jq" data-multiple-dates-separator=" - "  placeholder="Выберите дату")
+													.b-order-date__date
+														.b-catalog-sort__box
+															+field({type:'select', mode:'sort', options:[
+																{value:'10:00 - 22:00', option:'10:00 - 22:00'},
+																{value:'10:00 - 15:00', option:'10:00 - 15:00'},
+																{value:'10:00 - 18:00', option:'10:00 - 18:00'},
+																{value:'15:00 - 22:00', option:'15:00 - 22:00'},
+																{value:'18:00 - 23:00', option:'18:00 - 23:00'},
+															], default:{value:0, option:'Укажите время'}})
+
+											.b-order-step__block(data-type="2").js-delivery-option
+												| Самовывоз
+							.b-order-step
+								.b-order-step__wrapper
+									.b-order-step__title Способ оплаты
+									.b-order-step__row
+										.b-order-step__column.b-order-step__column--x2
+											+formField({type:'radio', mode:'radio',name:'payment',options:['Онлайн предоплата по&nbsp;банковской карте']})
+							.b-order-step
+								.b-order-step__wrapper
+									.b-order-step__title Товары в заказе
+										a(href="#basket") изменить
+									.b-order-step__goods.is-blocked
+										include _blocks/basket-list
+									.b-order-step__controls
+										.btn.btn--large.b-order-step__button Подтвердить заказ
+										.b-order-step__legend Нажимая на&nbsp;кнопку &laquo;Подтвердить заказ&raquo;, Вы&nbsp;соглашаетесь с&nbsp;<a href="#">условиями&nbsp;оферты</a> и&nbsp;политикой конфендециальности
+
+						.b-order__column
+							.b-order-result
+								.b-order-result__wrapper
+									.b-order-result__table
+										.b-order-result__row
+											.b-order-result__column
+												.b-order-result__title.b-order-result__title--border Ваш заказ
+											.b-order-result__column
+												.b-order-result__title-desc.b-order-result__title-desc--border
+													a(href="#") изменить
+										.b-order-result__row
+											.b-order-result__column
+												.b-order-result__subtitle Стоимость товаров
+											.b-order-result__column
+												.b-order-result__subtitle-desc
+													span.b-price_rub o
+													| 10 680
+										.b-order-result__row
+											.b-order-result__column
+												.b-order-result__subtitle Стоимость доставки
+											.b-order-result__column
+												.b-order-result__subtitle-desc
+													span.b-price_rub o
+													| 500
+										.b-order-result__row
+											.b-order-result__column
+												.b-order-result__title К оплате
+											.b-order-result__column
+												.b-order-result__title
+													span.b-price_rub o
+													| 11 180
+									.btn.btn--large.b-order-result__button Подтвердить заказ
+									.b-order-result__label Нажимая на&nbsp;кнопку &laquo;Подтвердить заказ&raquo;, Вы&nbsp;соглашаетесь с&nbsp;<a href="#">условиями оферты</a> и&nbsp;политикой конфендециальности
+	//- script.
+	//- 	$(function() {
+	//- 		$('#calendar').datepicker({
+	//- 			timepicker: true,
+	//- 		})
+	//- 	});
+

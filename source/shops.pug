@@ -1,0 +1,184 @@
+extends layouts/default
+
+block pageVar
+	-pageTitle = 'Адреса магазинов';
+
+block content
+	.page-container
+		+breadcrumbs({path:[
+			{title:'Главная', href:'#'},
+			{title:'Адреса магазинов', href:''}
+		]})
+		.content-wrapper
+			h1.page-container__title Адреса магазинов
+			.b-shops.js-shops
+				.b-shops__wrapper.js-tabs-parent.js-shops-parent
+					.b-product-tabs
+						.b-product-tabs__move
+							.b-product-tabs__item.js-tab-caption.js-shops-item.is-active(data-id="0000073738") Москва
+							.b-product-tabs__item.js-tab-caption.js-shops-item(data-id="0000103664") Санкт-Петербург
+							.b-product-tabs__item.js-tab-caption.js-shops-item(data-id="0000032273") Коломна
+							.b-product-tabs__item.js-tab-caption.js-shops-item(data-id="all") Все магазины
+					.b-shops__row
+						.b-shops__column
+							.b-shops__list.js-shops-list
+
+						.b-shops__column
+							.b-shops__map#shop-map
+
+	script(type="text/javascript" src="https://api-maps.yandex.ru/2.1.34/?load=package.full&lang=ru-RU")
+	script(type="text/javascript").
+		var shopsList = 
+		{'0000073738':[
+			{'name':'ТРЦ «Европейский»',
+				'address':'г. Москва, пл. Киевского Вокзала, 2, этаж 0',
+				'metro':'',
+				'phone':'+7 (495) 783-85-22 доб. 2064',
+				'workTime':'10.00 - 22.00',
+				'gps':
+				{'longitude':'55.74418708937',
+					'latitude':'37.56551859682'
+				},
+				'icon':''
+			},
+			{'name':'МТК «Европарк»',
+				'address':'г. Москва, Рублевское ш, 62, этаж 2',
+				'metro':'',
+				'phone':'+7 (495) 783-85-22 доб. 2060',
+				'workTime':'10:00 – 22:00',
+				'gps':
+				{'longitude':'55.766895',
+					'latitude':'37.381583999999'
+				},
+				'icon':''
+			},
+			{'name':'ТРЦ «Avenue Southwest» Gooodshouse',
+				'address':'г. Москва, Проспект Вернадского 86А, минус 1 этаж, м. «Юго-Западная»',
+				'metro':'',
+				'phone':'+7 (495) 783-85-22 доб. 2138',
+				'workTime':'10:00 – 22:00',
+				'gps':
+				{'longitude':'55.663052',
+					'latitude':'37.481167'
+				},
+				'icon':'/f/img/map-cluster.png'
+			},
+			{'name':'ТРЦ «РИО Севастопольский» Gooodshouse',
+				'address':'г. Москва, Большая Черемушкинская улица, 1',
+				'metro':'',
+				'phone':'+7 (495) 783-85-22 доб. 2134',
+				'workTime':'10:00 – 22:00',
+				'gps':
+				{'longitude':'55.69068',
+					'latitude':'37.600974'
+				},
+				'icon':'/f/img/map-cluster.png'
+			},
+			{'name':'ТРЦ «Райкин Плаза»',
+				'address':'г. Москва, Шереметьевская ул., д. 6, стр.1, 0 этаж.',
+				'metro':'',
+				'phone':'+7 (495) 783-85-22 доб. 2063',
+				'workTime':'10:00 – 22:00',
+				'gps':
+				{'longitude':'55.7954234',
+					'latitude':'37.6169582'
+				},
+				'icon':''
+			},
+			{'name':'ТРЦ «Хорошо»',
+				'address':'г. Москва, Хорошевское ш., 27 (3 этаж).',
+				'metro':'',
+				'phone':'+7 (495) 783-85-22 доб. 2109',
+				'workTime':'10:00 - 22:00',
+				'gps':
+				{'longitude':'55.7775617',
+					'latitude':'37.5249644'
+				},
+				'icon':''
+			},
+			{'name':'ТЦ «Дирижабль» Gooodshouse',
+				'address':'г. Москва, ул. Профсоюзная, 64',
+				'metro':'',
+				'phone':'+7 (495) 783-85-22 доб. 2137',
+				'workTime':'10:00 – 22:00',
+				'gps':
+				{'longitude':'55.666',
+					'latitude':'37.549'
+				},
+				'icon':'/f/img/map-cluster.png'
+			},
+			{'name':'ТЦ «Капитолий на Вернадского»',
+				'address':'г. Москва, пр-т Вернадского, д. 6, 2 этаж',
+				'metro':'',
+				'phone':'+7 (495) 783-85-22 доб. 2131',
+				'workTime':'10:00 – 22:00',
+				'gps':
+				{'longitude':'55.692246',
+					'latitude':'37.528199'
+				},
+				'icon':''
+			},
+			{'name':'ТЦ «РИО Ленинский»',
+				'address':'г. Москва, Ленинский просп., 109 -1 этаж',
+				'metro':'',
+				'phone':'+7 (495) 783-85-22 доб. 2103. ',
+				'workTime':'10:00 – 22:00',
+				'gps':
+				{'longitude':'55.663766',
+					'latitude':'37.511016'
+				},
+				'icon':''
+			},
+			{'name':'ТЦ «РИО Ленинский» Gooodshouse',
+				'address':'г. Москва, Ленинский просп., 109, минус 1 этаж',
+				'metro':'',
+				'phone':'+7 (495) 783-85-22 доб. 2136',
+				'workTime':'10:00 – 22:00',
+				'gps':
+				{'longitude':'55.663232',
+					'latitude':'37.510509'
+				},
+				'icon':'/f/img/map-cluster.png'
+			}
+		],
+		'0000103664':[
+			{'name':'ТРК «Гранд Каньон»',
+				'address':'г. Санкт-Петербург, пр-т Энгельса, д. 154, этаж 3',
+				'metro':'',
+				'phone':'+7 (495) 783-85-22 доб. 2019',
+				'workTime':'10:00 – 22:00',
+				'gps':
+				{'longitude':'60.058725906224',
+					'latitude':'30.33646738623'
+				},
+				'icon':''
+			}
+		],
+		'0000032273':[
+			{'name':'ТРЦ «РИО» Коломна Gooodshouse',
+				'address':'г. Коломна, ул. Октябрьской Революции, 362',
+				'metro':'',
+				'phone':'+7 (495) 783-85-22 доб. 2135',
+				'workTime':'10:00 – 22:00',
+				'gps':
+				{'longitude':'55.084207',
+					'latitude':'38.80037'
+				},
+				'icon':'/f/img/map-cluster.png'
+			}
+		]};
+
+	script(id="shop-info-template" type="text/x-handlebars-template").
+		{{#each shops}}
+		<div class="b-shops__item" data-long="{{{ gps.longitude }}}" data-lat="{{{ gps.latitude }}}">
+		<div class="b-shops__title">{{{ name }}}</div>
+		<div class="b-shops__desc b-shops__desc--address">{{{ address }}}</div>
+		<div class="b-shops__desc b-shops__desc--time">{{{ workTime }}}</div>
+		<div class="b-shops__desc b-shops__desc--phone">{{{ phone }}}</div>
+		<div class="b-shops__info">
+		<img src="https://static-maps.yandex.ru/1.x/?ll={{{ gps.latitude }}},{{{ gps.longitude }}}&z=15&l=map&size=230,200&pt={{{ gps.latitude }}},{{{ gps.longitude }}},pm2rdl" alt="" />
+		</div>
+		</div>
+		{{/each}}
+
+

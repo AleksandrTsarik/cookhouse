@@ -1,0 +1,244 @@
+.b-order
+	&__wrapper
+		padding 10px 0 100px
+		@media $tablet
+			padding-bottom 75px
+	&__row
+		display flex
+		justify-content space-between
+		@media $tablet
+			flex-direction column
+	&__column
+		width 66%
+		@media $desktop
+			width 59%
+		@media $tablet
+			width 100%
+		&:nth-child(2)
+			width 30.8%
+			@media $desktop
+				width 37%
+			@media $tablet
+				width 100%
+
+.b-order-result
+	&__wrapper
+		background $sub
+		padding 40px 32px
+		@media $phone
+			display block
+			padding 25px 15px
+	&__table
+		display table
+		width 100%
+	&__row
+		display table-row
+	&__column
+		display table-cell
+		vertical-align middle
+		&:nth-child(1)
+			width 80%
+	&__title
+		font-family $MuseoR
+		font-weight bold
+		font-size 20px
+		line-height 20px
+		letter-spacing -0.015em
+		white-space nowrap
+		padding 27px 10px 27px 0
+		@media $phone
+			font-size 18px
+		&--border
+			border-bottom 1px solid $backFont
+			padding 0 10px 28px 0
+			margin-bottom 21px
+	&__title-desc
+		font-family $MuseoM
+		font-size 14px
+		line-height 20px
+		letter-spacing -0.015em
+		white-space nowrap
+		padding 27px 10px 27px 0
+		&--border
+			border-bottom 1px solid $backFont
+			padding 0 10px 28px 0
+			margin-bottom 21px
+		a
+			display inline-block
+			vertical-align top
+			color $specsOrange
+			text-decoration underline
+			&:hover
+				color $hoverFont
+				text-decoration none
+	&__subtitle, &__subtitle-desc
+		font-family $MuseoM
+		font-size 16px
+		line-height 1.31
+		letter-spacing -0.015em
+		white-space nowrap
+		padding 7px 10px 7px 0
+	&__button
+		margin-top 10px
+		@media $tablet
+			width 320px
+		@media $phone
+			width 100%
+	&__label
+		font-family $MontserratR
+		font-size 12px
+		line-height 1.67
+		letter-spacing -0.015em
+		padding-top 28px
+		a
+			color $specsOrange
+			text-decoration underline
+			&:hover
+				color $hoverFont
+				text-decoration none
+
+.b-order-step
+	&__wrapper
+		padding 42px 0 35px /*29*/
+		border-top 1px solid $backFont
+	&__title
+		font-family $MuseoM
+		font-size 20px
+		line-height 1
+		letter-spacing -0.015em
+		padding-bottom 18px
+		a
+			font-size 14px
+			color $specsOrange
+			text-decoration underline
+			margin-top 3px
+			float right
+			&:hover
+				color $hoverFont
+				text-decoration none
+	&__row
+		display flex
+		justify-content space-between
+		@media $phone
+			flex-direction column
+	&__column
+		width 49%
+		@media $phone
+			width 100%
+		&--x2
+			width 100%
+	&__block
+		display none
+		padding-top 13px
+		&.is-show
+			display block
+	&__block-title
+		font-family $MuseoM
+		font-size 16px
+		line-height 1.5
+		letter-spacing -0.015em
+		padding-bottom 2px
+	&__block-desc
+		font-family $MuseoM
+		color $specsOrange
+		padding-bottom 16px
+		span
+			color $specsGrey
+		.b-price_rub
+			color: $orange
+	&__goods
+		border-top 1px solid $backFont
+		margin-top 10px
+	&__controls
+		padding-top 44px
+		display flex
+		align-items center
+		@media $desktop
+			flex-direction column
+			align-items flex-start
+		@media $tablet
+			display none
+	&__button
+		min-width 320px
+		width 320px
+	&__legend
+		font-family $MontserratR
+		font-size 12px
+		line-height 20px
+		letter-spacing -0.015em
+		padding-left 47px
+		@media $desktop
+			padding-left 0
+			padding-top 20px
+			width 320px
+		a
+			text-decoration underline
+			color $specsOrange
+			&:hover
+				text-decoration none
+				color $hoverFont
+//----------datepicker-----------//
+.b-order-date
+	display: flex
+	@media $phoneL
+		flex-wrap: wrap
+	&__datepicker
+		margin-right 20px
+		flex:  0 0 300px
+		max-width: 300px
+		@media $phoneL
+			flex: 0 0 100%
+			max-width: 100%
+			margin-bottom 28px
+			margin-top 14px
+		&-label
+			input
+				border: solid 1px $backFont
+				padding: 0px 10px 0px 17px
+				//border-bottom: solid 1px
+				font-size: 14px
+				line-height: 45px
+				height: 46px
+				width: 100%
+				border-radius: 3px
+				cursor pointer
+				background-image: url('../img/icon-date.svg')
+				background-position: 95% 50%
+				background-repeat: no-repeat
+				background-size: 7%
+				color: #36322F
+				letter-spacing: -0.015em
+				transition: 0.9s
+				&::placeholder
+					color: #36322F
+					letter-spacing: -0.015em
+				&:focus
+					background-image: url('../img/icon-date-dark.svg') // удалить елси не понравится
+					background-position: 95% 50%
+				@media $phoneL
+					background-size: 4%
+	&__date
+		@media $phoneL
+			width: 100%
+		.b-field__caption
+			height: 46px
+			line-height: 45px
+			&:after
+				top: 16px
+		.b-field__options
+			top: 100%
+			max-height: 240px
+			.b-field__item
+				margin: 2px 0
+				font-size: 14px
+				line-height: 34px
+				&:hover
+					background: $backBackground
+					color: $black
+		.b-field--sort.is-open .b-field__caption:after
+			top: 20px
+		.b-field--sort
+			width: 190px
+			@media $phoneL
+				width: 100%
+

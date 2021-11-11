@@ -1,0 +1,27 @@
+extends layouts/default
+
+block pageVar
+	-pageTitle = 'Спасибо за покупку!';
+
+block content
+	.page-container
+		+breadcrumbs({path:[
+			{title:'Главная', href:'#'},
+			{title:'Спасибо за покупку!', href:''}
+		]})
+		.content-wrapper
+			h1.page-container__title Спасибо за покупку!
+			.b-thankyou
+				.b-thankyou__wrapper
+					.b-thankyou__title Заказ &#8470;&nbsp;75560 успешно создан
+					.b-thankyou__desc Наш менеджер позвонит вам в&nbsp;ближайшее время для подтверждения заказа.
+					.b-thankyou__label Оплата заказа: Наличными при&nbsp;получении
+					.b-thankyou__controls
+						a.btn.b-thankyou__button(href="#") Продолжить покупки
+						a.btn.btn--gray.b-thankyou__button(href="#") Вернуться на&nbsp;главную
+
+
+
+
+
+

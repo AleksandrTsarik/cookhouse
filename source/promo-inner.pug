@@ -1,0 +1,38 @@
+extends layouts/default
+
+block pageVar
+	-pageTitle = 'Акция';
+
+block content
+	.page-container
+		+breadcrumbs({path:[
+			{title:'главная', href:'#'},
+			{title:'акции', href:''}
+		]})
+		.content-wrapper
+			h1.page-container__title Дарите девушкам цветы! А&nbsp;к&nbsp;ним обязательно вазы!
+			.b-promo-inner
+				.b-promo-inner__wrapper
+					.b-promo-inner__image
+						img(src="/f/img/content/promo-1.jpg" alt="")
+					.b-promo-inner__title C&nbsp;27&nbsp;февраля по&nbsp;10&nbsp;марта скидка&nbsp;30% на&nbsp;вазы для цветов в&nbsp;Cook House
+					.b-promo-inner__desc
+						p Дарите девушкам цветы! А&nbsp;к&nbsp;ним обязательно вазы! Ваза&nbsp;&mdash; отличный и&nbsp;полезный подарок на&nbsp;любой случай, а&nbsp;на&nbsp;8&nbsp;марта особенно. Высокие, низкие, круглые и&nbsp;квадратные: у&nbsp;нас есть на&nbsp;любой даже самый взыскательный вкус. Ждем за&nbsp;выгодными покупками в&nbsp;Cook House!
+						p * Акция действует во&nbsp;всех розничных магазинах Cook House, а&nbsp;также в&nbsp;интернет-магазине CookHouse.ru. Акция не&nbsp;суммируется с&nbsp;другими предложениями и&nbsp;акциями Cook House. Срок проведения акции: C&nbsp;27&nbsp;февраля по&nbsp;10&nbsp;марта 2020&nbsp;года.
+					a.b-promo-inner__back(href="#") Вернуться к&nbsp;списку
+
+					-
+						var catalogList = [
+							'Дарите девушкам цветы! А&nbsp;к&nbsp;ним обязательно вазы!',
+							'Коллекция для романтиков в&nbsp;Cook House!',
+							'Вместе теплее! Устраиваем вечера в&nbsp;теплой компании!'
+						]
+					-;
+					.b-promo-catalog
+						.b-promo-catalog__wrapper
+							each item in catalogList
+								a.b-promo-catalog__item(href="#")
+									.b-promo-catalog__image(style="background-image:url('/f/img/content/promo-1.jpg')")
+									.b-promo-catalog__title!= item
+
+

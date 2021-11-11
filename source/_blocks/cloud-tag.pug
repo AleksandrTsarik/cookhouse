@@ -1,0 +1,12 @@
+.cloud-tag
+   - var secondMenu = ['Соусник','Набор','Кастрюля','Фруктовница','Креманка','Салатник','Конфет','Сахарница'];
+   - var secondMenu2 = ['Соусник','Набор','Кастрюля','Фруктовница','Креманка','Салатник','Конфетница','Сахарница','Набор столовых вилок','Сахарница','Креманка','Салатник','Конфетница','Сахарница','Набор столовых вилок','Фруктовница'];
+   nav.cloud-tag__menu 
+      ul.cloud-tag__list
+         each item in secondMenu
+            li.cloud-tag__list__item 
+               a(href="#")= item
+         li.cloud-tag__more-items_close.js-close-list
+            span Скрыть все
+      .cloud-tag__more-items.js-open-list 
+         span Показать еще   

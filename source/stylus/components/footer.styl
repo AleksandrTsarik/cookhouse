@@ -1,0 +1,179 @@
+.footer
+	@media $phone
+		background $backBackground
+	&__wrapper
+		padding 105px 0 75px
+		display flex
+		justify-content space-between
+		border-top 1px solid $backFont
+		@media $tablet
+			flex-direction column
+			padding 55px 0 35px
+		@media $phone
+			border-top none
+			padding 25px 0 35px
+			max-width 375px
+			margin 0 auto
+	&__column
+		width 25.4%
+		@media $desktop
+			width 33.3333%
+		@media $tablet
+			width 100%
+		&:nth-child(3)
+			width 23.8%
+			@media $desktop
+				width 33.3333%
+			@media $tablet
+				width 100%
+		&--x2
+			width 50.8%
+			display flex
+			@media $desktop
+				flex-direction column
+				width 33.3333%
+			@media $tablet
+				flex-direction row
+				width 100%
+				order 2
+			@media $phone
+				flex-direction column
+				padding 23px 0 8px
+				border-bottom 1px solid $backFont
+		&--inner
+			width 50%
+			@media $desktop
+				width 100%
+			@media $tablet
+				width 50%
+			@media $phone
+				padding-bottom 18px
+				width 100%
+		&--direction
+			display flex
+			flex-direction column
+			justify-content space-between
+			@media $desktop
+				//flex-direction row
+				justify-content flex-start
+				order 3
+			// @media $tablet
+			// 	flex-direction row
+			@media $phone
+				flex-direction column
+		&--subscribe
+			@media $tablet
+				order 1
+			@media $phone
+				border-bottom 1px solid $backFont
+	&__link
+		display block
+		font-size 16px
+		line-height 2
+		a
+			color $baseFont
+			&:hover
+				color $linkFont
+	&__caption
+		font-family $MuseoM
+		font-size 16px
+		line-height 2
+		text-transform uppercase
+	&__phone
+		font-family $MuseoM
+		font-size 18px
+		line-height 1.78
+		text-align right
+		text-transform uppercase
+		display: inline-flex
+		margin-left auto
+		@media $desktop
+			margin-top 10px
+			margin-bottom 10px
+		@media $tablet
+			padding 20px 0 11px 45px
+			text-align left
+			margin-top 0
+			margin-bottom 0
+			//width calc(50% - 6px)
+			width: 100%
+		@media $phone
+			padding 25px 0 0 45px
+			width 100%
+	&__subscribe
+		padding 15px 0
+	&__social
+		display flex
+		justify-content flex-end
+		padding-bottom 11px
+		@media $desktop
+			margin-top 10px
+		@media $tablet
+			margin-top 0
+			padding 20px 0 11px
+			justify-content flex-start
+		@media $phone
+			padding 27px 0 11px
+	&__social-item
+		width 26px
+		height 26px
+		margin 0 6px
+		cursor pointer
+		&--vk
+			background url('../img/icon-vk.svg') no-repeat left top
+		&--ig
+			background url('../img/icon-ig.svg') no-repeat left top
+		&--fb
+			background url('../img/icon-fb.svg') no-repeat left top
+		&--yd
+			background url('../img/icon-yd.svg') no-repeat left top
+		&:last-child
+			margin-right 0
+.b-icon__phone
+	position: relative
+	&:after
+		content ''
+		position absolute
+		left -45px
+		top -2px
+		width 36px
+		height 36px
+		border-radius 50%
+		background url('../img/contacts/icon-phone.svg') no-repeat center center $linkFont
+		@media $tablet
+			left: 0
+			top: 18px
+		@media $phone
+			top: 22px
+.b-icon__whatsapp
+	position: relative
+	&:after
+		content ''
+		position absolute
+		left -45px
+		top -4px
+		width 36px
+		height 36px
+		background url('../img/contacts/icon-wp.svg') no-repeat 50% 75%
+		background-size: cover
+		@media $tablet
+			left: 0
+			top: 18px
+		@media $phone
+			top: 22px
+.b-icon__telegram
+	position: relative
+	&:after
+		content ''
+		position absolute
+		left -45px
+		top -4px
+		width 36px
+		height 36px
+		background url('../img/contacts/icon-telegram.svg') no-repeat 50% 75%
+		background-size: cover
+		@media $tablet
+			left: 0
+			top: 18px
+		@media $phone
+			top: 22px

@@ -1,0 +1,93 @@
+extends layouts/default
+
+block pageVar
+	-pageTitle = 'Кулинарная кухня';
+
+block content
+	.page-container
+		+breadcrumbs({path:[
+			{title:'Главная', href:'#'},
+			{title:'Кулинарная кухня', href:''}
+		]})
+		.b-kitchen
+			.content-wrapper
+				.b-kitchen__wrapper
+					.b-kitchen__image
+						img(src="/f/img/content/article-4.jpg" alt="")
+					.b-kitchen__block
+						h2.b-kitchen__title Кулинарная кухня
+						.b-kitchen__desc Какое-то описание про кухню. Национальная кухня&nbsp;&mdash; это совокупность кулинарных традиций и&nbsp;практик, распространенных в&nbsp;определенном регионе или которые соблюдаются некой этнической группой. Как правило, свое название национальная кухня получает от&nbsp;региона распространения или места возникновения.
+						.b-kitchen__subtitle Тосты с&nbsp;семгой
+						.b-recipe
+							.b-recipe__wrapper
+								.b-recipe__image
+									img(src="/f/img/content/kitchen-1.jpg" alt="")
+								.b-recipe__list
+									.b-recipe__item.b-recipe__item--timer
+										.b-recipe__desc приготовление
+										.b-recipe__title 45 минут
+									.b-recipe__item.b-recipe__item--person
+										.b-recipe__desc рецепт на
+										.b-recipe__title 5 персон
+
+						.b-kitchen__caption Описание
+						.b-kitchen__desc
+							p Классический американский завтрак на&nbsp;4&nbsp;порции. Приготовление не&nbsp;займет более 15-20&nbsp;минут. По&nbsp;желанию можно заменить хлеб на&nbsp;английский маффин. Рекордное содержание натрия и&nbsp;белков в&nbsp;каперсах соединяется с&nbsp;полиненасыщенными жирами в&nbsp;красной рыбе. Это не&nbsp;только потрясающе вкусно, но&nbsp;и&nbsp;очень питательно.
+							p Питательность: 
+								b 280 калорий на&nbsp;1&nbsp;порцию
+
+						.b-kitchen__caption Ингредиенты:
+						ul.b-kitchen__list
+							li.b-kitchen__list-item сливочный сыр&nbsp;&mdash; 
+								b &frac14; стакана
+							li.b-kitchen__list-item цельнозерновой поджаренный хлеб&nbsp;&mdash; 
+								b 8&nbsp;ломтиков
+							li.b-kitchen__list-item каперсы&nbsp;&mdash; 
+								b 2&nbsp;столовые ложки
+							li.b-kitchen__list-item красный лук&nbsp;&mdash; 
+								b &frac12; средней луковицы
+							li.b-kitchen__list-item руккола&nbsp;&mdash; 
+								b 1&nbsp;пучок
+							li.b-kitchen__list-item помидор&nbsp;&mdash; 
+								b 1&nbsp;шт
+							li.b-kitchen__list-item копченый лосось&nbsp;&mdash; 
+								b 200&nbsp;г
+							li.b-kitchen__list-item соль и&nbsp;перец по&nbsp;вкусу
+						.b-kitchen__legend Вы&nbsp;можете заменить лосось на&nbsp;копченую индейку, консервированного тунца или ветчину. Большой разницы в&nbsp;питательности не&nbsp;будет, но&nbsp;так можно разнообразить варианты завтрака. И&nbsp;они будут гораздо вкуснее и&nbsp;полезнее завтраков из&nbsp;магазина.
+
+						.b-kitchen__caption Пошаговый рецепт с&nbsp;фото:
+						-
+							var steps = [
+								'1. В&nbsp;большую миску просеять муку, добавить соль и&nbsp;дрожжи.',
+								'2. В воде растворить мальтозный сироп. ',
+								'3. Выложить тесто на&nbsp;слегка присыпанную мукой поверхность и&nbsp;разделить на&nbsp;равные части.',
+								'4. Противень застелить бумагой для выпечки и&nbsp;присыпать тонким слоем кукурузной муки.'
+							]
+						-;
+						.b-kitchen__steps
+							each item in steps
+								.b-kitchen__step.js-step
+									.b-kitchen__step-title.js-step-title!= item
+									.b-kitchen__step-block
+										.b-kitchen__step-image
+											img(src="/f/img/content/kitchen-2.jpg" alt="")
+										.b-kitchen__step-desc
+											p В&nbsp;большую кастрюлю влить воду, растворить в&nbsp;ней мальтозный сироп и&nbsp;довести до&nbsp;кипения. Уменьшить огонь. Добавить соду и&nbsp;перемешать. Аккуратно (!!!) погрузить бейглы по&nbsp;2-3 штуки в&nbsp;воду и&nbsp;варить по&nbsp;1&nbsp;минуте с&nbsp;каждой стороны. Вынуть бейглы из&nbsp;воды, дать им&nbsp;немного обсохнуть, затем посыпать сверху семенами или их&nbsp;смесью.
+
+											p Переместить бейглы на&nbsp;противень с&nbsp;пекарской бумагой. Отправить бейглы в&nbsp;духовку и&nbsp;выпекать около 20&nbsp;минут. По&nbsp;готовности вынуть бейглы из&nbsp;духовки и&nbsp;полностью охладить на&nbsp;решетке. Противень застелить бумагой для выпечки и&nbsp;присыпать тонким слоем кукурузной муки. Выложить на&nbsp;противень заготовки бейглов, затянуть плёнкой и&nbsp;отправить в&nbsp;холодильник на&nbsp;10-12&nbsp;часов.
+
+											.b-kitchen__step-hidden.js-step-hidden
+												p Продолжение...
+
+											span.b-kitchen__step-more.js-step-more Развернуть
+
+				.b-recipes
+					.b-recipes__wrapper
+						.b-recipes__title Рецепты
+						.b-recipes__block
+							each item in [1,2,3,4,5,6,7,8,9]
+								.b-recipes__item
+									.b-recipes__item-image
+										img(src="/f/img/content/recipe-1.png" alt="")
+									.b-recipes__item-title Горячий клюквенный морс с&nbsp;пряностями в&nbsp;термосе!
+

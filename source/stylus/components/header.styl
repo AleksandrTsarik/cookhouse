@@ -1,0 +1,808 @@
+// .top-strip + .header
+// 	top: 150px
+.header
+	position relative
+
+	&__top
+		position fixed
+		top 0
+		left 0
+		right 0
+		z-index 12
+		background $backBackground
+		height 40px
+		@media $phone
+			padding 10px 0 7px
+			height 57px
+	&__bottom
+		padding 51px 0 53px
+		position: relative
+		@media screen and (max-width: 1300px)
+			padding-bottom 75px
+		@media $tablet
+			padding-bottom 10px
+		@media $phone
+			padding 57px 0 0
+		.header__search--open
+			display: none
+			@media $phone
+				display: block
+
+	&__top-wrapper
+		display flex
+		@media $phoneL
+			position: static
+	&__row
+		display flex
+		justify-content space-between
+		align-items center
+		height 88px
+		@media $phone
+			display none
+	&__phone
+		font-family $MuseocyrM
+		font-size 16px
+		line-height 1
+		margin-top 2px
+		@media $tablet
+			padding-left 40px
+	&__logo
+		margin-left 56px
+		margin-top -11px
+		@media $tablet
+			margin-left 16px
+	&__menu
+		padding 0
+		height 43px
+		overflow hidden
+		position absolute
+		top 139px
+		left 0
+		right 0
+		z-index 10
+		background $white
+		@media screen and (max-width: 1300px)
+			height: 90px
+		@media $tablet
+			position fixed
+			top 40px
+			height auto
+			display none
+			box-shadow 0px 4px 10px rgba(0, 0, 0, 0.15)
+			&.is-open
+				display block
+		@media $phone
+			border-top 1px solid $backFont
+			box-shadow 0px 4px 10px rgba(0, 0, 0, 0.15)
+			top 57px
+			bottom 0
+			right 55px
+			padding-bottom 50px
+			overflow-y scroll
+	&__menu-wrapper
+		display flex
+		justify-content space-between
+		flex-wrap wrap
+		max-width 1328px
+		padding 0 calc(40px - 12px)
+		margin 0 auto
+		@media screen and (max-width: 1300px)
+			justify-content flex-start
+		@media $tablet
+			position relative
+			padding 7px 20px 7px 60px
+			justify-content flex-start
+		@media $phone
+			padding 7px 15px 7px 11px
+			box-shadow 0px 1px 2px rgba(0, 0, 0, 0.15)
+			//border-bottom 1px solid $backFont
+
+		&--smart
+			display none
+			@media $phone
+				display block
+		&--mobile
+			display none
+			@media $tablet
+				display flex
+				a
+					margin 5px 12px
+				&:after
+					content ''
+					position absolute
+					left 60px
+					right 20px
+					top 0
+					height 1px
+					background $backFont
+			@media $phone
+				display flex
+				flex-direction column
+				&:after
+					display none
+		&--general-list
+			@media $phone
+				display flex
+				flex-direction column
+		&_tm
+			@media $tablet
+				padding: 7px 20px 7px 60px
+			@media $phone
+				padding: 0 15px
+	&__menu-item
+		position: relative
+		// display inline-block
+		// vertical-align top
+		// font-family $MuseoM
+		// text-transform uppercase
+		// font-size 12px
+		// line-height 1.8
+		// color $baseFont
+		// padding 12px 0
+		// transition color 0.2s
+		// @media screen and (max-width: 1300px)
+		// 	padding: 8px
+		// 	font-size: 14px
+		// @media $tablet
+		// 	padding 5px 12px
+		&--profile
+			@media $phone
+				padding 0
+				width 22px
+				height 22px
+				background url('../img/icon-profile.svg') no-repeat center center
+				cursor pointer
+		&--favorite
+			@media $phone
+				padding 0
+				width 22px
+				height 22px
+				background url('../img/icon-favorite.svg') no-repeat center center
+				margin-left 8px
+				cursor pointer
+		&.is-active, &:hover
+			color $hoverFont
+	&__mobile-menu
+		position absolute
+		left 20px
+		top 83px
+		width 24px
+		height 24px
+		align-items center
+		cursor pointer
+		display none
+		z-index 11
+		@media $tablet
+			display flex
+		span
+			position relative
+			display block
+			width 24px
+			height 2px
+			background $brown
+			transition transform 0.2s
+			&:after, &:before
+				content ''
+				position absolute
+				left 0
+				right 0
+				top -7px
+				height 2px
+				background $brown
+				transition transform 0.2s
+			&:before
+				top auto
+				bottom -7px
+		&.is-open
+			@media $tablet
+				position fixed
+		&.is-open span
+			background transparent
+			&:after
+				transform rotate(45deg)
+				top 0
+			&:before
+				transform rotate(-45deg)
+				bottom 0
+	&__menu-phone
+		font-family $MuseocyrM
+		padding 10px 12px 6px
+	&__menu-row
+		display flex
+		align-items center
+		justify-content space-between
+	&__menu-controls
+		display flex
+
+.b-header-tabs
+	display flex
+	@media $phone
+		display none
+	&__item
+		width 40px
+		height 40px
+		border-left 1px solid $backFont
+		cursor pointer
+		background none no-repeat center center
+		transition background 0.2s
+		&:hover
+			background-color $white
+		&--cookhouse
+			background-image url('../img/icon-cookhouse.svg')
+		&--hamleys
+			background-image url('../img/icon-hamleys.svg')
+		&--goodshouse
+			background-image url('../img/icon-goodshouse.svg')
+		&.is-active,&.is-active:hover
+			background-color $white
+			cursor default
+		&:last-child
+			border-right 1px solid $backFont
+
+.b-header-menu
+	display flex
+	justify-content space-between
+	align-items center
+	padding 0 38px
+	flex-grow 1
+	@media $desktop
+		padding 0 10px
+	@media $phone
+		padding 0
+	&__links
+		display flex
+		align-items center
+		padding-right 10px
+		//width calc(50% - 58px - 25px)
+		@media $tablet
+			display none
+	&__about
+		display flex
+		align-items center
+		justify-content space-between
+		width calc(50% - 58px + 25px)
+		@media $tablet
+			width 100%
+		@media $phone
+			display none
+	&__box
+		display flex
+		align-items center
+		justify-content center
+		flex-grow 1
+		@media $tablet
+			justify-content flex-start
+	&__item
+		font-family $MuseoM
+		font-size 12px
+		line-height 1.17
+		height 40px
+		padding 0 17px
+		color $baseFont
+		text-align center
+		transition color 0.2s
+		display flex
+		align-items center
+		justify-content center
+		&--auth
+			cursor default
+		&:hover
+			background $white
+		& a
+			color $baseFont
+			&:hover
+				color $linkFont
+	&__logo
+		background-size 116px auto
+		background-position left 9px
+		width 116px
+		height 40px
+		display none
+		@media $tablet
+			position absolute
+			top 0
+			left 50%
+			transform translateX(-50%)
+		@media $phone
+			background-size 162px auto
+			background-position left 17px
+			width 162px
+			height 57px
+			display block
+	&__phone
+		background url('../img/icon-phone.svg') no-repeat left center
+		font-family $MuseoM
+		font-size 12px
+		line-height 22px
+		padding-left 25px
+		margin-left 12px
+		height 22px
+		display none
+		@media $tablet
+			margin-left 10px
+	&__mobile
+		position absolute
+		left 16px
+		top 19px
+		width 19px
+		height 19px
+		align-items center
+		cursor pointer
+		display none
+		@media $phone
+			display flex
+		span
+			position relative
+			display block
+			width 19px
+			height 2px
+			background $brown
+			transition background 0.2s, transform 0.2s
+			&:after, &:before
+				content ''
+				position absolute
+				left 0
+				right 0
+				top -6px
+				height 2px
+				background $brown
+				transition transform 0.2s
+			&:before
+				top auto
+				bottom -7px
+		&.is-open span
+			background transparent
+			&:after
+				transform rotate(45deg)
+				top 0
+			&:before
+				transform rotate(-45deg)
+				bottom 0
+	&__loginzone
+		position relative
+		height 40px
+		&.is-open &-caption
+			background $white
+			border-left 1px solid $backBackground
+			border-right 1px solid $backBackground
+		&.is-open &-caption span:after
+			top 7px
+			transform rotate(45deg)
+		&.is-open &-options
+			display block
+	&__loginzone-caption
+		font-family $MuseoM
+		font-size 12px
+		line-height 1.17
+		height 40px
+		padding 0 24px
+		color $baseFont
+		text-align center
+		transition color 0.2s
+		display flex
+		align-items center
+		justify-content flex-start
+		cursor pointer
+		min-width 190px
+		margin-right -38px
+		border-left 1px solid transparent
+		border-right 1px solid transparent
+		@media $desktop
+			min-width 170px
+			margin-right -10px
+			padding 0 17px
+		&:hover
+			background $white
+			border-left 1px solid $backBackground
+			border-right 1px solid $backBackground
+		span
+			position relative
+			&:after
+				content ''
+				position absolute
+				right -15px
+				top 3px
+				width 5px
+				height 5px
+				border-top 1px solid $baseFont
+				border-left 1px solid $baseFont
+				transform rotate(225deg)
+	&__loginzone-options
+		position absolute
+		z-index 15
+		left 0
+		right -38px
+		top 40px
+		background $white
+		border 1px solid $backBackground
+		border-top none
+		padding 3px 0 19px
+		display none
+		@media $desktop
+			padding 3px 0 13px
+			right -10px
+	&__loginzone-item
+		font-family $MuseoM
+		font-size 12px
+		line-height 14px
+		padding 4px 14px 4px 24px
+		color $baseFont
+		text-align left
+		display inline-block
+		vertical-align top
+		width 100%
+		@media $desktop
+			padding 4px 10px 4px 17px
+		&--exit span
+			position relative
+			padding-left 18px
+			&:before
+				content ''
+				position absolute
+				left 2px
+				top 7px
+				width 8px
+				height 1px
+				background $orange
+			&:after
+				content ''
+				position absolute
+				left 2px
+				top 6px
+				width 3px
+				height 3px
+				border-left 1px solid $orange
+				border-bottom 1px solid $orange
+				transform rotate(45deg)
+
+		&:hover
+			color $hoverFont
+
+.header.is-moved .b-header-menu__logo
+	display block
+
+.header.is-moved .b-header-menu__phone
+	display block
+.header.is-moved .header__top
+	@media $tablet
+		box-shadow 0px 4px 10px rgba(0, 0, 0, 0.15)
+.header.is-moved .b-header-menu__links
+	width calc(50% - 58px - 25px)
+
+.header.is-fixed .header__menu
+	position fixed
+	top 40px
+	box-shadow 0px 4px 10px rgba(0, 0, 0, 0.15)
+	@media $phone
+		top 57px
+
+.b-user-action
+	display flex
+	margin-right -9px
+	@media $phone
+		margin-right -4px
+	&__item
+		position relative
+		width 40px
+		height 40px
+		cursor pointer
+		background none no-repeat center center
+		transition background 0.2s
+		&:hover
+			background-color $white
+			@media $phone
+				background-color transparent
+		// &--basket
+		// 	background-image url('../img/icon-basket.svg')
+		&--basket
+			background-image url('../img/icon-basket.svg')
+			&.shake
+				animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both
+				transform: translate3d(0, 0, 0)
+				backface-visibility: hidden
+				perspective: 1000px
+			&:after
+				content attr(data-count)
+				position absolute
+				right 5px
+				top 6px
+				width 15px
+				height 15px
+				background $orange
+				border-radius 50%
+				font-family $MuseoM
+				font-size 10px
+				line-height 15px
+				text-align center
+				color $white
+				@media $phone
+					top 8px
+		&--favorite
+			background-image  url('../img/icon-favorite.svg')
+			@media $phone
+				display none
+		&--search
+			background-image url('../img/icon-search.svg')
+			display: none
+			@media $phone
+				display block
+			@media $phoneL
+				position: absolute
+				left: 50px
+			@media $phoneS
+				left: 35px
+.header.is-moved .b-user-action__item--search
+	display: block
+@keyframes shake
+	10%, 90%
+		transform: translate3d(-1px, 0, 0)
+	20%, 80%
+		transform: translate3d(2px, 0, 0)
+	30%, 50%, 70%
+		transform: translate3d(-4px, 0, 0)
+	40%, 60%
+		transform: translate3d(4px, 0, 0);
+
+.top-strip
+	position: fixed
+	width: 100%
+	height: 50px
+	line-height: 40px
+	text-align: center
+	font-size: 14px
+	z-index: 10
+.top-strip_mobile
+	display: none
+	@media $tablet
+		display: block
+.top-strip_desktop
+	display: block
+	@media $tablet
+		display: none
+
+.header
+	&.with-desk-hellobar
+		.header__top
+			top: 40px
+			@media $tablet
+				top: 0
+		.header__bottom
+			padding-top: 91px
+			@media $tablet
+				padding-bottom 10px
+			@media $phone
+				padding 57px 0 0
+		.header__menu
+			top: 179px
+		&.is-fixed .header__menu
+			top: 80px
+			@media $tablet
+				top: 40px
+	&.with-mob-hellobar
+		.header__top
+			@media $tablet
+				top: 40px
+		.header__bottom
+			@media $tablet
+				padding-top: 91px
+		.header__menu
+			@media $tablet
+				top: 179px
+		&.is-fixed .header__menu
+			@media $tablet
+				top: 80px
+	&.with-desk-hellobar.with-mob-hellobar
+		 .header__top
+			 top: 40px
+		 .header__bottom
+			 padding-top: 91px
+		 .header__menu
+			 top: 179px
+		 &.is-fixed .header__menu
+			 top: 80px
+
+.top-menu
+	position: static
+
+	.menu
+		&__list
+			display: flex
+			justify-content: space-between
+			flex-wrap: wrap
+			@media $phone
+				flex-direction: column
+			@media screen and (max-width: 1300px)
+				justify-content: flex-start
+			&__item
+				font-size: 12px
+				padding: 12px 5px
+				vertical-align top
+				font-family $MuseoM
+				text-transform uppercase
+				line-height 1.8
+				color $baseFont
+				transition color 0.2s
+				white-space: nowrap
+				.is-active
+					color $orange
+				&:hover .d-wrapper
+					display: block
+				a
+					color $baseFont
+					transition: 0.3s
+					&:hover
+						color: $linkFont
+				@media screen and (max-width: 1300px)
+					padding: 5px 12px 5px 0
+				@media $tablet
+					padding: 5px 12px
+					font-size: 12px
+
+.d-wrapper
+	background: $white
+	width: 100%
+	left: 0
+	right: 0
+	position fixed
+	padding: 25px 0 50px
+	display: none
+	@media $tablet
+		display: none !important
+	.content-wrapper
+		padding-left 45px
+	.d-list
+		font-size: 12px
+		letter-spacing: -0.015em
+		column-count: 4
+		&__group
+			break-inside: avoid
+		&__title
+			font-weight 700
+			line-height: 14px
+			padding-top 15px
+		&__group-item
+			line-height: 14px
+			padding-top 15px
+	.d-alphabet
+		display: flex
+		a
+			color: $orange
+			font-size: 14px
+			font-weight 600
+			display: block
+			margin-right 20px
+	.d-brands
+		.d-list
+			&__item
+				padding-top 15px
+				break-inside: avoid
+				&_more
+					color: $orange
+					margin-top 15px
+					line-height: 14px
+					display: flex
+					align-items: center
+					position: relative
+					font-size: 14px
+					font-weight 600
+					&::after
+						content: ''
+						border-right: solid 2px $orange
+						border-top: solid 2px $orange
+						transform: rotate(45deg)
+						width: 7px
+						height: 7px
+						display: block
+						margin-left 7px
+						margin-bottom 1px
+					&:hover::after
+						border-right: solid 2px $linkFont
+						border-top: solid 2px $linkFont
+.header__search
+	background: $white
+.header-search
+	position: fixed
+	z-index 18
+	top: 40px
+	left: 0
+	right: 0
+	display: none
+	@media $phone
+		top: 57px
+	.content-wrapper
+		@media $beforePhone
+			padding: 0
+		@media $phone
+			padding: 0
+	.b-field__column
+		background: $backFont
+		border-radius: 0 3px 3px 0
+		padding: 0 10px
+		height: 36px
+		line-height: 36px
+		margin: 0 15px 0 0
+		cursor: pointer
+		transition: 0.3s
+		font-size: 14px
+		&:hover
+			background: $specsOrange
+			color: $white
+
+.header.is-search-opened .header-search
+	display: block
+.search
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15)
+	&__wrapper
+		padding: 21px 17px 21px 36px
+	&__top
+		display: flex
+		justify-content: space-between
+		.b-field--search
+			display: flex
+			flex: 1 0 auto
+			align-items: center
+		.b-field__wrapper
+			flex-grow: 1
+			border-radius: 3px 0 0 3px
+		.b-field__input
+			height: 34px
+			font-weight 600
+		.btn
+			height: 36px
+			line-height: 36px
+			transition: 0.3s
+			font-size: 14px
+			text-transform: none
+			background: $white
+			border: solid 1px $specsOrange
+			color: $specsOrange
+			&:hover
+				background: $specsOrange
+				color: $white
+			@media $desktop
+				display: none
+	&__results
+		display: flex
+		padding-top 15px
+		&-coincidence
+			font-weight 700
+	&__results
+		&-list
+			flex none
+			width: 24%
+			padding: 0 10px 0 20px
+			@media $desktop
+				width: 35%
+			@media $phone
+				width: 100%
+		&-item
+			color: $baseFont
+			transition: 0.3s
+			margin-bottom 0.3em
+			&:hover
+				color: $linkFont
+		&-products
+			@media $desktop
+				overflow-x: scroll
+				width: 65%
+			@media $phone
+				display: none
+			&-list
+				display: flex
+				margin: 0 -10px
+			&-item
+				//flex: 0 0 25%
+				width: 25%
+				padding: 0 10px
+				@media $desktop
+					width: 350px
+				a
+					transition: 0.3s
+					&:hover
+						box-shadow: 0 0 8px rgba(black, 0.2)
+				.b-product-card__image
+					height: auto
+					max-height: auto
+		&-list
+			display: flex
+			flex-direction: column

@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="title" content="">
+    <meta name="description" content="">
+    <title>offer</title>
+    <link href="/f/css/slick.css" rel="stylesheet" type="text/css">
+    <link href="/f/css/main.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    <div class="upblock js-upblock" id="login">
+      <div class="upblock__wrapper">
+        <div class="upblock__close js-upblock-close"></div>
+        <div class="upblock__title">Авторизация</div>
+        <div class="upblock__body js-val-container">
+          <div class="upblock__body-wrapper">
+                <div class="b-form-field b-form-field--email">
+                  <div class="b-form-field__wrapper">
+                    <input class="b-form-field__input" type="text" placeholder="E-mail" value="">
+                  </div>
+                </div>
+                <div class="b-form-field b-form-field--password">
+                  <div class="b-form-field__wrapper">
+                    <input class="b-form-field__input" type="password" placeholder="Пароль" value="">
+                  </div>
+                </div>
+          </div>
+          <div class="upblock__body-wrapper"><span class="upblock__body-link" onclick="Upblock.showId('recovery')">Забыли пароль?</span></div>
+          <div class="upblock__body-button js-btn-submit">Войти</div>
+          <div class="upblock__body-wrapper">
+            <div class="b-social-auth">
+              <div class="b-social-auth__title">Вход через социальную сеть</div>
+              <div class="b-social-auth__row">
+                <div class="b-social-auth__item b-social-auth__item--vk"></div>
+                <div class="b-social-auth__item b-social-auth__item--fb"></div>
+              </div>
+            </div>
+          </div>
+          <div class="upblock__body-wrapper"><span class="upblock__body-link upblock__body-link--reg" onclick="Upblock.showId('registration')">Зарегистрироваться</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="upblock js-upblock" id="registration">
+      <div class="upblock__wrapper">
+        <div class="upblock__close js-upblock-close"></div>
+        <div class="upblock__title">Регистрация</div>
+        <div class="upblock__body js-val-container">
+          <div class="upblock__body-wrapper">
+                <div class="b-form-field b-form-field--name required">
+                  <div class="b-form-field__wrapper">
+                    <input class="b-form-field__input" type="text" placeholder="Имя*" value="">
+                  </div>
+                </div>
+                <div class="b-form-field b-form-field--email required">
+                  <div class="b-form-field__wrapper">
+                    <input class="b-form-field__input" type="text" placeholder="E-mail*" value="">
+                  </div>
+                  <div class="b-form-field__error">Неверный формат</div>
+                </div>
+          </div>
+          <div class="upblock__body-wrapper">
+                <div class="b-form-field b-form-field--password required">
+                  <div class="b-form-field__wrapper">
+                    <input class="b-form-field__input" type="password" placeholder="Пароль*" value="">
+                  </div>
+                </div>
+                <div class="b-form-field b-form-field--password-repeat required">
+                  <div class="b-form-field__wrapper">
+                    <input class="b-form-field__input" type="password" placeholder="Подтвердите пароль*" value="">
+                  </div>
+                </div>
+          </div>
+          <div class="upblock__body-wrapper">
+            <div class="upblock__body-label">Нажимая на&nbsp;кнопку &laquo;Регистрация&raquo;, Вы&nbsp;принимаете условия <a href="#">Соглашения об&nbsp;использовании сайта</a></div>
+          </div>
+          <div class="upblock__body-button js-btn-submit">Регистрация</div>
+        </div>
+      </div>
+    </div>
+    <div class="upblock js-upblock" id="recovery">
+      <div class="upblock__wrapper">
+        <div class="upblock__close js-upblock-close"></div>
+        <div class="upblock__title">Восстановление пароля</div>
+        <div class="upblock__body js-val-container">
+          <div class="upblock__body-wrapper">
+                <div class="b-form-field b-form-field--email">
+                  <div class="b-form-field__wrapper">
+                    <input class="b-form-field__input" type="text" placeholder="E-mail" value="">
+                  </div>
+                </div>
+          </div>
+          <div class="upblock__body-wrapper">
+            <div class="upblock__body-label upblock__body-label--comment">На&nbsp;ваш E-Mail придёт ссылка для сброса пароля</div>
+          </div>
+          <div class="upblock__body-button">Получить ссылку</div>
+        </div>
+      </div>
+    </div>
+    <div class="upblock js-upblock" id="reserve">
+      <div class="upblock__wrapper">
+        <div class="upblock__close js-upblock-close"></div>
+        <div class="upblock__title">Отложить</div>
+        <div class="upblock__body js-val-container">
+          <div class="upblock__body-wrapper">
+            <div class="upblock__body-desc">Этот товар отложат специально для вас в&nbsp;магазине. Вам останется только прийти, оплатить и&nbsp;забрать.</div>
+          </div>
+          <div class="upblock__body-wrapper">
+                <div class="b-form-field js-select-field b-form-field--select js-nav-select">
+                  <input class="js-select-value" type="hidden" value="60">
+                  <div class="b-form-field__caption js-select-caption">ТРЦ &laquo;РИО Севастопольский&raquo; Gooodshouse</div>
+                  <div class="b-form-field__options js-select-options">
+                    <div class="b-form-field__item js-select-option" data-val="60">ТРЦ &laquo;РИО Севастопольский&raquo; Gooodshouse</div>
+                    <div class="b-form-field__item js-select-option" data-val="16">ТРЦ «Райкин Плаза»</div>
+                  </div>
+                </div>
+            <div class="upblock__body-container">
+              <div class="upblock__block js-nav-item is-active" data-id="60">
+                <div class="upblock__body-row">
+                  <div class="upblock__body-column">Количество:</div>
+                  <div class="upblock__body-column">
+                        <div class="b-form-field js-select-field b-form-field--select b-form-field--small">
+                          <input class="js-select-value" type="hidden" value="1">
+                          <div class="b-form-field__caption js-select-caption">1</div>
+                          <div class="b-form-field__options js-select-options">
+                            <div class="b-form-field__item js-select-option" data-val="1">1</div>
+                            <div class="b-form-field__item js-select-option" data-val="2">2</div>
+                            <div class="b-form-field__item js-select-option" data-val="3">3</div>
+                            <div class="b-form-field__item js-select-option" data-val="4">4</div>
+                            <div class="b-form-field__item js-select-option" data-val="5">5</div>
+                          </div>
+                        </div>
+                  </div>
+                </div>
+                <div class="upblock__list">
+                  <div class="upblock__list-item upblock__list-item--address">г. Москва, Большая Черемушкинская улица, 1</div>
+                  <div class="upblock__list-item upblock__list-item--time">10:00&nbsp;&mdash; 22:00</div>
+                  <div class="upblock__list-item upblock__list-item--phone">+7 (495) 783-85-22&nbsp;доб.&nbsp;2063</div>
+                </div>
+              </div>
+              <div class="upblock__block js-nav-item" data-id="16">
+                <div class="upblock__body-row">
+                  <div class="upblock__body-column">Количество:</div>
+                  <div class="upblock__body-column">
+                        <div class="b-form-field js-select-field b-form-field--select b-form-field--small">
+                          <input class="js-select-value" type="hidden" value="1">
+                          <div class="b-form-field__caption js-select-caption">1</div>
+                          <div class="b-form-field__options js-select-options">
+                            <div class="b-form-field__item js-select-option" data-val="1">1</div>
+                          </div>
+                        </div>
+                  </div>
+                </div>
+                <div class="upblock__list">
+                  <div class="upblock__list-item upblock__list-item--address">г. Москва, Шереметьевская ул., д. 6, стр.1, 0 этаж.</div>
+                  <div class="upblock__list-item upblock__list-item--time">10:00&nbsp;&mdash; 22:00</div>
+                  <div class="upblock__list-item upblock__list-item--phone">+7 (495) 783-85-22&nbsp;доб.&nbsp;2063</div>
+                </div>
+              </div>
+            </div>
+            <div class="upblock__row upblock__row--short">
+              <div class="upblock__column">
+                    <div class="b-form-field b-form-field--name">
+                      <div class="b-form-field__wrapper">
+                        <input class="b-form-field__input" type="text" placeholder="Имя" value="">
+                      </div>
+                    </div>
+              </div>
+              <div class="upblock__column">
+                    <div class="b-form-field b-form-field--name">
+                      <div class="b-form-field__wrapper">
+                        <input class="b-form-field__input" type="text" placeholder="Фамилия" value="">
+                      </div>
+                    </div>
+              </div>
+            </div>
+            <div class="upblock__row upblock__row--short">
+              <div class="upblock__column">
+                    <div class="b-form-field b-form-field--email">
+                      <div class="b-form-field__wrapper">
+                        <input class="b-form-field__input" type="text" placeholder="E-mail" value="">
+                      </div>
+                    </div>
+              </div>
+              <div class="upblock__column">
+                    <div class="b-form-field b-form-field--phone js-phone-mask">
+                      <div class="b-form-field__wrapper">
+                        <input class="b-form-field__input" type="text" placeholder="Телефон" value="">
+                      </div>
+                    </div>
+              </div>
+            </div>
+          </div>
+          <div class="upblock__body-button">Забрать из&nbsp;магазина</div>
+        </div>
+      </div>
+    </div>
+    <div class="upblock js-upblock" id="reviews">
+      <div class="upblock__wrapper">
+        <div class="upblock__close js-upblock-close"></div>
+        <div class="upblock__title">Написать отзыв</div>
+        <div class="upblock__body js-val-container">
+          <div class="upblock__body-wrapper">
+                <div class="b-form-field b-form-field--name">
+                  <div class="b-form-field__wrapper">
+                    <input class="b-form-field__input" type="text" placeholder="Имя" value="">
+                  </div>
+                </div>
+                <div class="b-form-field b-form-field--email">
+                  <div class="b-form-field__wrapper">
+                    <input class="b-form-field__input" type="text" placeholder="E-mail" value="">
+                  </div>
+                </div>
+          </div>
+          <div class="upblock__body-wrapper">
+            <div class="upblock__body-row">
+              <div class="upblock__body-column">Ваша оценка</div>
+              <div class="upblock__body-column">
+                    <div class="b-stars js-stars">
+                      <div class="b-stars__wrapper">
+                        <label class="b-stars__item js-star" data-star="5">
+                              <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19.9477 7.67117C19.816 7.2662 19.4568 6.97948 19.0335 6.94118L13.2601 6.41703L10.9784 1.07515C10.81 0.682682 10.4267 0.429382 10 0.429382C9.57338 0.429382 9.18992 0.682682 9.02253 1.07515L6.74085 6.41703L0.96652 6.94118C0.543234 6.98024 0.184799 7.26696 0.0523506 7.67117C-0.0793349 8.07615 0.0422796 8.52034 0.362414 8.8011L4.72665 12.6279L3.43986 18.2954C3.34571 18.7122 3.50746 19.1431 3.85323 19.393C4.03908 19.5281 4.25744 19.5955 4.47656 19.5955C4.66485 19.5955 4.8533 19.5455 5.02161 19.4447L10 16.468L14.9775 19.4447C15.3427 19.6629 15.8018 19.643 16.1468 19.393C16.4926 19.1431 16.6543 18.7122 16.5602 18.2954L15.2734 12.6279L19.6376 8.8011C19.9576 8.52034 20.0794 8.07706 19.9477 7.67117Z"></path>
+                              </svg>
+                        </label>
+                        <label class="b-stars__item js-star" data-star="4">
+                              <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19.9477 7.67117C19.816 7.2662 19.4568 6.97948 19.0335 6.94118L13.2601 6.41703L10.9784 1.07515C10.81 0.682682 10.4267 0.429382 10 0.429382C9.57338 0.429382 9.18992 0.682682 9.02253 1.07515L6.74085 6.41703L0.96652 6.94118C0.543234 6.98024 0.184799 7.26696 0.0523506 7.67117C-0.0793349 8.07615 0.0422796 8.52034 0.362414 8.8011L4.72665 12.6279L3.43986 18.2954C3.34571 18.7122 3.50746 19.1431 3.85323 19.393C4.03908 19.5281 4.25744 19.5955 4.47656 19.5955C4.66485 19.5955 4.8533 19.5455 5.02161 19.4447L10 16.468L14.9775 19.4447C15.3427 19.6629 15.8018 19.643 16.1468 19.393C16.4926 19.1431 16.6543 18.7122 16.5602 18.2954L15.2734 12.6279L19.6376 8.8011C19.9576 8.52034 20.0794 8.07706 19.9477 7.67117Z"></path>
+                              </svg>
+                        </label>
+                        <label class="b-stars__item js-star" data-star="3">
+                              <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19.9477 7.67117C19.816 7.2662 19.4568 6.97948 19.0335 6.94118L13.2601 6.41703L10.9784 1.07515C10.81 0.682682 10.4267 0.429382 10 0.429382C9.57338 0.429382 9.18992 0.682682 9.02253 1.07515L6.74085 6.41703L0.96652 6.94118C0.543234 6.98024 0.184799 7.26696 0.0523506 7.67117C-0.0793349 8.07615 0.0422796 8.52034 0.362414 8.8011L4.72665 12.6279L3.43986 18.2954C3.34571 18.7122 3.50746 19.1431 3.85323 19.393C4.03908 19.5281 4.25744 19.5955 4.47656 19.5955C4.66485 19.5955 4.8533 19.5455 5.02161 19.4447L10 16.468L14.9775 19.4447C15.3427 19.6629 15.8018 19.643 16.1468 19.393C16.4926 19.1431 16.6543 18.7122 16.5602 18.2954L15.2734 12.6279L19.6376 8.8011C19.9576 8.52034 20.0794 8.07706 19.9477 7.67117Z"></path>
+                              </svg>
+                        </label>
+                        <label class="b-stars__item js-star" data-star="2">
+                              <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19.9477 7.67117C19.816 7.2662 19.4568 6.97948 19.0335 6.94118L13.2601 6.41703L10.9784 1.07515C10.81 0.682682 10.4267 0.429382 10 0.429382C9.57338 0.429382 9.18992 0.682682 9.02253 1.07515L6.74085 6.41703L0.96652 6.94118C0.543234 6.98024 0.184799 7.26696 0.0523506 7.67117C-0.0793349 8.07615 0.0422796 8.52034 0.362414 8.8011L4.72665 12.6279L3.43986 18.2954C3.34571 18.7122 3.50746 19.1431 3.85323 19.393C4.03908 19.5281 4.25744 19.5955 4.47656 19.5955C4.66485 19.5955 4.8533 19.5455 5.02161 19.4447L10 16.468L14.9775 19.4447C15.3427 19.6629 15.8018 19.643 16.1468 19.393C16.4926 19.1431 16.6543 18.7122 16.5602 18.2954L15.2734 12.6279L19.6376 8.8011C19.9576 8.52034 20.0794 8.07706 19.9477 7.67117Z"></path>
+                              </svg>
+                        </label>
+                        <label class="b-stars__item js-star is-active" data-star="1">
+                              <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19.9477 7.67117C19.816 7.2662 19.4568 6.97948 19.0335 6.94118L13.2601 6.41703L10.9784 1.07515C10.81 0.682682 10.4267 0.429382 10 0.429382C9.57338 0.429382 9.18992 0.682682 9.02253 1.07515L6.74085 6.41703L0.96652 6.94118C0.543234 6.98024 0.184799 7.26696 0.0523506 7.67117C-0.0793349 8.07615 0.0422796 8.52034 0.362414 8.8011L4.72665 12.6279L3.43986 18.2954C3.34571 18.7122 3.50746 19.1431 3.85323 19.393C4.03908 19.5281 4.25744 19.5955 4.47656 19.5955C4.66485 19.5955 4.8533 19.5455 5.02161 19.4447L10 16.468L14.9775 19.4447C15.3427 19.6629 15.8018 19.643 16.1468 19.393C16.4926 19.1431 16.6543 18.7122 16.5602 18.2954L15.2734 12.6279L19.6376 8.8011C19.9576 8.52034 20.0794 8.07706 19.9477 7.67117Z"></path>
+                              </svg>
+                        </label>
+                      </div>
+                    </div>
+              </div>
+            </div>
+          </div>
+          <div class="upblock__body-wrapper">
+                <div class="b-form-field b-form-field--review">
+                  <div class="b-form-field__wrapper">
+                    <textarea class="b-form-field__textarea" placeholder="Отзыв"></textarea>
+                  </div>
+                </div>
+          </div>
+          <div class="upblock__body-button">Оставить отзыв</div>
+        </div>
+      </div>
+    </div>
+    <div class="upblock js-upblock" id="gallery">
+      <div class="upblock__wrapper upblock__wrapper--fullscreen">
+        <div class="upblock__close js-upblock-close"></div>
+        <div class="b-slider__wrapper b-slider__wrapper--upblock js-product-gallery"></div>
+      </div>
+    </div>
+    <header class="header js-header">
+      <div class="header__wrapper">
+        <div class="header__top">
+          <div class="header__top-wrapper content-wrapper">
+            <div class="b-header-tabs">
+              <div class="b-header-tabs__item b-header-tabs__item--cookhouse is-active"></div><a class="b-header-tabs__item b-header-tabs__item--hamleys" href="#hamleys"></a><a class="b-header-tabs__item b-header-tabs__item--goodshouse" href="#goodshouse"></a>
+            </div>
+            <div class="b-header-menu">
+              <div class="b-header-menu__mobile js-mobile-menu"><span></span></div>
+              <div class="b-header-menu__links"><a class="b-header-menu__item" href="#">Адреса магазинов</a><a class="b-header-menu__item" href="#">Контакты</a><a class="b-header-menu__item" href="#">Доставки и&nbsp;оплата</a></div><a class="logo b-header-menu__logo" href="#"></a>
+              <div class="b-header-menu__about">
+                <div class="b-header-menu__box">
+                  <div class="b-header-menu__phone">+ 7 (495) 783-85-21</div>
+                </div><span class="b-header-menu__item b-header-menu__item--auth"><a href="#" onclick="Upblock.showId('login');return(false);">Вход</a>&nbsp;/&nbsp;<a href="#" onclick="Upblock.showId('registration');return(false);">Регистрация</a></span>
+              </div>
+            </div>
+            <div class="b-user-action"><a class="b-user-action__item b-user-action__item--basket" data-count="10" href="#basket"></a><a class="b-user-action__item b-user-action__item--favorite" href="#favorite"></a></div>
+          </div>
+        </div>
+        <div class="header__bottom">
+          <div class="content-wrapper">
+            <div class="header__row">
+              <div class="header__mobile-menu js-mobile-menu"><span></span></div>
+              <div class="header__phone">+ 7 (495) 783-85-21</div>
+              <div class="logo header__logo"></div>
+              <div class="header__search">
+                    <div class="b-field b-field--search">
+                      <div class="b-field__wrapper">
+                        <input class="b-field__input" type="text" placeholder="Поиск">
+                      </div>
+                    </div>
+              </div>
+            </div>
+          </div>
+          <div class="header__menu js-header-menu">
+            <div class="header__menu-wrapper header__menu-wrapper--smart">
+              <div class="header__menu-row"><a class="header__menu-phone" href="tel:+74957838521">+ 7 (495) 783-85-21</a>
+                <div class="header__menu-controls"><span class="header__menu-item header__menu-item--profile" onclick="Upblock.showId('login')"></span><a class="header__menu-item header__menu-item--favorite" href="#favorite"></a></div>
+              </div>
+            </div>
+            <div class="header__menu-wrapper header__menu-wrapper--smart">
+              <div class="header__search">
+                    <div class="b-field b-field--search">
+                      <div class="b-field__wrapper">
+                        <input class="b-field__input" type="text" placeholder="Поиск">
+                      </div>
+                    </div>
+              </div>
+            </div>
+            <div class="header__menu-wrapper header__menu-wrapper--general-list"><a class="header__menu-item is-active" href="#">Бренды</a><a class="header__menu-item" href="#">Для кухни</a><a class="header__menu-item" href="#">Кухонная утварь</a><a class="header__menu-item" href="#">Посуда</a><a class="header__menu-item" href="#">Для выпечки</a><a class="header__menu-item" href="#">Для гриля</a><a class="header__menu-item" href="#">Чай и&nbsp;кофе</a><a class="header__menu-item" href="#">Ножи</a><a class="header__menu-item" href="#">Вино и&nbsp;сыр</a><a class="header__menu-item" href="#">Специи</a><a class="header__menu-item" href="#">Текстиль и&nbsp;декор</a><a class="header__menu-item" href="#">Бытовая техника</a><a class="header__menu-item" href="#">Для дома</a><a class="header__menu-item is-active" href="#">Sale</a>
+            </div>
+            <div class="header__menu-wrapper header__menu-wrapper--mobile"><a class="header__menu-item" href="#">Адреса магазинов</a><a class="header__menu-item" href="#">Контакты</a><a class="header__menu-item" href="#">Доставки и&nbsp;оплата</a></div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="page-container">
+          <section class="b-breadcrumbs">
+            <div class="content-wrapper">
+              <div class="b-breadcrumbs__wrapper"><span class="b-breadcrumbs__item" itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem"><a href="#" itemprop="item"><span itemprop="name">Главная</span>
+                    <meta itemprop="position" content="0"></a></span><span class="b-breadcrumbs__item" itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem"><span itemprop="name">ДОГОВОР ОФЕРТЫ</span>
+                  <meta itemprop="position" content="1"></span>
+              </div>
+            </div>
+          </section>
+      <div class="content-wrapper">
+        <div class="b-text">
+          <h1>Пользовательское соглашение</h1>
+        </div>
+        <div class="b-text b-content-links">
+          <p><a href="#main">Основные понятия</a></p>
+          <p><a href="#section1">Общие положения (п. 1)</a></p>
+          <p><a href="#section2">Предмет соглашения (п. 2)</a></p>
+          <p><a href="#section3">Регистрация на сайте (п. 3)</a></p>
+          <p><a href="#section4">Товар и порядок совершения покупки (п. 4)</a></p>
+          <p><a class="b-text__left-padding" href="#section4_1">Доставка заказа (п. 4.1)</a></p>
+          <p><a class="b-text__left-padding" href="#section4_2">Оплата товара (п. 4.2)</a></p>
+          <p><a class="b-text__left-padding" href="#section4_3">Возврат товара и денежных средств (п. 4.3)</a></p>
+          <p><a class="b-text__left-padding" href="#section4_4">Ответственность (п. 4.4)</a></p>
+          <p><a href="#section5">Конфиденциальность и защита информации (п. 5)</a></p>
+          <p><a href="#section6">Срок действия Публичной оферты (п. 6)</a></p>
+          <p><a href="#section7">Дополнительные условия (п. 7)</a></p>
+        </div>
+        <div class="b-text">
+          <h2 id="main">Основные понятия</h2>
+          <p><span class="text_bold">Посетитель Сайта </span>— лицо, пришедшее на сайт <a href="http://cookhouse.ru/" target="_blank">cookhouse.ru</a> без цели размещения Заказа.</p>
+          <p><span class="text_bold">Пользователь </span>— физическое лицо, посетитель Сайта,
+            			принимающий условия настоящего Соглашения и желающий разместить Заказы в Интернет-магазине COOK HOUSE
+          </p>
+          <p><span class="text_bold">Покупатель </span>— Пользователь, разместивший Заказ в Интернет-магазине <a href="http://cookhouse.ru/" target="_blank">cookhouse.ru</a></p>
+          <p><span class="text_bold">COOK HOUSE </span>— АО «Кукхаус» (ОГРН 1107746567686, ИНН 7716667870, КПП 773101001, место нахождения: 121609, г. Москва, Осенний бульвар, д.23, помещение 1, комната 16).</p>
+          <p><span class="text_bold">Продавец </span>— COOK HOUSE</p>
+          <p><span class="text_bold">Интернет-магазин </span>— Интернет-сайт, принадлежащий COOK HOUSE,
+            			расположенный в сети интернет по адресу <a href="http://cookhouse.ru/" target="_blank">cookhouse.ru</a>, где представлены Товары, предлагаемые Продавцом для приобретения, а также условия оплаты и доставки Товаров Покупателям.
+          </p>
+          <p><span class="text_bold">Сайт </span>— <a href="http://cookhouse.ru/" target="_blank">cookhouse.ru</a></p>
+          <p><span class="text_bold">Товар </span>— посуда, товары для приготовления и иные товары, представленные к продаже на Сайте.</p>
+          <p><span class="text_bold">Заказ </span>— должным образом оформленный запрос Покупателя на приобретение и доставку по указанному Покупателем адресу / посредством самовывоза Товаров, выбранных на Сайте.</p>
+          <h2 id="section1">1. Общие положения</h2>
+          <p>1. Продавец осуществляет продажу Товаров через Интернет-магазин по адресу <a href="http://cookhouse.ru/" target="_blank">cookhouse.ru</a></p>
+          <p>
+            2. Заказывая Товары через Интернет-магазин, Пользователь соглашается с условиями продажи
+            Товаров, изложенными ниже (далее — Условия продажи товаров). В случае несогласия с настоящим
+            Пользовательским соглашением (далее — Соглашение / Публичная оферта) Пользователь обязан немедленно
+            прекратить использование сервиса и покинуть сайт <a href="http://cookhouse.ru/" target="_blank">cookhouse.ru</a>.
+          </p>
+          <p>
+            3. Настоящие Условия продажи товаров, а также информация о Товаре, представленная
+            на Сайте, являются публичной офертой в соответствии со ст.435 и п.2 ст.437 Гражданского кодекса
+            Российской Федерации.
+          </p>
+          <p>
+            4. Соглашение может быть изменено Продавцом в одностороннем порядке без уведомления
+            Пользователя/Покупателя. Новая редакция Соглашения вступает в силу по истечении 10 (Десяти)
+            календарных дней с момента ее опубликования на Сайте, если иное не предусмотрено условиями
+            настоящего Соглашения.
+          </p>
+          <p>
+            5. Публичная оферта признается акцептованной Посетителем Сайта / Покупателем
+            с момента регистрации Посетителя на Сайте, подписки Посетителя на новости, оформления Покупателем
+            Заказа без авторизации на Сайте, а также с момента принятия от Покупателя Заказа
+            по телефону <a href="tel:+74957838521">+7 (495) 783-85-21.</a><br>Договор розничной купли-продажи считается заключенным с момента выдачи Продавцом Покупателю кассового или
+            			товарного чека либо иного документа, подтверждающего оплату товара.<br>Сообщая Продавцу свой e-mail и номер телефона, Посетитель Сайта/Пользователь/Покупатель дает согласие
+            			на использование указанных средств связи Продавцом, а также третьими лицами, привлекаемыми им для
+            			целей выполнения обязательств перед Посетителями Сайта/Пользователями/Покупателями, в целях осуществления
+            			рассылок рекламного и информационного характера, содержащих информацию о скидках, предстоящих
+            			и действующих акциях и других мероприятиях Продавца, о передаче заказа в доставку, а также
+            			иную информацию, непосредственно связанную с выполнением обязательств Покупателем в рамках настоящей
+            			Публичной оферты.
+          </p>
+          <p>
+            6. Осуществляя Заказ, Пользователь/Покупатель соглашается с тем, что Продавец может
+            поручить исполнение Договора третьему лицу, при этом оставаясь ответственным за его исполнение.
+          </p>
+          <p>
+            7. В рамках Заказа COOK HOUSE предоставляет Пользователю информационное сопровождение
+            заключенного Пользователем с Продавцом Договора.
+          </p>
+          <h2 id="section2">2. Предмет соглашения</h2>
+          <p>
+            1. Предметом настоящего Соглашения является предоставление возможности Пользователю приобретать
+            для личных, семейных, домашних и иных нужд, не связанных с осуществлением предпринимательской
+            деятельности, Товары, представленные в каталоге Интернет-магазина по адресу <a href="http://cookhouse.ru/" target="_blank">cookhouse.ru</a>.
+          </p>
+          <p>
+            2. Данное Соглашение распространяется на все виды Товаров и услуг, представленных
+            на Сайте, пока такие предложения присутствуют в каталоге Интернет-магазина.
+          </p>
+          <h2 id="section3">3. Регистрация на сайте</h2>
+          <p>
+            1. Регистрация на Сайте осуществляется с помощью всплывающего окна «Регистрация»,
+            подписки на новости или оформления заказа не авторизованным Пользователем.
+          </p>
+          <p>2. Регистрация на Сайте не является обязательной для оформления Заказа.</p>
+          <p>
+            3. COOK HOUSE не несет ответственности за точность и правильность информации,
+            предоставляемой Пользователем при регистрации.
+          </p>
+          <p>
+            4. Пользователь обязуется не сообщать третьим лицам логин и пароль, указанные
+            Пользователем при регистрации. В случае возникновения у Пользователя подозрений относительно безопасности
+            его логина и пароля или возможности их несанкционированного использования третьими лицами, Пользователь
+            обязуется незамедлительно уведомить об этом COOK HOUSE, направив соответствующее электронное письмо
+            по адресу: <a href="mailto:istore@ideas4retail.ru" target="_blank">istore@ideas4retail.ru</a>.
+          </p>
+          <p>
+            5. Общение Пользователя/Покупателя с операторами Call-центра / менеджерами
+            и иными представителями COOK HOUSE и иных Продавцов должно строиться на принципах общепринятой морали
+            и коммуникационного этикета. Строго запрещено использование нецензурных слов, брани, оскорбительных выражений,
+            а также угроз и шантажа, в независимости от того, в каком виде и кому они были
+            адресованы.
+          </p>
+          <h2 id="section4">4. Товар и порядок совершения покупки</h2>
+          <p>
+            1. Продавец обеспечивает наличие на своем складе Товаров, представленных на Сайте.
+            Сопровождающие Товар фотографии являются простыми иллюстрациями к нему и могут отличаться
+            от фактического внешнего вида Товара. Сопровождающие Товар описания/характеристики не претендуют
+            на исчерпывающую информативность и могут содержать опечатки. Для уточнения информации по Товару
+            Покупатель должен обратиться в Службу поддержки клиентов.
+          </p>
+          <p>
+            2. В случае отсутствия заказанных Покупателем Товаров на складе Продавца, последний
+            вправе исключить указанный Товар из Заказа / аннулировать Заказ Покупателя, уведомив об этом
+            Покупателя путем направления соответствующего электронного сообщения по адресу, указанному Покупателем при
+            регистрации (либо звонком оператора Call-центра COOK HOUSE).
+          </p>
+          <p>
+            3. В случае аннуляции полностью либо частично предоплаченного Заказа стоимость
+            аннулированного Товара возвращается Продавцом Покупателю способом, которым Товар был оплачен.
+          </p>
+          <p>
+            4. Покупатель несет полную ответственность за предоставление неверных сведений, повлекшее
+            за собой невозможность надлежащего исполнения Продавцом своих обязательств перед Покупателем.
+          </p>
+          <p>
+            5. После оформления Заказа на Сайте Покупателю предоставляется информация
+            о предполагаемой дате доставки путем направления электронного сообщения по адресу, указанному Покупателем
+            при регистрации, или по телефону. Менеджер, обслуживающий данный Заказ, уточняет детали Заказа, согласовывает
+            дату доставки.
+          </p>
+          <p>
+            6. Ожидаемая дата передачи Заказа в Службу доставки Продавца сообщается Покупателю
+            менеджером, обслуживающим Заказ, по электронной почте или при контрольном звонке Покупателю. Дата передачи
+            Товара может быть изменена Продавцом в одностороннем порядке в случае наличия объективных, по мнению
+            Продавца, причин.
+          </p>
+          <h2 id="section4_1">4.1 Доставка заказа</h2>
+          <p>
+            1. Cпособы, а также примерные сроки доставки Товаров, реализуемых COOK HOUSE, указаны
+            на Сайте в разделе «Доставка и оплата» по адресу <a href="http://cookhouse.ru/delivery/" target="_blank">cookhouse.ru/delivery/</a>. Конкретные сроки доставки могут быть
+            			согласованы Покупателем с оператором Call-центра при подтверждении заказа.
+          </p>
+          <p>
+            2. Территория доставки Товаров, представленных на Сайте и реализуемых COOK HOUSE, ограничена
+            пределами Российской Федерации.
+          </p>
+          <p>
+            3. Задержки в доставке возможны ввиду непредвиденных обстоятельств, произошедших
+            не по вине Продавца.
+          </p>
+          <p>
+            4. При доставке Заказ вручается Покупателю либо третьему лицу, указанному в Заказе
+            в качестве получателя (далее Покупатель и третье лицо именуются «Получатель»). При невозможности получения
+            Заказа, оплаченного посредством наличного расчета, указанными выше лицами, Заказ может быть вручен лицу, который
+            может предоставить сведения о Заказе (номер отправления и/или ФИО Получателя), а также оплатить стоимость
+            Заказа в полном объеме лицу, осуществляющему доставку Заказа.
+          </p>
+          <p>
+            5. Во избежание случаев мошенничества, а также для выполнения взятых на себя
+            обязательств, указанных в пункте 5. настоящего Соглашения, при вручении предоплаченного Заказа лицо,
+            осуществляющее доставку Заказа, вправе затребовать документ, удостоверяющий личность Получателя, а также
+            указать тип и номер предоставленного Получателем документа на квитанции к Заказу. Продавец
+            гарантирует конфиденциальность и защиту персональных данных Получателя (п.9.3.).
+          </p>
+          <p>
+            6. Риск случайной гибели или случайного повреждения Товара переходит к Покупателю
+            с момента передачи ему Заказа и проставления Получателем Заказа подписи в документах, подтверждающих
+            доставку Заказа. В случае недоставки Заказа Продавец возмещает Покупателю стоимость предоплаченного Покупателем
+            Заказа и доставки в полном объеме после получения от Службы доставки подтверждения утраты Заказа.
+          </p>
+          <p>
+            7. Стоимость доставки каждого Заказа рассчитывается индивидуально, исходя из сведений
+            о Продавце заказанного Товара, веса Товара, региона и способа доставки, а также (в случае
+            необходимости) формы оплаты, и указывается на Сайте на последнем этапе оформления Заказа.
+          </p>
+          <p>
+            8. Обязанность Продавца передать товар Покупателю считается исполненной в момент вручения
+            курьером Товара Получателю или получения Товара Получателем в отделении почтовой связи либо в заранее
+            оговоренном месте выдачи Заказа (в т.ч. в пункте самовывоза).
+          </p>
+          <p>
+            9. При принятии Заказа от курьера, Получатель обязан осмотреть доставленный Товар
+            и проверить его на соответствие заявленному количеству, ассортименту и комплектности Товара,
+            а также проверить срок службы доставленного Товара и целостность упаковки. В случае отсутствия
+            претензий к доставленному Товару Получатель расписывается в «Бланке доставки заказов» либо ином
+            аналогичном документе, предоставляемом курьером, и оплачивает Заказ (в отсутствие 100%-ной предоплаты).
+            Подпись в доставочных документах свидетельствует о том, что претензий к Товару Получателем
+            не заявлено и Продавец полностью и надлежащим образом выполнил свою обязанность по передаче
+            Товара.
+          </p>
+          <p>
+            10. Время нахождения курьеров, доставляющих товар, реализуемый COOK HOUSE, по адресу
+            Получателя ограничено 15 минутами.
+          </p>
+          <p>
+            11. Товар, представленный на Сайте, по качеству и упаковке соответствует ГОСТу
+            и ТУ, что подтверждается соответствующими документами (сертификатами и т.д.).
+          </p>
+          <p>
+            12. Уточнить дату, время и при необходимости маршрут доставки, можно у менеджера,
+            который связывается с Покупателем для подтверждения Заказа.
+          </p>
+          <p>
+            13. Пользователь понимает и соглашается с тем, что: осуществление доставки —
+            отдельная услуга, не являющаяся неотъемлемой частью приобретаемого Покупателем Товара, выполнение которой
+            заканчивается в момент получения Получателем Товара и осуществления платежа за него. Претензии
+            к качеству приобретенного Товара, возникшие после получения и оплаты Товара, рассматриваются
+            в соответствии с Законом РФ «О защите прав потребителей» и гарантийными обязательствами
+            соответствующего Продавца. В связи с этим приобретение Товара с доставкой не дает Покупателю
+            право требования доставки приобретенного Товара в целях гарантийного обслуживания или замены, не дает
+            возможности осуществлять гарантийное обслуживание или замену Товара посредством выезда к Покупателю
+            и не подразумевает возможность возврата стоимости доставки Товара в случаях, когда Покупатель имеет
+            право на возврат денег за Товар как таковой, в соответствии с Законом РФ «О защите
+            прав потребителей».
+          </p>
+          <h2 id="section4_2">4.2 Оплата товара</h2>
+          <p>
+            1. Цена товара, реализуемого в Интернет-магазине, указывается в рублях Российской
+            Федерации и включает в себя налог на добавленную стоимость.
+          </p>
+          <p>
+            2. Цена Товара указывается на Сайте. В случае неверного указания цены заказанного
+            Покупателем Товара, Продавец информирует об этом Покупателя для подтверждения Заказа по исправленной цене
+            либо аннулирования Заказа. При невозможности связаться с Покупателем данный Заказ считается аннулированным.
+            Если Заказ был оплачен, Продавец возвращает Покупателю оплаченную за Заказ сумму тем же способом, которым
+            она была уплачена.
+          </p>
+          <p>3. При возврате товара Бонусы, которыми товар был оплачен, возвращаются на Карту Участника.</p>
+          <p>
+            4. Цена Товара на Сайте может быть изменена Продавцом в одностороннем порядке. При
+            этом цена на заказанный Покупателем Товар изменению не подлежит. Цена Товара может дифференцироваться
+            по регионам.
+          </p>
+          <p>5. Особенности оплаты Товара с помощью банковских карт:</p>
+          <ul class="b-text__left-padding">
+            <li>
+              В соответствии с положением ЦБ РФ «Об эмиссии банковских карт и об операциях,
+              совершаемых с использованием платежных карт» от 24.12.2004 № 266-П операции по банковским
+              картам совершаются держателем карты либо уполномоченным им лицом.
+            </li>
+            <li>
+              Авторизация операций по банковским картам осуществляется банком. Если у банка есть основания полагать,
+              что операция носит мошеннический характер, то банк вправе отказать в осуществлении данной операции.
+              Мошеннические операции с банковскими картами попадают под действие статьи 159 УК РФ.
+            </li>
+            <li>
+              Во избежание случаев различного рода неправомерного использования банковских карт при оплате все Заказы,
+              оформленные на Сайте и предоплаченные банковской картой, проверяются Продавцом. В целях проверки
+              личности владельца и его правомочности на использование карты Продавец вправе потребовать
+              от Покупателя, оформившего такой заказ, предъявления документа, удостоверяющего личность.
+            </li>
+          </ul>
+          <p>
+            6. COOK HOUSE вправе предоставлять скидки на Товары и устанавливать программу
+            бонусов. Виды скидок, бонусов, порядок и условия начисления определяются Продавцом самостоятельно
+            и указаны на Сайте и могут быть изменены Продавцом в одностороннем порядке.<br>В случае если при применении скидки / бонуса пересчитанная стоимость Товара COOK HOUSE включает
+            			в себя копейки, такая стоимость Товара подлежит округлению до значения, кратного 1 (Одному) рублю.
+          </p>
+          <p>
+            7. При проведении маркетинговых мероприятий, предполагающих вложение каких-либо объектов
+            в отправления с Заказом Покупателя, доставка указанных вложений осуществляется за счет Покупателя.
+            Для того, чтобы отказаться от вложения, Покупателю необходимо обратиться в Службу по работе
+            с клиентами.
+          </p>
+          <p>
+            8. Заказ считается неукомплектованным, если Покупатель сообщил об изменении решения
+            о покупке до момента начала сборки заказа на складе. Если Покупатель сообщил Продавцу об этом
+            после момента начала сборки заказа на складе, то такой Заказ считается отклоненным.
+          </p>
+          <h2 id="section4_3">4.3 Возврат товара и денежных средств</h2>
+          <p>
+            1. Возврат Товара, реализуемого COOK HOUSE, осуществляется в соответствии с условиями
+            возврата, указанными на Сайте по адресу <a href="http://cookhouse.ru/vozvrat/" target="_blank">cookhouse.ru/vozvrat/</a>.
+          </p>
+          <h2 id="section4_4">4.4 Ответственность</h2>
+          <p>
+            1. Продавец не несет ответственности за ущерб, причиненный Покупателю вследствие
+            ненадлежащего использования Товаров, приобретенных в Интернет-магазине.
+          </p>
+          <p>
+            2. Продавец не несет ответственности за содержание и функционирование внешних
+            сайтов.
+          </p>
+          <h2 id="section5">5. Конфиденциальность и защита информации</h2>
+          <p>
+            1. Персональные данные Пользователя/Покупателя обрабатывается в соответствии
+            с ФЗ «О персональных данных» № 152-ФЗ.
+          </p>
+          <p>
+            2. При регистрации на Сайте Пользователь предоставляет следующую информацию: Фамилия, Имя,
+            Отчество, контактный номер телефона, адрес электронной почты, дату рождения, пол, адрес доставки товара.
+          </p>
+          <p>
+            3. Предоставляя свои персональные данные Продавцу, Посетитель Сайта/Пользователь/Покупатель
+            соглашается на их обработку Продавцом, в том числе в целях выполнения Продавцом обязательств
+            перед Посетителем Сайта/Пользователем/Покупателем в рамках настоящей Публичной оферты , продвижения Продавцом
+            товаров и услуг, проведения электронных и sms опросов, контроля результатов маркетинговых акций,
+            клиентской поддержки, организации доставки товара Покупателям, проведение розыгрышей призов среди Посетителей
+            Сайта/Пользователей/ Покупателей, контроля удовлетворенности Посетителя Сайта/Пользователя/Покупателя, а также
+            качества услуг, оказываемых Продавцом.
+          </p>
+          <p>
+            4. Под обработкой персональных данных понимается любое действие (операция) или совокупность
+            действий (операций), совершаемых с использованием средств автоматизации или без использования таких средств
+            с персональными данными, включая сбор, запись, систематизацию, накопление, хранение, уточнение (обновление,
+            изменение) извлечение, использование, передачу (в том числе передачу третьим лицам, не исключая
+            трансграничную передачу, если необходимость в ней возникла в ходе исполнения обязательств), обезличивание,
+            блокирование, удаление, уничтожение персональных данных. Подробнее об обработке персональных здесь. Подробнее
+            о порядке осуществления прав предусмотренных ФЗ № 152 «О персональных данных» здесь.
+          </p>
+          <ul class="b-text__left-padding">
+            <li>
+              Продавец имеет право отправлять информационные, в том числе рекламные сообщения, на электронную почту
+              и мобильный телефон Пользователя/Покупателя с его согласия, выраженного посредством совершения
+              им действий, однозначно идентифицирующих этого абонента и позволяющих достоверно установить его
+              волеизъявление на получение сообщения. Пользователь/Покупатель вправе отказаться от получения рекламной
+              и другой информации без объяснения причин отказа путем информирования COOK HOUSE о своем отказе
+              по телефону <a href="tel:+74957838521" target="_blank">+7 (495) 783-85-21</a>				либо посредством направления соответствующего заявления на электронный адрес Продавца: <a href="mailto:istore@ideas4retail.ru" target="_blank">istore@ideas4retail.ru</a>.
+              				Сервисные сообщения, информирующие Пользователя/Покупателя о заказе и этапах его обработки, отправляются
+              				автоматически и не могут быть отклонены Пользователем/Покупателем.
+            </li>
+            <li>
+              Отзыв согласия на обработку персональных данных осуществляется путем отзыва акцепта настоящей Публичной
+              оферты по форме, указанной здесь.
+            </li>
+          </ul>
+          <p>
+            5. Продавец вправе использовать технологию «cookies». «Cookies» не содержат
+            конфиденциальную информацию. Посетитель / Пользователь / Покупатель настоящим дает согласие на сбор,
+            анализ и использование cookies, в том числе третьими лицами для целей формирования статистики
+            и оптимизации рекламных сообщений.
+          </p>
+          <p>6. Продавец получает информацию об ip-адресе посетителя Сайта <a href="http://cookhouse.ru/" target="_blank">cookhouse.ru</a> Данная информация
+            			не используется для установления личности посетителя.
+          </p>
+          <p>
+            7. Продавец не несет ответственности за сведения, предоставленные
+            Пользователем/Покупателем на Сайте в общедоступной форме.
+          </p>
+          <p>
+            8. Продавец вправе осуществлять записи телефонных разговоров с Пользователем/Покупателем.
+            При этом Продавец обязуется: предотвращать попытки несанкционированного доступа к информации, полученной
+            в ходе телефонных переговоров, и/или передачу ее третьим лицам, не имеющим непосредственного
+            отношения к исполнению Заказов, в соответствии с п. 4 ст. 16 Федерального закона
+            «Об информации, информационных технологиях и о защите информации».
+          </p>
+          <h2 id="section6">6. Срок действия Публичной оферты</h2>
+          <p>
+            1. Настоящая Публичная оферта вступает в силу с момента ее акцепта Посетителем
+            Сайта/Покупателем, и действует до момента отзыва акцепта Публичной оферты.
+          </p>
+          <h2 id="section7">7. Дополнительные условия</h2>
+          <p>
+            1. Продавец вправе переуступать либо каким-либо иным способом передавать свои права
+            и обязанности, вытекающие из его отношений с Покупателем, третьим лицам.
+          </p>
+          <p>
+            2. Интернет-магазин и предоставляемые сервисы могут временно частично или полностью
+            недоступны по причине проведения профилактических или иных работ или по любым другим причинам технического
+            характера. Техническая служба COOK HOUSE имеет право периодически проводить необходимые профилактические или иные
+            работы с предварительным уведомлением Покупателей или без такового.
+          </p>
+          <p>
+            3. К отношениям между Пользователем/Покупателем и Продавцом применяются положения
+            Российского законодательства.
+          </p>
+          <p>
+            4. В случае возникновения вопросов и претензий со стороны
+            Пользователя/Покупателя он должен обратиться к Продавцу по телефону или иным доступным способом. Все
+            возникающее споры стороны будут стараться решить путем переговоров, при недостижении соглашения спор будет передан
+            на рассмотрение в судебный орган в соответствии с действующим законодательством РФ.
+          </p>
+          <p>
+            5. Признание судом недействительности какого-либо положения настоящего Соглашения
+            не влечет за собой недействительность остальных положений.
+          </p>
+        </div>
+      </div>
+      <div class="btn-page-up js-btn-page-up"></div>
+    </div>
+    <footer class="footer">
+      <div class="content-wrapper">
+        <div class="footer__wrapper">
+          <div class="footer__column footer__column--x2">
+            <div class="footer__column footer__column--inner">
+              <div class="footer__link"><a href="#">O&nbsp;COOK HOUSE</a></div>
+              <div class="footer__link"><a href="#">Новости</a></div>
+              <div class="footer__link"><a href="#">Программа лояльности</a></div>
+              <div class="footer__link"><a href="#">Подарочные карты</a></div>
+              <div class="footer__link"><a href="#">Адреса магазинов</a></div>
+              <div class="footer__link"><a href="#">Вакансии</a></div>
+            </div>
+            <div class="footer__column footer__column--inner">
+              <div class="footer__link"><a href="#">Пользовательское соглашение</a></div>
+              <div class="footer__link"><a href="#">Доставка и&nbsp;оплата</a></div>
+              <div class="footer__link"><a href="#">Возврат товара</a></div>
+              <div class="footer__link"><a href="#">Контакты</a></div>
+              <div class="footer__link"><a href="#">Оферта</a></div>
+            </div>
+          </div>
+          <div class="footer__column footer__column--subscribe">
+            <div class="footer__caption">Будь в&nbsp;курсе наших новостей</div>
+            <div class="footer__subscribe">
+                  <div class="b-field b-field--subscribe">
+                    <div class="b-field__wrapper">
+                      <input class="b-field__input" type="text" placeholder="Email">
+                    </div>
+                    <div class="b-field__column">
+                      <div class="b-field__button">Подписаться</div>
+                    </div>
+                  </div>
+                  <div class="b-field b-field--checkbox">
+                    <label class="b-field__label">
+                      <input type="checkbox" checked="checked">
+                      <div class="b-field__caption">Согласен с&nbsp;<a href="#">обработкой персональных данных</a></div>
+                    </label>
+                  </div>
+            </div>
+          </div>
+          <div class="footer__column footer__column--direction">
+            <div class="footer__phone">+ 7 (495) 783-85-21</div>
+            <div class="footer__social">
+              <div class="footer__social-item footer__social-item--vk"></div>
+              <div class="footer__social-item footer__social-item--ig"></div>
+              <div class="footer__social-item footer__social-item--fb"></div>
+              <div class="footer__social-item footer__social-item--yd"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="/f/js/vendor/jquery.min.js"></script>
+    <script src="/f/js/vendor/slick.min.js"></script>
+    <script src="/f/js/vendor/jquery.mask.min.js"></script>
+    <script src="/f/js/vendor/handlebars.min.js"></script>
+    <script src="/f/js/main.js"></script>
+  </body>
+</html>

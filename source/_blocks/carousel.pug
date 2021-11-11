@@ -1,0 +1,16 @@
+section.b-carousel
+	.b-carousel__wrapper.js-main-carousel
+		each item, index in [3,4]
+			.b-carousel__slide
+				-var link = "/f/img/carousel/image-" + item + ".jpg";
+				-var linkM = "/f/img/carousel/image-" + item + "-m.jpg";
+				img.b-carousel__image(src=link alt="")
+				img.b-carousel__image-mobile(src=linkM alt="")
+				.b-carousel__slide-wrapper
+					.content-wrapper.content-wrapper--vh
+						//- mobile background
+						.b-carousel__layout(href="#" class="" + (index==1?'b-carousel__layout-dark-style':''))
+							//-.b-carousel__title Nadoba "Vilma"
+							//-.b-carousel__desc Сковорода с&nbsp;антипригарным покрытием и&nbsp;съёмной ручкой. Антипригарное покрытие ILAG Ultimate (Швейцария) не&nbsp;содержит PFOA, кадмий, свинец, а&nbsp;также любых других вредных веществ и&nbsp;полностью безопасно.
+							a.b-carousel__button(href="#") Подробнее
+

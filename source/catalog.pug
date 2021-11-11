@@ -1,0 +1,248 @@
+extends layouts/default
+
+block pageVar
+	-pageTitle = 'Каталог товаров';
+
+block content
+	.page-container
+		- var secondMenu = ['Сервисы','Салатники','Кружки и&nbsp;чашки','Чайники и&nbsp;кофейники'];
+		+breadcrumbs({path:[
+			{title:'сервировка', href:'#'},
+			{title:'сервисы и&nbsp;наборы', href:''}
+		]})
+		.content-wrapper
+			h1.page-container__title.page-container__title_lh Сервисы и&nbsp;наборы
+			include _blocks/cloud-tag
+		include _blocks/catalog-sort
+		.content-wrapper
+			.page-container__row.page-container__row--last
+				.page-container__column.page-container__column--x3.tb-x4.ph-x0
+					.b-catalog.js-block-filters
+						.b-catalog__wrapper.b-catalog__wrapper--mobile-controls
+							.b-catalog__close.js-toggle-filter
+								span
+							.b-catalog__button Применить
+							.b-catalog__button.b-catalog__button--white Сбросить
+						.b-catalog__wrapper.b-catalog__wrapper--other
+							.b-catalog__menu
+								each item in secondMenu
+									.b-catalog__menu-item
+										a(href="#")!= item
+						.b-catalog__wrapper.b-catalog__wrapper--mobile
+							+filterItem({type:'select', title:'Наличие в&nbsp;магазине', options:[
+								{value:0, option:'не выбрано'},
+								{value:1, option:'ТРЦ&nbsp;&laquo;Европейский&raquo;'},
+								{value:2, option:'МТК&nbsp;&laquo;Европарк&raquo;'},
+								{value:3, option:'ТЦ&nbsp;&laquo;Капитолий на&nbsp;Вернадского&raquo;'},
+								{value:4, option:'ТРЦ&nbsp;&laquo;Avenue Southwest&raquo; Gooodshouse'},
+								{value:5, option:'ТЦ&nbsp;&laquo;Дирижабль&raquo; Gooodshouse'},
+								{value:6, option:'ТЦ&nbsp;&laquo;РИО Ленинский&raquo; Gooodshouse'},
+								{value:7, option:'ТРЦ&nbsp;&laquo;РИО Севастопольский&raquo; Gooodshouse'},
+								{value:8, option:'ТРЦ&nbsp;&laquo;РИО&raquo; Коломна Gooodshouse'},
+								{value:9, option:'ТРЦ&nbsp;&laquo;Хорошо&raquo;'},
+								{value:10, option:'ТРК&nbsp;&laquo;Гранд Каньон&raquo;'},
+								{value:11, option:'ТРЦ&nbsp;&laquo;Райкин Плаза&raquo;'},
+								{value:12, option:'ТЦ&nbsp;&laquo;РИО Ленинский&raquo;'},
+							]})
+
+						.b-catalog__wrapper
+							+filterItem({type:'list', title:'Бренд', search:'Найти бренд', size:'limit', list:['Akcam','Anna Lafarg','Badlab','Balsford','Bernadotte','Bodum','Bohemia','Bohemia Crystal','BSF','Churchill','Akcam','Anna Lafarg','Badlab','Balsford','Bernadotte','Bodum','Bohemia','Bohemia Crystal','BSF','Churchill'], button:'Применить'})
+
+						.b-catalog__wrapper
+							+filterItem({type:'list', title:'Цвет', list:['белый','красный','оранжевый','желтый','зеленый'], button:'Применить'})
+
+						.b-catalog__wrapper
+							+filterItem({type:'list', title:'Производитель', search:'Найти производителя', size:'limit', list:['Akcam','Anna Lafarg','Badlab','Balsford','Bernadotte','Bodum','Bohemia','Bohemia Crystal','BSF','Churchill','Akcam','Anna Lafarg','Badlab','Balsford','Bernadotte','Bodum','Bohemia','Bohemia Crystal','BSF','Churchill'], button:'Применить'})
+
+						.b-catalog__wrapper
+							+filterItem({type:'price', title:'Цена', order:['0','99 999'], button:'Применить',  range: true})
+
+						.b-catalog__wrapper
+							+filterItem({type:'list', title:'Материал', list:['BSF','Churchill','Akcam','Anna Lafarg','Badlab'], button:'Применить'})
+
+						.b-catalog__wrapper
+							+filterItem({type:'range', title:'Ширина (СМ)', order:['0',''], button:'Применить', range: true})
+
+						.b-catalog__wrapper
+							+filterItem({type:'list', title:'Подарочная упаковка', list:['В наличии']})
+						.b-catalog__wrapper
+							.b-catalog-filter__title.b-catalog__switch.catalog-switch
+								label.catalog-switch__label
+									| Набор
+									input.catalog-switch__input(type="checkbox", name="")
+									span.catalog-switch__checked
+
+				.page-container__column.page-container__column--x9.tb-x8.ph-x12
+					-
+						var gProducts = [
+							{
+								title:'Набор соусник с&nbsp;тарелкой 150&nbsp;мл Tognana &laquo;Party&raquo;',
+								subtitle:'TOGNANA',
+								price:'890',
+
+								button:'Купить',
+								image:'/f/img/content/pic-5.png',
+
+								promo:['new'],
+								promoTitle:['new'],
+								colors:['#F26832','#73645C','#DAD0C7']
+							},
+							{
+								title:'Сервиз столовый на&nbsp;6&nbsp;персон Bernadotte &laquo;Платиновый узор&raquo;...',
+								subtitle:'BERNARDOTTE',
+								price:'124 690',
+								oldprice:'130 862',
+								button:'Купить',
+								image:'/f/img/content/pic-6.png',
+								favorite:'1',
+								promo: ['sale','new' ],
+								promoTitle: ['-20%','new'],
+								exclusive: ['exclusive'],
+								exclusiveTitle: ['exclusive'],
+							},{
+								title:'Набор сервировочный 3&nbsp;предмета Tognana Tendence...',
+								subtitle:'TOGNANA',
+								price:'15 390',
+
+								button:'Самовывоз',
+								image:'/f/img/content/pic-7.png',
+
+								//- promo:['exclusive'],
+								//- promoTitle:['exclusive'],
+								exclusive: ['exclusive'],
+								exclusiveTitle: ['exclusive'],
+
+							},
+							{
+								title:'Набор стаканов для виски 6&nbsp;шт.&nbsp;310&nbsp;мл Aurum Crystal Cooper',
+								subtitle:'AURUM CRYSTAL COOPER',
+								price:'3 690',
+
+								button:'Купить',
+								image:'/f/img/content/pic-1.png',
+
+							},{
+								title:'Набор кастрюль 5&nbsp;предметов Zwilling Impulse',
+								subtitle:'ZWILLING IMPULSE',
+								price:'30 590',
+
+								button:'Купить',
+								image:'/f/img/content/pic-3.png',
+							},{
+								title:'Глубокая кастрюля Silampos Royal 4&nbsp;л',
+								subtitle:'SILAMPOS ROYAL',
+								price:'7 990',
+
+								button:'Купить',
+								image:'/f/img/content/pic-4.png',
+
+
+
+
+							},{
+								title:'Набор соусник с&nbsp;тарелкой 150&nbsp;мл Tognana &laquo;Party&raquo;',
+								subtitle:'TOGNANA',
+								price:'890',
+
+								button:'Купить',
+								image:'/f/img/content/pic-5.png',
+
+								promo: ['new', 'sale',],
+								promoTitle: ['new', '-20%',],
+
+							},{
+								title:'Сервиз столовый на&nbsp;6&nbsp;персон Bernadotte &laquo;Платиновый узор&raquo;...',
+								subtitle:'BERNARDOTTE',
+								price:'24 690',
+								oldprice:'30 862',
+								button:'Купить',
+								image:'/f/img/content/pic-6.png',
+
+								promo:['sale'],
+								promoTitle:['20%'],
+								exclusive: ['exclusive'],
+								exclusiveTitle: ['exclusive'],
+
+							},{
+								title:'Набор сервировочный 3&nbsp;предмета Tognana Tendence...',
+								subtitle:'TOGNANA',
+								price:'15 390',
+
+								button:'Купить',
+								image:'/f/img/content/pic-7.png',
+
+								//- promo:['exclusive'],
+								//- promoTitle:['exclusive'],
+								exclusive: ['exclusive'],
+								exclusiveTitle: ['exclusive'],
+
+							},{
+								title:'Набор стаканов для виски 6&nbsp;шт.&nbsp;310&nbsp;мл Aurum Crystal Cooper',
+								subtitle:'AURUM CRYSTAL COOPER',
+								price:'3 690',
+
+								button:'Купить',
+								image:'/f/img/content/pic-1.png',
+
+
+
+								colors:['#73645C','#DAD0C7','#F26832']
+							},{
+								title:'Набор кастрюль 5&nbsp;предметов Zwilling Impulse',
+								subtitle:'ZWILLING IMPULSE',
+								price:'30 590',
+
+								button:'Купить',
+								image:'/f/img/content/pic-3.png',
+
+
+
+
+							}/*,{
+								title:'Глубокая кастрюля Silampos Royal 4&nbsp;л',
+								subtitle:'SILAMPOS ROYAL',
+								price:'7 990',
+
+								button:'Купить',
+								image:'/f/img/content/pic-4.png',
+
+
+
+
+							}*/
+						]
+					-;
+					.b-catalog-table
+						.b-catalog-table__wrapper
+							each item in gProducts
+								.b-catalog-table__item
+									+productCard(item)
+						.b-catalog-table__controls
+							.b-catalog-table__more
+								span показать ещё
+							.b-catalog-table__paginator
+								.b-paginator
+									.b-paginator__wrapper
+										.b-paginator__prev-first.is-disabled
+										.b-paginator__prev.is-disabled
+										.b-paginator__pages
+											.b-paginator__current 125
+											.b-paginator__count 535
+										.b-paginator__next
+										.b-paginator__next-last
+
+			.b-brand-preview
+				.b-brand-preview__wrapper
+					.b-brand-preview__column
+						.b-brand-preview__logo.js-heightLogo
+							img(src="/f/img/brands/brand-2.jpg" alt="")
+					.b-brand-preview__column.b-brand-preview__column-text.js-heightText
+						p В&nbsp;магазинах сети можно приобрести любые товары для приготовления еды и&nbsp;сервировки стола&nbsp;&mdash; от&nbsp;необходимых мелочей до&nbsp;малой бытовой техники. Здесь легко подобрать сезонные и&nbsp;праздничные комплекты посуды&nbsp;&mdash; для дачи или пикника, для празднования нового года или дня рождения, для создания особого настроения или для шумного праздника.
+
+						p Сеть поддерживает выгодную программу лояльности для своих клиентов, а&nbsp;ассортимент магазинов регулярно обновляется товарами с&nbsp;крупнейших выставок мира. Уютная атмосфера COOK HOUSE притягивает как магнит и&nbsp;заставляет возвращаться сюда вновь и&nbsp;вновь. В&nbsp;магазинах сети можно приобрести любые товары для приготовления еды и&nbsp;сервировки стола&nbsp;&mdash; от&nbsp;необходимых мелочей до&nbsp;малой бытовой техники. Здесь легко подобрать сезонные и&nbsp;праздничные комплекты посуды&nbsp;&mdash; для дачи или пикника, для празднования нового года или дня рождения, для создания особого настроения или для шумного праздника.
+
+						p Сеть поддерживает выгодную программу лояльности для своих клиентов, а&nbsp;ассортимент магазинов регулярно обновляется товарами с&nbsp;крупнейших выставок мира. Уютная атмосфера COOK HOUSE притягивает как магнит и&nbsp;заставляет возвращаться сюда вновь и&nbsp;вновь.
+
+		.btn-page-up.js-btn-page-up
+
+

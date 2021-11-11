@@ -1,0 +1,1390 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="title" content="">
+    <meta name="description" content="">
+    <title>Bonus</title>
+    <link href="/f/css/slick.css" rel="stylesheet" type="text/css">
+    <link href="/f/css/jquery-ui.min.css" rel="stylesheet" type="text/css">
+    <link href="/f/css/datepicker.css" rel="stylesheet" type="text/css">
+    <link href="/f/css/main.css" rel="stylesheet" type="text/css">
+    <link href="/f/css/questionnaire.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    <div class="upblock js-upblock" id="login">
+      <div class="upblock__wrapper">
+        <div class="upblock__close js-upblock-close"></div>
+        <div class="upblock__title">Авторизация</div>
+        <div class="upblock__body js-val-container">
+          <div class="upblock__body-wrapper">
+                <div class="b-form-field b-form-field--email">
+                  <div class="b-form-field__wrapper">
+                    <input class="b-form-field__input" type="text" placeholder="E-mail" value="">
+                  </div>
+                </div>
+                <div class="b-form-field b-form-field--password">
+                  <div class="b-form-field__wrapper">
+                    <input class="b-form-field__input" type="password" placeholder="Пароль" value="">
+                  </div>
+                </div>
+          </div>
+          <div class="upblock__body-wrapper"><span class="upblock__body-link" onclick="Upblock.showId('recovery')">Забыли пароль?</span></div>
+          <div class="upblock__body-button js-btn-submit">Войти</div>
+          <div class="upblock__body-wrapper">
+            <div class="b-social-auth">
+              <div class="b-social-auth__title">Вход через социальную сеть</div>
+              <div class="b-social-auth__row">
+                <div class="b-social-auth__item b-social-auth__item--vk"></div>
+                <div class="b-social-auth__item b-social-auth__item--fb"></div>
+              </div>
+            </div>
+          </div>
+          <div class="upblock__body-wrapper"><span class="upblock__body-link upblock__body-link--reg" onclick="Upblock.showId('registration')">Зарегистрироваться</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="upblock js-upblock" id="registration">
+      <div class="upblock__wrapper">
+        <div class="upblock__close js-upblock-close"></div>
+        <div class="upblock__title">Регистрация</div>
+        <div class="upblock__body js-val-container">
+          <div class="upblock__body-wrapper">
+                <div class="b-form-field b-form-field--name required">
+                  <div class="b-form-field__wrapper">
+                    <input class="b-form-field__input" type="text" placeholder="Имя*" value="">
+                  </div>
+                </div>
+                <div class="b-form-field b-form-field--email required">
+                  <div class="b-form-field__wrapper">
+                    <input class="b-form-field__input" type="text" placeholder="E-mail*" value="">
+                  </div>
+                  <div class="b-form-field__error">Неверный формат</div>
+                </div>
+          </div>
+          <div class="upblock__body-wrapper">
+                <div class="b-form-field b-form-field--password required">
+                  <div class="b-form-field__wrapper">
+                    <input class="b-form-field__input" type="password" placeholder="Пароль*" value="">
+                  </div>
+                </div>
+                <div class="b-form-field b-form-field--password-repeat required">
+                  <div class="b-form-field__wrapper">
+                    <input class="b-form-field__input" type="password" placeholder="Подтвердите пароль*" value="">
+                  </div>
+                </div>
+          </div>
+          <div class="upblock__body-wrapper">
+            <div class="upblock__body-label">Нажимая на&nbsp;кнопку &laquo;Регистрация&raquo;, Вы&nbsp;принимаете условия <a href="#">Соглашения об&nbsp;использовании сайта</a></div>
+          </div>
+          <div class="upblock__body-button js-btn-submit">Регистрация</div>
+        </div>
+      </div>
+    </div>
+    <div class="upblock js-upblock" id="recovery">
+      <div class="upblock__wrapper">
+        <div class="upblock__close js-upblock-close"></div>
+        <div class="upblock__title">Восстановление пароля</div>
+        <div class="upblock__body js-val-container">
+          <div class="upblock__body-wrapper">
+                <div class="b-form-field b-form-field--email">
+                  <div class="b-form-field__wrapper">
+                    <input class="b-form-field__input" type="text" placeholder="E-mail" value="">
+                  </div>
+                </div>
+          </div>
+          <div class="upblock__body-wrapper">
+            <div class="upblock__body-label upblock__body-label--comment">На&nbsp;ваш E-Mail придёт ссылка для сброса пароля</div>
+          </div>
+          <div class="upblock__body-button">Получить ссылку</div>
+        </div>
+      </div>
+    </div>
+    <div class="upblock js-upblock" id="reserve">
+      <div class="upblock__wrapper">
+        <div class="upblock__close js-upblock-close"></div>
+        <div class="upblock__title">Отложить</div>
+        <div class="upblock__body js-val-container">
+          <div class="upblock__body-wrapper">
+            <div class="upblock__body-desc">Этот товар отложат специально для вас в&nbsp;магазине. Вам останется только прийти, оплатить и&nbsp;забрать.</div>
+          </div>
+          <div class="upblock__body-wrapper">
+                <div class="b-form-field js-select-field b-form-field--select js-nav-select">
+                  <input class="js-select-value" type="hidden" value="60">
+                  <div class="b-form-field__caption js-select-caption">ТРЦ &laquo;РИО Севастопольский&raquo; Gooodshouse</div>
+                  <div class="b-form-field__options js-select-options">
+                    <div class="b-form-field__item js-select-option" data-val="60">ТРЦ &laquo;РИО Севастопольский&raquo; Gooodshouse</div>
+                    <div class="b-form-field__item js-select-option" data-val="16">ТРЦ «Райкин Плаза»</div>
+                  </div>
+                </div>
+            <div class="upblock__body-container">
+              <div class="upblock__block js-nav-item is-active" data-id="60">
+                <div class="upblock__body-row">
+                  <div class="upblock__body-column">Количество:</div>
+                  <div class="upblock__body-column">
+                        <div class="b-form-field js-select-field b-form-field--select b-form-field--small">
+                          <input class="js-select-value" type="hidden" value="1">
+                          <div class="b-form-field__caption js-select-caption">1</div>
+                          <div class="b-form-field__options js-select-options">
+                            <div class="b-form-field__item js-select-option" data-val="1">1</div>
+                            <div class="b-form-field__item js-select-option" data-val="2">2</div>
+                            <div class="b-form-field__item js-select-option" data-val="3">3</div>
+                            <div class="b-form-field__item js-select-option" data-val="4">4</div>
+                            <div class="b-form-field__item js-select-option" data-val="5">5</div>
+                          </div>
+                        </div>
+                  </div>
+                </div>
+                <div class="upblock__list">
+                  <div class="upblock__list-item upblock__list-item--address">г. Москва, Большая Черемушкинская улица, 1</div>
+                  <div class="upblock__list-item upblock__list-item--time">10:00&nbsp;&mdash; 22:00</div>
+                  <div class="upblock__list-item upblock__list-item--phone">+7 (495) 783-85-22&nbsp;доб.&nbsp;2063</div>
+                </div>
+              </div>
+              <div class="upblock__block js-nav-item" data-id="16">
+                <div class="upblock__body-row">
+                  <div class="upblock__body-column">Количество:</div>
+                  <div class="upblock__body-column">
+                        <div class="b-form-field js-select-field b-form-field--select b-form-field--small">
+                          <input class="js-select-value" type="hidden" value="1">
+                          <div class="b-form-field__caption js-select-caption">1</div>
+                          <div class="b-form-field__options js-select-options">
+                            <div class="b-form-field__item js-select-option" data-val="1">1</div>
+                          </div>
+                        </div>
+                  </div>
+                </div>
+                <div class="upblock__list">
+                  <div class="upblock__list-item upblock__list-item--address">г. Москва, Шереметьевская ул., д. 6, стр.1, 0 этаж.</div>
+                  <div class="upblock__list-item upblock__list-item--time">10:00&nbsp;&mdash; 22:00</div>
+                  <div class="upblock__list-item upblock__list-item--phone">+7 (495) 783-85-22&nbsp;доб.&nbsp;2063</div>
+                </div>
+              </div>
+            </div>
+            <div class="upblock__row upblock__row--short">
+              <div class="upblock__column">
+                    <div class="b-form-field b-form-field--name">
+                      <div class="b-form-field__wrapper">
+                        <input class="b-form-field__input" type="text" placeholder="Имя" value="">
+                      </div>
+                    </div>
+              </div>
+              <div class="upblock__column">
+                    <div class="b-form-field b-form-field--name">
+                      <div class="b-form-field__wrapper">
+                        <input class="b-form-field__input" type="text" placeholder="Фамилия" value="">
+                      </div>
+                    </div>
+              </div>
+            </div>
+            <div class="upblock__row upblock__row--short">
+              <div class="upblock__column">
+                    <div class="b-form-field b-form-field--email">
+                      <div class="b-form-field__wrapper">
+                        <input class="b-form-field__input" type="text" placeholder="E-mail" value="">
+                      </div>
+                    </div>
+              </div>
+              <div class="upblock__column">
+                    <div class="b-form-field b-form-field--phone js-phone-mask">
+                      <div class="b-form-field__wrapper">
+                        <input class="b-form-field__input" type="text" placeholder="Телефон" value="">
+                      </div>
+                    </div>
+              </div>
+            </div>
+          </div>
+          <div class="upblock__body-button">Забрать из&nbsp;магазина</div>
+        </div>
+      </div>
+    </div>
+    <div class="upblock js-upblock" id="reviews">
+      <div class="upblock__wrapper">
+        <div class="upblock__close js-upblock-close"></div>
+        <div class="upblock__title">Написать отзыв</div>
+        <div class="upblock__body js-val-container">
+          <div class="upblock__body-wrapper">
+                <div class="b-form-field b-form-field--name">
+                  <div class="b-form-field__wrapper">
+                    <input class="b-form-field__input" type="text" placeholder="Имя" value="">
+                  </div>
+                </div>
+                <div class="b-form-field b-form-field--email">
+                  <div class="b-form-field__wrapper">
+                    <input class="b-form-field__input" type="text" placeholder="E-mail" value="">
+                  </div>
+                </div>
+          </div>
+          <div class="upblock__body-wrapper">
+            <div class="upblock__body-row">
+              <div class="upblock__body-column">Ваша оценка</div>
+              <div class="upblock__body-column">
+                    <div class="b-stars js-stars">
+                      <div class="b-stars__wrapper">
+                        <label class="b-stars__item js-star" data-star="5">
+                              <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19.9477 7.67117C19.816 7.2662 19.4568 6.97948 19.0335 6.94118L13.2601 6.41703L10.9784 1.07515C10.81 0.682682 10.4267 0.429382 10 0.429382C9.57338 0.429382 9.18992 0.682682 9.02253 1.07515L6.74085 6.41703L0.96652 6.94118C0.543234 6.98024 0.184799 7.26696 0.0523506 7.67117C-0.0793349 8.07615 0.0422796 8.52034 0.362414 8.8011L4.72665 12.6279L3.43986 18.2954C3.34571 18.7122 3.50746 19.1431 3.85323 19.393C4.03908 19.5281 4.25744 19.5955 4.47656 19.5955C4.66485 19.5955 4.8533 19.5455 5.02161 19.4447L10 16.468L14.9775 19.4447C15.3427 19.6629 15.8018 19.643 16.1468 19.393C16.4926 19.1431 16.6543 18.7122 16.5602 18.2954L15.2734 12.6279L19.6376 8.8011C19.9576 8.52034 20.0794 8.07706 19.9477 7.67117Z"></path>
+                              </svg>
+                        </label>
+                        <label class="b-stars__item js-star" data-star="4">
+                              <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19.9477 7.67117C19.816 7.2662 19.4568 6.97948 19.0335 6.94118L13.2601 6.41703L10.9784 1.07515C10.81 0.682682 10.4267 0.429382 10 0.429382C9.57338 0.429382 9.18992 0.682682 9.02253 1.07515L6.74085 6.41703L0.96652 6.94118C0.543234 6.98024 0.184799 7.26696 0.0523506 7.67117C-0.0793349 8.07615 0.0422796 8.52034 0.362414 8.8011L4.72665 12.6279L3.43986 18.2954C3.34571 18.7122 3.50746 19.1431 3.85323 19.393C4.03908 19.5281 4.25744 19.5955 4.47656 19.5955C4.66485 19.5955 4.8533 19.5455 5.02161 19.4447L10 16.468L14.9775 19.4447C15.3427 19.6629 15.8018 19.643 16.1468 19.393C16.4926 19.1431 16.6543 18.7122 16.5602 18.2954L15.2734 12.6279L19.6376 8.8011C19.9576 8.52034 20.0794 8.07706 19.9477 7.67117Z"></path>
+                              </svg>
+                        </label>
+                        <label class="b-stars__item js-star" data-star="3">
+                              <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19.9477 7.67117C19.816 7.2662 19.4568 6.97948 19.0335 6.94118L13.2601 6.41703L10.9784 1.07515C10.81 0.682682 10.4267 0.429382 10 0.429382C9.57338 0.429382 9.18992 0.682682 9.02253 1.07515L6.74085 6.41703L0.96652 6.94118C0.543234 6.98024 0.184799 7.26696 0.0523506 7.67117C-0.0793349 8.07615 0.0422796 8.52034 0.362414 8.8011L4.72665 12.6279L3.43986 18.2954C3.34571 18.7122 3.50746 19.1431 3.85323 19.393C4.03908 19.5281 4.25744 19.5955 4.47656 19.5955C4.66485 19.5955 4.8533 19.5455 5.02161 19.4447L10 16.468L14.9775 19.4447C15.3427 19.6629 15.8018 19.643 16.1468 19.393C16.4926 19.1431 16.6543 18.7122 16.5602 18.2954L15.2734 12.6279L19.6376 8.8011C19.9576 8.52034 20.0794 8.07706 19.9477 7.67117Z"></path>
+                              </svg>
+                        </label>
+                        <label class="b-stars__item js-star" data-star="2">
+                              <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19.9477 7.67117C19.816 7.2662 19.4568 6.97948 19.0335 6.94118L13.2601 6.41703L10.9784 1.07515C10.81 0.682682 10.4267 0.429382 10 0.429382C9.57338 0.429382 9.18992 0.682682 9.02253 1.07515L6.74085 6.41703L0.96652 6.94118C0.543234 6.98024 0.184799 7.26696 0.0523506 7.67117C-0.0793349 8.07615 0.0422796 8.52034 0.362414 8.8011L4.72665 12.6279L3.43986 18.2954C3.34571 18.7122 3.50746 19.1431 3.85323 19.393C4.03908 19.5281 4.25744 19.5955 4.47656 19.5955C4.66485 19.5955 4.8533 19.5455 5.02161 19.4447L10 16.468L14.9775 19.4447C15.3427 19.6629 15.8018 19.643 16.1468 19.393C16.4926 19.1431 16.6543 18.7122 16.5602 18.2954L15.2734 12.6279L19.6376 8.8011C19.9576 8.52034 20.0794 8.07706 19.9477 7.67117Z"></path>
+                              </svg>
+                        </label>
+                        <label class="b-stars__item js-star is-active" data-star="1">
+                              <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19.9477 7.67117C19.816 7.2662 19.4568 6.97948 19.0335 6.94118L13.2601 6.41703L10.9784 1.07515C10.81 0.682682 10.4267 0.429382 10 0.429382C9.57338 0.429382 9.18992 0.682682 9.02253 1.07515L6.74085 6.41703L0.96652 6.94118C0.543234 6.98024 0.184799 7.26696 0.0523506 7.67117C-0.0793349 8.07615 0.0422796 8.52034 0.362414 8.8011L4.72665 12.6279L3.43986 18.2954C3.34571 18.7122 3.50746 19.1431 3.85323 19.393C4.03908 19.5281 4.25744 19.5955 4.47656 19.5955C4.66485 19.5955 4.8533 19.5455 5.02161 19.4447L10 16.468L14.9775 19.4447C15.3427 19.6629 15.8018 19.643 16.1468 19.393C16.4926 19.1431 16.6543 18.7122 16.5602 18.2954L15.2734 12.6279L19.6376 8.8011C19.9576 8.52034 20.0794 8.07706 19.9477 7.67117Z"></path>
+                              </svg>
+                        </label>
+                      </div>
+                    </div>
+              </div>
+            </div>
+          </div>
+          <div class="upblock__body-wrapper">
+                <div class="b-form-field b-form-field--review">
+                  <div class="b-form-field__wrapper">
+                    <textarea class="b-form-field__textarea" placeholder="Отзыв"></textarea>
+                  </div>
+                </div>
+          </div>
+          <div class="upblock__body-button">Оставить отзыв</div>
+        </div>
+      </div>
+    </div>
+    <div class="upblock js-upblock" id="gallery">
+      <div class="upblock__wrapper upblock__wrapper--fullscreen">
+        <div class="upblock__close js-upblock-close"></div>
+        <div class="b-slider__wrapper b-slider__wrapper--upblock js-product-gallery"></div>
+      </div>
+    </div>
+    <header class="header js-header">
+      <div class="header__wrapper">
+        <div class="header__top">
+          <div class="header__top-wrapper content-wrapper">
+            <div class="b-header-tabs">
+              <div class="b-header-tabs__item b-header-tabs__item--cookhouse is-active"></div><a class="b-header-tabs__item b-header-tabs__item--hamleys" href="#hamleys"></a><a class="b-header-tabs__item b-header-tabs__item--goodshouse" href="#goodshouse"></a>
+            </div>
+            <div class="b-header-menu">
+              <div class="b-header-menu__mobile js-mobile-menu"><span></span></div>
+              <div class="b-header-menu__links"><a class="b-header-menu__item" href="#">Адреса магазинов</a><a class="b-header-menu__item" href="#">Контакты</a><a class="b-header-menu__item" href="#">Доставки и&nbsp;оплата</a></div><a class="logo b-header-menu__logo" href="#"></a>
+              <div class="b-header-menu__about">
+                <div class="b-header-menu__box">
+                  <div class="b-header-menu__phone">+ 7 (495) 783-85-21</div>
+                </div><span class="b-header-menu__item b-header-menu__item--auth"><a href="#" onclick="Upblock.showId('login');return(false);">Вход</a>&nbsp;/&nbsp;<a href="#" onclick="Upblock.showId('registration');return(false);">Регистрация</a></span>
+              </div>
+            </div>
+            <div class="b-user-action"><span class="b-user-action__item b-user-action__item--search js-header-search-open"></span><a class="b-user-action__item b-user-action__item--basket js-basket-ico" data-count="10" href="#basket"></a><a class="b-user-action__item b-user-action__item--favorite" href="#favorite"></a></div>
+          </div>
+        </div>
+        <div class="header__bottom">
+          <div class="header__search header__search--open">
+                <div class="b-field b-field--search">
+                  <div class="b-field__wrapper">
+                    <input class="b-field__input" type="text" placeholder="Поиск">
+                  </div>
+                </div>
+          </div>
+          <div class="content-wrapper">
+            <div class="header__row">
+              <div class="header__mobile-menu js-mobile-menu"><span></span></div>
+              <div class="header__phone">+ 7 (495) 783-85-21</div>
+              <div class="logo header__logo"></div>
+              <div class="header__search">
+                    <div class="b-field b-field--search">
+                      <div class="b-field__wrapper">
+                        <input class="b-field__input" type="text" placeholder="Поиск">
+                      </div>
+                    </div>
+              </div>
+            </div>
+          </div>
+          <div class="header__menu js-header-menu">
+            <div class="header__menu-wrapper header__menu-wrapper--smart">
+              <div class="header__menu-row"><a class="header__menu-phone" href="tel:+74957838521">+ 7 (495) 783-85-21</a>
+                <div class="header__menu-controls"><span class="header__menu-item header__menu-item--profile" onclick="Upblock.showId('login')"></span><a class="header__menu-item header__menu-item--favorite" href="#favorite"></a></div>
+              </div>
+            </div>
+            <div class="header__menu-wrapper header__menu-wrapper--general-list"></div>
+            <div class="content-wrapper header__menu-wrapper_tm">
+              <section class="top-menu">
+                <nav class="menu">
+                  <ul class="menu__list">        
+                    <li class="menu__list__item"> <a class="is-active" href="#">Бренды</a>
+                      <div class="d-wrapper">
+                        <div class="content-wrapper">
+                          <div class="d-alphabet"><a href="#">0-9</a><a href="#">A</a><a href="#">B</a><a href="#">C</a><a href="#">D</a><a href="#">E</a><a href="#">F</a><a href="#">G</a><a href="#">H</a><a href="#">I</a><a href="#">J</a><a href="#">K</a><a href="#">L</a><a href="#">M</a><a href="#">N</a><a href="#">O</a><a href="#">P</a><a href="#">Q</a><a href="#">R</a><a href="#">S</a><a href="#">T</a><a href="#">U</a><a href="#">V</a><a href="#">W</a><a href="#">X</a><a href="#">Y</a><a href="#">Z</a>
+                          </div>
+                          <nav class="d-brands">
+                            <ul class="d-list">
+                              <li class="d-list__item"><a href="#">1DEA.me</a></li>
+                              <li class="d-list__item"><a href="#">Aeternum</a></li>
+                              <li class="d-list__item"><a href="#">Ajka Crystal</a></li>
+                              <li class="d-list__item"><a href="#">Alessi</a></li>
+                              <li class="d-list__item"><a href="#">Alexandre</a></li>
+                              <li class="d-list__item"><a href="#">Turpault</a></li>
+                              <li class="d-list__item"><a href="#">Ambientair</a></li>
+                              <li class="d-list__item"><a href="#">Anabella Asabella</a></li>
+                              <li class="d-list__item"><a href="#">Andrea Fontebasso</a></li>
+                              <li class="d-list__item"><a href="#">Angelo</a></li>
+                              <li class="d-list__item"><a href="#">Anna lafarg Emilypol</a></li>
+                              <li class="d-list__item"><a href="#">AromaCleaninQ</a></li>
+                              <li class="d-list__item"><a href="#">Aroma</a></li>
+                              <li class="d-list__item"><a href="#">Harmony</a></li>
+                              <li class="d-list__item"><a href="#">ART ATELIERART GLASS</a></li>
+                              <li class="d-list__item"><a href="#">Asa Selection</a></li>
+                              <li class="d-list__item"><a href="#">Ashdene</a></li>
+                              <li class="d-list__item"><a href="#">Atlantis</a></li>
+                              <li class="d-list__item"><a href="#">Attitude</a></li>
+                              <li class="d-list__item"><a href="#">BAGOhome</a></li>
+                              <li class="d-list__item"><a href="#">Balimena</a></li>
+                              <li class="d-list__item"><a href="#">Ballarini</a></li>
+                              <li class="d-list__item"><a href="#">Balvi</a></li>
+                              <li class="d-list__item"><a href="#">Barazzoni</a></li>
+                              <li class="d-list__item"><a href="#">BAUERBCL</a></li>
+                              <li class="d-list__item"><a href="#">Bialetti</a></li>
+                              <li class="d-list__item"><a href="#">Biederlack</a></li>
+                              <li class="d-list__item"><a href="#">Biederlackborbo</a></li>
+                              <li class="d-list__item"><a href="#">Bisetti</a></li>
+                              <li class="d-list__item"><a href="#">Blomus</a></li>
+                              <li class="d-list__item"><a href="#">Bocasa</a></li>
+                              <li class="d-list__item"><a href="#">Bodum</a></li>
+                              <li class="d-list__item"><a href="#">BOHEMIA CRYSTAL</a></li>
+                              <li class="d-list__item"><a href="#">Borbo</a></li>
+                              <li class="d-list__item"><a href="#">Bordallo Pinheiro</a></li>
+                              <li class="d-list__item"><a href="#">Brabantia</a></li>
+                              <li class="d-list__item"><a href="#">Brun De Vian-Tiran</a></li>
+                              <li class="d-list__item"><a href="#">Bsf</a></li>
+                              <li class="d-list__item"><a href="#">Bugatti</a></li>
+                              <li class="d-list__item"><a href="#">Candle Warmers</a></li>
+                              <li class="d-list__item"><a href="#">Casy Home</a></li>
+                              <li class="d-list__item"><a href="#">Carmani</a></li>
+                              <li class="d-list__item"><a href="#">Casa Domani</a></li><a class="d-list__item_more" href="#">Все бренды</a>
+                            </ul>
+                          </nav>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="menu__list__item"><a href="#">Сервировка</a>
+                          <div class="d-wrapper"> 
+                            <div class="content-wrapper">
+                              <ul class="d-list">
+                                <li class="d-list__group">
+                                  <div class="d-list__title"><a href="#" target="_blank">Емкости</a></div>
+                                </li>
+                                <li class="d-list__group">
+                                  <div class="d-list__title"><a href="#" target="_blank">Контейнеры, корзины</a></div>
+                                </li>
+                                <li class="d-list__group">
+                                  <div class="d-list__title"><a href="#" target="_blank">Для специй</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Емкости для специй</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Перечницы и солонки</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Наборы для специй</a></div>
+                                </li>
+                                <li class="d-list__group">
+                                  <div class="d-list__title"><a href="#" target="_blank"> Для посуды</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Органайзеры</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Подставки</a></div>
+                                  <div class="d-list__group-item"><a href="link" target="_blank">Для ножей</a></div>
+                                </li>
+                                <li class="d-list__group">
+                                  <div class="d-list__title"><a target="_blank">Для жидкостей</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Для масла и уксуса</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Емкости для напитков</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Диспенсеры и дозаторы</a></div>
+                                </li>
+                                <li class="d-list__group">
+                                  <div class="d-list__title"><a target="_blank">Спец назначения</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Для фольги</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Держатели</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Релинги, полки, держатели</a></div>
+                                </li>
+                                <li class="d-list__group">
+                                  <div class="d-list__title"><a target="_blank">Для продуктов</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Контейнеры</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Банки</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Корзинки</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Для сыпучих продуктов</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Для орехов</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Для меда</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Хлебницы</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Для лука, помидоров</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Для яиц</a></div>
+                                </li>
+                                <li class="d-list__group">
+                                  <div class="d-list__title"><a href="#" target="_blank">В дорогу</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Термосумки</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Ланчбоксы</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Сумки</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Бутылки</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Стаканы</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Термокружки и термосы </a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">С трубочкой</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Пластиковая посуда в дорогу</a></div>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                    </li>
+                    <li class="menu__list__item"><a href="#">Для приготовления</a>
+                          <div class="d-wrapper"> 
+                            <div class="content-wrapper">
+                              <ul class="d-list">
+                                <li class="d-list__group">
+                                  <div class="d-list__title"><a href="#" target="_blank">Емкости</a></div>
+                                </li>
+                                <li class="d-list__group">
+                                  <div class="d-list__title"><a href="#" target="_blank">Контейнеры, корзины</a></div>
+                                </li>
+                                <li class="d-list__group">
+                                  <div class="d-list__title"><a href="#" target="_blank">Для специй</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Емкости для специй</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Перечницы и солонки</a></div>
+                                  <div class="d-list__group-item"><a href="link" target="_blank">Наборы для специй</a></div>
+                                </li>
+                                <li class="d-list__group">
+                                  <div class="d-list__title"><a href="#" target="_blank"> Для посуды</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Органайзеры</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Подставки</a></div>
+                                  <div class="d-list__group-item"><a href="link" target="_blank">Для ножей</a></div>
+                                </li>
+                                <li class="d-list__group">
+                                  <div class="d-list__title"><a target="_blank">Для жидкостей</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Для масла и уксуса</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Емкости для напитков</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Диспенсеры и дозаторы</a></div>
+                                </li>
+                                <li class="d-list__group">
+                                  <div class="d-list__title"><a target="_blank">Спец назначения</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Для фольги</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Держатели</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Релинги, полки, держатели</a></div>
+                                </li>
+                                <li class="d-list__group">
+                                  <div class="d-list__title"><a target="_blank">Для продуктов</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Контейнеры</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Банки</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Корзинки</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Для сыпучих продуктов</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Для орехов</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Для меда</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Хлебницы</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Для лука, помидоров</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Для яиц</a></div>
+                                </li>
+                                <li class="d-list__group">
+                                  <div class="d-list__title"><a href="#" target="_blank">В дорогу</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Термосумки</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Ланчбоксы</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Сумки</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Бутылки</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Стаканы</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Термокружки и термосы </a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">С трубочкой</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Пластиковая посуда в дорогу</a></div>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                    </li>
+                    <li class="menu__list__item"><a href="#">Утварь</a>
+                          <div class="d-wrapper"> 
+                            <div class="content-wrapper">
+                              <ul class="d-list">
+                                <li class="d-list__group">
+                                  <div class="d-list__title"><a target="_blank">Емкости</a></div>
+                                </li>
+                                <li class="d-list__group">
+                                  <div class="d-list__title"><a target="_blank">Контейнеры, корзины</a></div>
+                                </li>
+                                <li class="d-list__group">
+                                  <div class="d-list__title"><a target="_blank">Для специй</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Емкости для специй</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Перечницы и солонки</a></div>
+                                  <div class="d-list__group-item"><a href="link" target="_blank">Наборы для специй</a></div>
+                                </li>
+                                <li class="d-list__group">
+                                  <div class="d-list__title"><a target="_blank"> Для посуды</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Органайзеры</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Подставки</a></div>
+                                  <div class="d-list__group-item"><a href="link" target="_blank">Для ножей</a></div>
+                                </li>
+                                <li class="d-list__group">
+                                  <div class="d-list__title"><a target="_blank">Для жидкостей</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Для масла и уксуса</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Емкости для напитков</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Диспенсеры и дозаторы</a></div>
+                                </li>
+                                <li class="d-list__group">
+                                  <div class="d-list__title"><a target="_blank">Спец назначения</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Для фольги</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Держатели</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Релинги, полки, держатели</a></div>
+                                </li>
+                                <li class="d-list__group">
+                                  <div class="d-list__title"><a target="_blank">Для продуктов</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Контейнеры</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Банки</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Корзинки</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Для сыпучих продуктов</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Для орехов</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Для меда</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Хлебницы</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Для лука, помидоров</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Для яиц</a></div>
+                                </li>
+                                <li class="d-list__group">
+                                  <div class="d-list__title"><a target="_blank">В дорогу</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Термосумки</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Ланчбоксы</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Сумки</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Бутылки</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Стаканы</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Термокружки и термосы </a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">С трубочкой</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Пластиковая посуда в дорогу</a></div>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                    </li>
+                    <li class="menu__list__item"><a href="#">Детская посуда</a>
+                          <div class="d-wrapper"> 
+                            <div class="content-wrapper">
+                              <ul class="d-list">
+                                <li class="d-list__group">
+                                  <div class="d-list__title"><a href="#" target="_blank">Кружки</a></div>
+                                </li>
+                                <li class="d-list__group">
+                                  <div class="d-list__title"><a href="#" target="_blank">Ланчбоксы</a></div>
+                                </li>
+                                <li class="d-list__group">
+                                  <div class="d-list__title"><a href="#" target="_blank">Наборы посуды</a></div>
+                                </li>
+                                <li class="d-list__group">
+                                  <div class="d-list__title"><a href="#" target="_blank">Наборы столовых приборов</a></div>
+                                </li>
+                                <li class="d-list__group">
+                                  <div class="d-list__title"><a href="#" target="_blank">Пластиковые стаканы и бутылки</a></div>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                    </li>
+                    <li class="menu__list__item"><a href="#">Чай и кофе</a>
+                          <div class="d-wrapper"> 
+                            <div class="content-wrapper">
+                              <ul class="d-list">
+                                <li class="d-list__group">
+                                  <div class="d-list__title"><a href="#" target="_blank">Емкости</a></div>
+                                </li>
+                                <li class="d-list__group">
+                                  <div class="d-list__title"><a href="#" target="_blank">Контейнеры, корзины</a></div>
+                                </li>
+                                <li class="d-list__group">
+                                  <div class="d-list__title"><a href="#" target="_blank">Для специй</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Емкости для специй</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Перечницы и солонки</a></div>
+                                  <div class="d-list__group-item"><a href="link" target="_blank">Наборы для специй</a></div>
+                                </li>
+                                <li class="d-list__group">
+                                  <div class="d-list__title"><a href="#" target="_blank"> Для посуды</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Органайзеры</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Подставки</a></div>
+                                  <div class="d-list__group-item"><a href="link" target="_blank">Для ножей</a></div>
+                                </li>
+                                <li class="d-list__group">
+                                  <div class="d-list__title"><a target="_blank">Для жидкостей</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Для масла и уксуса</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Емкости для напитков</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Диспенсеры и дозаторы</a></div>
+                                </li>
+                                <li class="d-list__group">
+                                  <div class="d-list__title"><a target="_blank">Спец назначения</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Для фольги</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Держатели</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Релинги, полки, держатели</a></div>
+                                </li>
+                                <li class="d-list__group">
+                                  <div class="d-list__title"><a target="_blank">Для продуктов</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Контейнеры</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Банки</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Корзинки</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Для сыпучих продуктов</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Для орехов</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Для меда</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Хлебницы</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Для лука, помидоров</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Для яиц</a></div>
+                                </li>
+                                <li class="d-list__group">
+                                  <div class="d-list__title"><a href="#" target="_blank">В дорогу</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Термосумки</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Ланчбоксы</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Сумки</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Бутылки</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Стаканы</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Термокружки и термосы </a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">С трубочкой</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Пластиковая посуда в дорогу</a></div>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                    </li>
+                    <li class="menu__list__item"><a href="#">Бар</a>
+                          <div class="d-wrapper"> 
+                            <div class="content-wrapper">
+                              <ul class="d-list">
+                                <li class="d-list__group">
+                                  <div class="d-list__title"><a href="#" target="_blank">Емкости</a></div>
+                                </li>
+                                <li class="d-list__group">
+                                  <div class="d-list__title"><a href="#" target="_blank">Контейнеры, корзины</a></div>
+                                </li>
+                                <li class="d-list__group">
+                                  <div class="d-list__title"><a href="#" target="_blank">Для специй</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Емкости для специй</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Перечницы и солонки</a></div>
+                                  <div class="d-list__group-item"><a href="link" target="_blank">Наборы для специй</a></div>
+                                </li>
+                                <li class="d-list__group">
+                                  <div class="d-list__title"><a href="#" target="_blank"> Для посуды</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Органайзеры</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Подставки</a></div>
+                                  <div class="d-list__group-item"><a href="link" target="_blank">Для ножей</a></div>
+                                </li>
+                                <li class="d-list__group">
+                                  <div class="d-list__title"><a target="_blank">Для жидкостей</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Для масла и уксуса</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Емкости для напитков</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Диспенсеры и дозаторы</a></div>
+                                </li>
+                                <li class="d-list__group">
+                                  <div class="d-list__title"><a target="_blank">Спец назначения</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Для фольги</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Держатели</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Релинги, полки, держатели</a></div>
+                                </li>
+                                <li class="d-list__group">
+                                  <div class="d-list__title"><a target="_blank">Для продуктов</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Контейнеры</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Банки</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Корзинки</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Для сыпучих продуктов</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Для орехов</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Для меда</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Хлебницы</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Для лука, помидоров</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Для яиц</a></div>
+                                </li>
+                                <li class="d-list__group">
+                                  <div class="d-list__title"><a href="#" target="_blank">В дорогу</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Термосумки</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Ланчбоксы</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Сумки</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Бутылки</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Стаканы</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Термокружки и термосы </a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">С трубочкой</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Пластиковая посуда в дорогу</a></div>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                    </li>
+                    <li class="menu__list__item"><a href="#">Хранение</a>
+                          <div class="d-wrapper"> 
+                            <div class="content-wrapper">
+                              <ul class="d-list">
+                                <li class="d-list__group">
+                                  <div class="d-list__title"><a target="_blank">Емкости</a></div>
+                                </li>
+                                <li class="d-list__group">
+                                  <div class="d-list__title"><a target="_blank">Контейнеры, корзины</a></div>
+                                </li>
+                                <li class="d-list__group">
+                                  <div class="d-list__title"><a target="_blank">Для специй</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Емкости для специй</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Перечницы и солонки</a></div>
+                                  <div class="d-list__group-item"><a href="link" target="_blank">Наборы для специй</a></div>
+                                </li>
+                                <li class="d-list__group">
+                                  <div class="d-list__title"><a target="_blank"> Для посуды</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Органайзеры</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Подставки</a></div>
+                                  <div class="d-list__group-item"><a href="link" target="_blank">Для ножей</a></div>
+                                </li>
+                                <li class="d-list__group">
+                                  <div class="d-list__title"><a target="_blank">Для жидкостей</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Для масла и уксуса</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Емкости для напитков</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Диспенсеры и дозаторы</a></div>
+                                </li>
+                                <li class="d-list__group">
+                                  <div class="d-list__title"><a target="_blank">Спец назначения</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Для фольги</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Держатели</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Релинги, полки, держатели</a></div>
+                                </li>
+                                <li class="d-list__group">
+                                  <div class="d-list__title"><a target="_blank">Для продуктов</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Контейнеры</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Банки</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Корзинки</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Для сыпучих продуктов</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Для орехов</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Для меда</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Хлебницы</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Для лука, помидоров</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Для яиц</a></div>
+                                </li>
+                                <li class="d-list__group">
+                                  <div class="d-list__title"><a target="_blank">В дорогу</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Термосумки</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Ланчбоксы</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Сумки</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Бутылки</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Стаканы</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Термокружки и термосы </a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">С трубочкой</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Пластиковая посуда в дорогу</a></div>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                    </li>
+                    <li class="menu__list__item"><a href="#">Техника</a>
+                          <div class="d-wrapper"> 
+                            <div class="content-wrapper">
+                              <ul class="d-list">
+                                <li class="d-list__group">
+                                  <div class="d-list__title"><a href="#" target="_blank">Емкости</a></div>
+                                </li>
+                                <li class="d-list__group">
+                                  <div class="d-list__title"><a href="#" target="_blank">Контейнеры, корзины</a></div>
+                                </li>
+                                <li class="d-list__group">
+                                  <div class="d-list__title"><a href="#" target="_blank">Для специй</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Емкости для специй</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Перечницы и солонки</a></div>
+                                  <div class="d-list__group-item"><a href="link" target="_blank">Наборы для специй</a></div>
+                                </li>
+                                <li class="d-list__group">
+                                  <div class="d-list__title"><a href="#" target="_blank"> Для посуды</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Органайзеры</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Подставки</a></div>
+                                  <div class="d-list__group-item"><a href="link" target="_blank">Для ножей</a></div>
+                                </li>
+                                <li class="d-list__group">
+                                  <div class="d-list__title"><a target="_blank">Для жидкостей</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Для масла и уксуса</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Емкости для напитков</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Диспенсеры и дозаторы</a></div>
+                                </li>
+                                <li class="d-list__group">
+                                  <div class="d-list__title"><a target="_blank">Спец назначения</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Для фольги</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Держатели</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Релинги, полки, держатели</a></div>
+                                </li>
+                                <li class="d-list__group">
+                                  <div class="d-list__title"><a target="_blank">Для продуктов</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Контейнеры</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Банки</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Корзинки</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Для сыпучих продуктов</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Для орехов</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Для меда</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Хлебницы</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Для лука, помидоров</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Для яиц</a></div>
+                                </li>
+                                <li class="d-list__group">
+                                  <div class="d-list__title"><a href="#" target="_blank">В дорогу</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Термосумки</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Ланчбоксы</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Сумки</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Бутылки</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Стаканы</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Термокружки и термосы </a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">С трубочкой</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Пластиковая посуда в дорогу</a></div>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                    </li>
+                    <li class="menu__list__item"><a href="#">Для дома</a>
+                          <div class="d-wrapper"> 
+                            <div class="content-wrapper">
+                              <ul class="d-list">
+                                <li class="d-list__group">
+                                  <div class="d-list__title"><a href="#" target="_blank">Емкости</a></div>
+                                </li>
+                                <li class="d-list__group">
+                                  <div class="d-list__title"><a href="#" target="_blank">Контейнеры, корзины</a></div>
+                                </li>
+                                <li class="d-list__group">
+                                  <div class="d-list__title"><a href="#" target="_blank">Для специй</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Емкости для специй</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Перечницы и солонки</a></div>
+                                  <div class="d-list__group-item"><a href="link" target="_blank">Наборы для специй</a></div>
+                                </li>
+                                <li class="d-list__group">
+                                  <div class="d-list__title"><a href="#" target="_blank"> Для посуды</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Органайзеры</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Подставки</a></div>
+                                  <div class="d-list__group-item"><a href="link" target="_blank">Для ножей</a></div>
+                                </li>
+                                <li class="d-list__group">
+                                  <div class="d-list__title"><a target="_blank">Для жидкостей</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Для масла и уксуса</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Емкости для напитков</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Диспенсеры и дозаторы</a></div>
+                                </li>
+                                <li class="d-list__group">
+                                  <div class="d-list__title"><a target="_blank">Спец назначения</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Для фольги</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Держатели</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Релинги, полки, держатели</a></div>
+                                </li>
+                                <li class="d-list__group">
+                                  <div class="d-list__title"><a target="_blank">Для продуктов</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Контейнеры</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Банки</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Корзинки</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Для сыпучих продуктов</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Для орехов</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Для меда</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Хлебницы</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Для лука, помидоров</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Для яиц</a></div>
+                                </li>
+                                <li class="d-list__group">
+                                  <div class="d-list__title"><a href="#" target="_blank">В дорогу</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Термосумки</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Ланчбоксы</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Сумки</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Бутылки</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Стаканы</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Термокружки и термосы </a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">С трубочкой</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Пластиковая посуда в дорогу</a></div>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                    </li>
+                    <li class="menu__list__item"><a href="#">Бакалея</a>
+                          <div class="d-wrapper"> 
+                            <div class="content-wrapper">
+                              <ul class="d-list">
+                                <li class="d-list__group">
+                                  <div class="d-list__title"><a href="#" target="_blank">Емкости</a></div>
+                                </li>
+                                <li class="d-list__group">
+                                  <div class="d-list__title"><a href="#" target="_blank">Контейнеры, корзины</a></div>
+                                </li>
+                                <li class="d-list__group">
+                                  <div class="d-list__title"><a href="#" target="_blank">Для специй</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Емкости для специй</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Перечницы и солонки</a></div>
+                                  <div class="d-list__group-item"><a href="link" target="_blank">Наборы для специй</a></div>
+                                </li>
+                                <li class="d-list__group">
+                                  <div class="d-list__title"><a href="#" target="_blank"> Для посуды</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Органайзеры</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Подставки</a></div>
+                                  <div class="d-list__group-item"><a href="link" target="_blank">Для ножей</a></div>
+                                </li>
+                                <li class="d-list__group">
+                                  <div class="d-list__title"><a target="_blank">Для жидкостей</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Для масла и уксуса</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Емкости для напитков</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Диспенсеры и дозаторы</a></div>
+                                </li>
+                                <li class="d-list__group">
+                                  <div class="d-list__title"><a target="_blank">Спец назначения</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Для фольги</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Держатели</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Релинги, полки, держатели</a></div>
+                                </li>
+                                <li class="d-list__group">
+                                  <div class="d-list__title"><a target="_blank">Для продуктов</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Контейнеры</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Банки</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Корзинки</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Для сыпучих продуктов</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Для орехов</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Для меда</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Хлебницы</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Для лука, помидоров</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Для яиц</a></div>
+                                </li>
+                                <li class="d-list__group">
+                                  <div class="d-list__title"><a href="#" target="_blank">В дорогу</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Термосумки</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Ланчбоксы</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Сумки</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Бутылки</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Стаканы</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Термокружки и термосы </a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">С трубочкой</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Пластиковая посуда в дорогу</a></div>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                    </li>
+                    <li class="menu__list__item"><a href="#">Premium</a>
+                          <div class="d-wrapper"> 
+                            <div class="content-wrapper">
+                              <ul class="d-list">
+                                <li class="d-list__group">
+                                  <div class="d-list__title"><a href="#" target="_blank">Емкости</a></div>
+                                </li>
+                                <li class="d-list__group">
+                                  <div class="d-list__title"><a href="#" target="_blank">Контейнеры, корзины</a></div>
+                                </li>
+                                <li class="d-list__group">
+                                  <div class="d-list__title"><a href="#" target="_blank">Для специй</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Емкости для специй</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Перечницы и солонки</a></div>
+                                  <div class="d-list__group-item"><a href="link" target="_blank">Наборы для специй</a></div>
+                                </li>
+                                <li class="d-list__group">
+                                  <div class="d-list__title"><a href="#" target="_blank"> Для посуды</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Органайзеры</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Подставки</a></div>
+                                  <div class="d-list__group-item"><a href="link" target="_blank">Для ножей</a></div>
+                                </li>
+                                <li class="d-list__group">
+                                  <div class="d-list__title"><a target="_blank">Для жидкостей</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Для масла и уксуса</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Емкости для напитков</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Диспенсеры и дозаторы</a></div>
+                                </li>
+                                <li class="d-list__group">
+                                  <div class="d-list__title"><a target="_blank">Спец назначения</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Для фольги</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Держатели</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Релинги, полки, держатели</a></div>
+                                </li>
+                                <li class="d-list__group">
+                                  <div class="d-list__title"><a target="_blank">Для продуктов</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Контейнеры</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Банки</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Корзинки</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Для сыпучих продуктов</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Для орехов</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Для меда</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Хлебницы</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Для лука, помидоров</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Для яиц</a></div>
+                                </li>
+                                <li class="d-list__group">
+                                  <div class="d-list__title"><a href="#" target="_blank">В дорогу</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Термосумки</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Ланчбоксы</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Сумки</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Бутылки</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Стаканы</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Термокружки и термосы </a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">С трубочкой</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Пластиковая посуда в дорогу</a></div>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                    </li>
+                    <li class="menu__list__item"><a class="is-active" href="#">Sale</a>
+                          <div class="d-wrapper"> 
+                            <div class="content-wrapper">
+                              <ul class="d-list">
+                                <li class="d-list__group">
+                                  <div class="d-list__title"><a href="#" target="_blank">Емкости</a></div>
+                                </li>
+                                <li class="d-list__group">
+                                  <div class="d-list__title"><a href="#" target="_blank">Контейнеры, корзины</a></div>
+                                </li>
+                                <li class="d-list__group">
+                                  <div class="d-list__title"><a href="#" target="_blank">Для специй</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Емкости для специй</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Перечницы и солонки</a></div>
+                                  <div class="d-list__group-item"><a href="link" target="_blank">Наборы для специй</a></div>
+                                </li>
+                                <li class="d-list__group">
+                                  <div class="d-list__title"><a href="#" target="_blank"> Для посуды</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Органайзеры</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Подставки</a></div>
+                                  <div class="d-list__group-item"><a href="link" target="_blank">Для ножей</a></div>
+                                </li>
+                                <li class="d-list__group">
+                                  <div class="d-list__title"><a target="_blank">Для жидкостей</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Для масла и уксуса</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Емкости для напитков</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Диспенсеры и дозаторы</a></div>
+                                </li>
+                                <li class="d-list__group">
+                                  <div class="d-list__title"><a target="_blank">Спец назначения</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Для фольги</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Держатели</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Релинги, полки, держатели</a></div>
+                                </li>
+                                <li class="d-list__group">
+                                  <div class="d-list__title"><a target="_blank">Для продуктов</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Контейнеры</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Банки</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Корзинки</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Для сыпучих продуктов</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Для орехов</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Для меда</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Хлебницы</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Для лука, помидоров</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Для яиц</a></div>
+                                </li>
+                                <li class="d-list__group">
+                                  <div class="d-list__title"><a href="#" target="_blank">В дорогу</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Термосумки</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Ланчбоксы</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Сумки</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Бутылки</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Стаканы</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Термокружки и термосы </a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">С трубочкой</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Пластиковая посуда в дорогу</a></div>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                    </li>
+                    <li class="menu__list__item"><a href="#">Новинки</a>
+                          <div class="d-wrapper"> 
+                            <div class="content-wrapper">
+                              <ul class="d-list">
+                                <li class="d-list__group">
+                                  <div class="d-list__title"><a href="#" target="_blank">Емкости</a></div>
+                                </li>
+                                <li class="d-list__group">
+                                  <div class="d-list__title"><a href="#" target="_blank">Контейнеры, корзины</a></div>
+                                </li>
+                                <li class="d-list__group">
+                                  <div class="d-list__title"><a href="#" target="_blank">Для специй</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Емкости для специй</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Перечницы и солонки</a></div>
+                                  <div class="d-list__group-item"><a href="link" target="_blank">Наборы для специй</a></div>
+                                </li>
+                                <li class="d-list__group">
+                                  <div class="d-list__title"><a href="#" target="_blank"> Для посуды</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Органайзеры</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Подставки</a></div>
+                                  <div class="d-list__group-item"><a href="link" target="_blank">Для ножей</a></div>
+                                </li>
+                                <li class="d-list__group">
+                                  <div class="d-list__title"><a target="_blank">Для жидкостей</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Для масла и уксуса</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Емкости для напитков</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Диспенсеры и дозаторы</a></div>
+                                </li>
+                                <li class="d-list__group">
+                                  <div class="d-list__title"><a target="_blank">Спец назначения</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Для фольги</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Держатели</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Релинги, полки, держатели</a></div>
+                                </li>
+                                <li class="d-list__group">
+                                  <div class="d-list__title"><a target="_blank">Для продуктов</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Контейнеры</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Банки</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Корзинки</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Для сыпучих продуктов</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Для орехов</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Для меда</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Хлебницы</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Для лука, помидоров</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Для яиц</a></div>
+                                </li>
+                                <li class="d-list__group">
+                                  <div class="d-list__title"><a href="#" target="_blank">В дорогу</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Термосумки</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Ланчбоксы</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Сумки</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Бутылки</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Стаканы</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Термокружки и термосы </a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">С трубочкой</a></div>
+                                  <div class="d-list__group-item"><a href="#" target="_blank">Пластиковая посуда в дорогу</a></div>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                    </li>
+                  </ul>
+                </nav>
+              </section>
+            </div>
+            <div class="header__menu-wrapper header__menu-wrapper--mobile"><a class="header__menu-item" href="#">Адреса магазинов</a><a class="header__menu-item" href="#">Контакты</a><a class="header__menu-item" href="#">Доставки и&nbsp;оплата</a></div>
+          </div>
+          <div class="header-search">
+            <div class="content-wrapper">
+              <div class="header__search search">
+                <div class="search__wrapper">
+                  <div class="search__top">
+                        <div class="b-field b-field--search">
+                          <div class="b-field__wrapper">
+                            <input class="b-field__input" type="text" placeholder="Поиск">
+                          </div>
+                          <div class="b-field__column">
+                            <div class="b-field__button">Найти</div>
+                          </div>
+                        </div>
+                    <div class="search__close">
+                      <div class="btn js-header-search-close">Закрыть</div>
+                    </div>
+                  </div>
+                  <div class="search__results">
+                    <div class="search__results-list"><a class="search__results-item" href="#"><span class="search__results-coincidence">тарелка</span> </a><a class="search__results-item" href="#"><span class="search__results-coincidence">тарелка</span> для пасты</a><a class="search__results-item" href="#"><span class="search__results-coincidence">тарелка</span> для супа</a><a class="search__results-item" href="#"><span class="search__results-coincidence">тарелка</span> обеденная</a><a class="search__results-item" href="#"><span class="search__results-coincidence">тарелка</span> суповая</a><a class="search__results-item" href="#"><span class="search__results-coincidence">тарелка</span> керимическая</a><a class="search__results-item" href="#"><span class="search__results-coincidence">тарелка</span> десертная</a><a class="search__results-item" href="#"><span class="search__results-coincidence">тарелка</span> новогодняя</a><a class="search__results-item" href="#"><span class="search__results-coincidence">тарелка</span> подстановочная</a>
+                    </div>
+                    <div class="search__results-products">
+                      <div class="search__results-products-list">
+                        <div class="search__results-products-item"><a class="b-product-card" href="#">
+                                <div class="b-product-card__wrapper">
+                                  <div class="b-product-card__info">
+                                    <div class="b-product-card__favorite" onclick="return false"></div>
+                                    <div class="b-product-card__image"><img src="/f/img/content/pic-1.png" alt="">
+                                      <div class="b-product-card__promo-container">
+                                      </div>
+                                      <div class="b-product-card__promo-container-exclusive"></div>
+                                    </div>
+                                    <div class="b-product-card__title">Текстурированная форма для хлеба</div>
+                                    <div class="b-product-card__subtitle"></div>
+                                  </div>
+                                  <div class="b-product-card__row b-product-card__row--">
+                                    <div class="b-product-card__cost">
+                                      <div class="b-product-card__price"><span class="b-price_rub">o</span>3 000 690</div>
+                                    </div>
+                                    <div class="b-product-card__basket js-basket-btn" onclick="return false"></div>
+                                  </div>
+                                </div></a>
+                        </div>
+                        <div class="search__results-products-item"><a class="b-product-card" href="#">
+                                <div class="b-product-card__wrapper">
+                                  <div class="b-product-card__info">
+                                    <div class="b-product-card__favorite" onclick="return false"></div>
+                                    <div class="b-product-card__image"><img src="/f/img/content/pic-2.png" alt="">
+                                      <div class="b-product-card__promo-container">
+                                      </div>
+                                      <div class="b-product-card__promo-container-exclusive"></div>
+                                    </div>
+                                    <div class="b-product-card__title">Текстурированная форма для хлеба</div>
+                                    <div class="b-product-card__subtitle"></div>
+                                  </div>
+                                  <div class="b-product-card__row b-product-card__row--">
+                                    <div class="b-product-card__cost">
+                                      <div class="b-product-card__price"><span class="b-price_rub">o</span>15 000 390</div>
+                                    </div>
+                                    <div class="b-product-card__basket js-basket-btn" onclick="return false"></div>
+                                  </div>
+                                </div></a>
+                        </div>
+                        <div class="search__results-products-item"><a class="b-product-card" href="#">
+                                <div class="b-product-card__wrapper">
+                                  <div class="b-product-card__info">
+                                    <div class="b-product-card__favorite" onclick="return false"></div>
+                                    <div class="b-product-card__image"><img src="/f/img/content/pic-3.png" alt="">
+                                      <div class="b-product-card__promo-container">
+                                      </div>
+                                      <div class="b-product-card__promo-container-exclusive"></div>
+                                    </div>
+                                    <div class="b-product-card__title">Текстурированная форма для хлеба</div>
+                                    <div class="b-product-card__subtitle"></div>
+                                  </div>
+                                  <div class="b-product-card__row b-product-card__row--">
+                                    <div class="b-product-card__cost">
+                                      <div class="b-product-card__price"><span class="b-price_rub">o</span>30 590</div>
+                                    </div>
+                                    <div class="b-product-card__basket js-basket-btn" onclick="return false"></div>
+                                  </div>
+                                </div></a>
+                        </div>
+                        <div class="search__results-products-item"><a class="b-product-card" href="#">
+                                <div class="b-product-card__wrapper">
+                                  <div class="b-product-card__info">
+                                    <div class="b-product-card__favorite" onclick="return false"></div>
+                                    <div class="b-product-card__image"><img src="/f/img/content/pic-4.png" alt="">
+                                      <div class="b-product-card__promo-container">
+                                      </div>
+                                      <div class="b-product-card__promo-container-exclusive"></div>
+                                    </div>
+                                    <div class="b-product-card__title">Текстурированная форма для хлеба</div>
+                                    <div class="b-product-card__subtitle"></div>
+                                  </div>
+                                  <div class="b-product-card__row b-product-card__row--">
+                                    <div class="b-product-card__cost">
+                                      <div class="b-product-card__price"><span class="b-price_rub">o</span>7 990</div>
+                                    </div>
+                                    <div class="b-product-card__basket js-basket-btn" onclick="return false"></div>
+                                  </div>
+                                </div></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="page-container">
+          <section class="b-breadcrumbs">
+            <div class="content-wrapper">
+              <div class="b-breadcrumbs__wrapper"><span class="b-breadcrumbs__item" itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem"><a href="#" itemprop="item"><span itemprop="name">Главная</span>
+                    <meta itemprop="position" content="0"></a></span><span class="b-breadcrumbs__item" itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem"><span itemprop="name">Бонусная программа привелегий</span>
+                  <meta itemprop="position" content="1"></span>
+              </div>
+            </div>
+          </section>
+      <div class="content-wrapper">
+        <div class="b-bonus__logo"><img src="/f/img/bonus/main_logo.png" alt="alt"></div>
+        <div class="b-bonus-wrap">
+          <h1 class="page-container__title bonus__tile bonus__tile--fs">Бонусная программа привелегий</h1>
+          <div class="b-bonus__info-text">Новая бонусная программа ГК "Ideas 4 Retail" объеденяет в себе единый бонусный счет для всех брендов компании. Теперь клиенты могут копить и тратить бонусы в магазинах сети<a href="#">Hamleys,</a><a href="#">Винни,</a><a href="#">Cook House,</a>и<a href="#">Goods House.</a></div>
+          <div class="b-bonus__list-company b-bonus-list">
+            <div class="b-bonus-list__item"> <img src="/f/img/bonus/icon-hm.svg" alt="alt"></div>
+            <div class="b-bonus-list__item"> <img src="/f/img/bonus/icon-vinni.svg" alt="alt"></div>
+            <div class="b-bonus-list__item"> <img src="/f/img/bonus/icon-goodhouse.svg" alt="alt"></div>
+            <div class="b-bonus-list__item"> <img src="/f/img/bonus/icon-cookhouse.svg" alt="alt"></div>
+          </div>
+          <div class="b-bonus__economy b-bonus-economy">
+            <div class="b-bonus-economy__title bonus__tile">Экономить с бонусной программой легко:</div>
+            <div class="b-bonus-economy__list">
+              <div class="b-bonus-economy__item">
+                <div class="b-bonus-economy__item-img"><img src="/f/img/bonus/icon-bonus.svg" alt="alt"></div>
+                <div class="b-bonus-economy__item-text">	1 бонус=1 рубль</div>
+              </div>
+              <div class="b-bonus-economy__item">
+                <div class="b-bonus-economy__item-img"><img src="/f/img/bonus/icon-percent.svg" alt="alt"></div>
+                <div class="b-bonus-economy__item-text">	до 100% оплата <br><span>покупок бонусами</span></div>
+              </div>
+              <div class="b-bonus-economy__item">
+                <div class="b-bonus-economy__item-img"><img src="/f/img/bonus/icon-phone.svg" alt="alt"></div>
+                <div class="b-bonus-economy__item-text">	номер телефона <br><span>нужен только телефон</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="b-bonus-programm">
+            <div class="b-bonus-programm__title bonus__tile">Как работает программа:</div>
+            <div class="b-bonus-programm__list">
+              <div class="b-bonus-programm__text"><span class="b-bonus-programm__text--bold">Регистрация:</span>совершите любую покупку в любом из магазинов сети Hamleys, Винни, Cook House и Goods House и оформите виртуальную карту по номеру телефона.</div>
+              <div class="b-bonus-programm__text"><span class="b-bonus-programm__text--bold">Накопления:</span>с каждой вашей покупки будут начислено 5% в виде бонусов, просто назовите свой номер телефона на кассе или в интернет магазине.</div>
+              <div class="b-bonus-programm__text"><span class="b-bonus-programm__text--bold">Оплата:</span>оплачивайте до 100% от вашей покуки бонусами.</div>
+              <div class="b-bonus-programm__text"><span class="b-bonus-programm__text--bold">Привелегии:</span>всем участникам программы мы дарим подарки на день рождения, а также бонусы и скидки от наших партнеров.</div>
+            </div>
+            <div class="b-bonus-programm__link"><a href="#"><img src="/f/img/bonus/icon-reg.svg" alt="">правила бонусной программы</a></div>
+          </div>
+          <div class="b-bonus-app">
+            <div class="b-bonus-app__title bonus__tile">Приложение Ideas 4 you!</div>
+            <div class="b-bonus-app__text">Хотите держать под контролем свой бонусный счет и получать сюрпризы и подарки? Тогда скачайте приложение Ideas 4 you! Только в приложении всегда актуальные скидки и предложения, а также розыгрыши подарков.</div>
+            <div class="b-bonus-app__link"><a href="#"><img src="/f/img/bonus/icon-arrow.svg" alt="">скачать приложение</a></div>
+          </div>
+          <div class="b-bonus-participants">
+            <div class="b-bonus-participants__title bonus__tile bonus__tile--fs">СПИСОК МАГАЗИНОВ УЧАСТНИКОВ</div>
+            <div class="b-bonus-participants__list b-bonus-list">
+              <div class="b-bonus-list__item b-bonus-participants__item"><a href="#"><img class="b-bonus-participants__item-img" src="/f/img/bonus//company/icon-hm.svg" alt="">
+                  <div class="b-bonus-participants__item-text">Hamleys</div></a></div>
+              <div class="b-bonus-list__item b-bonus-participants__item"><a href="#"><img class="b-bonus-participants__item-img" src="/f/img/bonus//company/icon-v.svg" alt="">
+                  <div class="b-bonus-participants__item-text">Винни</div></a></div>
+              <div class="b-bonus-list__item b-bonus-participants__item"><a href="#"><img class="b-bonus-participants__item-img" src="/f/img/bonus//company/icon-g.svg" alt="">
+                  <div class="b-bonus-participants__item-text">Goods House</div></a></div>
+              <div class="b-bonus-list__item b-bonus-participants__item"><a href="#"><img class="b-bonus-participants__item-img" src="/f/img/bonus//company/icon-c.svg" alt="">
+                  <div class="b-bonus-participants__item-text">Cook House</div></a></div>
+            </div>
+          </div>
+          <div class="b-bonus-add">
+            <div class="b-bonus-add__title">Вступайте в программу привелегий! Это просто!</div>
+            <div class="b-bonus-add__button">
+              <button type="submit">вступить</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="footer">
+      <div class="content-wrapper">
+        <div class="footer__wrapper">
+          <div class="footer__column footer__column--x2">
+            <div class="footer__column footer__column--inner">
+              <div class="footer__link"><a href="#">O&nbsp;COOK HOUSE</a></div>
+              <div class="footer__link"><a href="#">Новости</a></div>
+              <div class="footer__link"><a href="#">Программа лояльности</a></div>
+              <div class="footer__link"><a href="#">Подарочные карты</a></div>
+              <div class="footer__link"><a href="#">Адреса магазинов</a></div>
+              <div class="footer__link"><a href="#">Вакансии</a></div>
+            </div>
+            <div class="footer__column footer__column--inner">
+              <div class="footer__link"><a href="#">Пользовательское соглашение</a></div>
+              <div class="footer__link"><a href="#">Доставка и&nbsp;оплата</a></div>
+              <div class="footer__link"><a href="#">Возврат товара</a></div>
+              <div class="footer__link"><a href="#">Контакты</a></div>
+              <div class="footer__link"><a href="#">Оферта</a></div>
+            </div>
+          </div>
+          <div class="footer__column footer__column--subscribe">
+            <div class="footer__caption">Будь в&nbsp;курсе наших новостей</div>
+            <div class="footer__subscribe">
+                  <div class="b-field b-field--subscribe">
+                    <div class="b-field__wrapper">
+                      <input class="b-field__input" type="text" placeholder="Email">
+                    </div>
+                    <div class="b-field__column">
+                      <div class="b-field__button">Подписаться</div>
+                    </div>
+                  </div>
+                  <div class="b-field b-field--checkbox">
+                    <label class="b-field__label">
+                      <input type="checkbox" checked="checked">
+                      <div class="b-field__caption">Согласен с&nbsp;<a href="#">обработкой персональных данных</a></div>
+                    </label>
+                  </div>
+            </div>
+          </div>
+          <div class="footer__column footer__column--direction">
+            <div class="footer__phone b-icon__phone">+ 7 (495) 783-85-21</div>
+            <div class="footer__phone b-icon__telegram">+ 7 (903) 159-70-99</div>
+            <div class="footer__phone b-icon__whatsapp">+ 7 (903) 159-70-99</div>
+            <div class="footer__social">
+              <div class="footer__social-item footer__social-item--vk"></div>
+              <div class="footer__social-item footer__social-item--ig"></div>
+              <div class="footer__social-item footer__social-item--fb"></div>
+              <div class="footer__social-item footer__social-item--yd"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="/f/js/vendor/jquery.min.js"></script>
+    <script src="/f/js/vendor/slick.min.js"></script>
+    <script src="/f/js/vendor/jquery.mask.min.js"></script>
+    <script src="/f/js/vendor/handlebars.min.js"></script>
+    <script src="/f/js/vendor/jquery-ui.min.js"></script>
+    <script src="/f//js/vendor/datepicker.js"> </script>
+    <script src="/f/js/main.js"></script>
+  </body>
+</html>

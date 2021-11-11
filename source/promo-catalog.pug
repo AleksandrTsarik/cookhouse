@@ -1,0 +1,53 @@
+extends layouts/default
+
+block pageVar
+	-pageTitle = 'Акции';
+
+block content
+	.page-container
+		+breadcrumbs({path:[
+			{title:'главная', href:'#'},
+			{title:'акции', href:''}
+		]})
+		.content-wrapper
+			h1.page-container__title Акции 
+			-
+				var catalogList = [
+					'Дарите девушкам цветы! А&nbsp;к&nbsp;ним обязательно вазы!',
+					'Коллекция для романтиков в&nbsp;Cook House!',
+					'Вместе теплее! Устраиваем вечера в&nbsp;теплой компании!',
+					'Готовим дом к&nbsp;Новому году вместе с&nbsp;DEC!',
+					'Божоле Нуво! Праздник молодого вина в&nbsp;Cook House!',
+					'Встречаем Октоберфест!',
+					'Дарите девушкам цветы! А&nbsp;к&nbsp;ним обязательно вазы!',
+					'Коллекция для романтиков в&nbsp;Cook House!',
+					'Вместе теплее! Устраиваем вечера в&nbsp;теплой компании!',
+				]
+			-;
+			.b-promo-catalog
+				.b-promo-catalog__wrapper
+					.b-promo-catalog__item.b-promo-catalog__item--spec-position
+						.b-promo-catalog__image(style="background-image:url('/f/img/content/promo-1.jpg')")
+						.b-promo-catalog__info
+							.b-promo-catalog__title Дарите девушкам цветы! А&nbsp;к&nbsp;ним обязательно вазы!
+							.b-promo-catalog__desc C&nbsp;27&nbsp;февраля по&nbsp;10&nbsp;марта скидка&nbsp;30% на&nbsp;вазы для цветов в&nbsp;Cook House
+							.b-promo-catalog__more cмотреть
+					each item in catalogList
+						a.b-promo-catalog__item(href="#")
+							.b-promo-catalog__image(style="background-image:url('/f/img/content/promo-1.jpg')")
+							.b-promo-catalog__title!= item
+
+				.b-catalog-table__controls
+					.b-catalog-table__more
+						span показать ещё
+					.b-catalog-table__paginator
+						.b-paginator
+							.b-paginator__wrapper
+								.b-paginator__prev-first.is-disabled
+								.b-paginator__prev.is-disabled
+								.b-paginator__pages
+									.b-paginator__current 1
+									.b-paginator__count 2
+								.b-paginator__next
+								.b-paginator__next-last
+

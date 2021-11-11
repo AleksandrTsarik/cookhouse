@@ -1,0 +1,63 @@
+extends layouts/default
+
+block pageVar
+	-pageTitle = 'Личный кабинет';
+	-auth = true;
+
+block content
+	.page-container
+		+breadcrumbs({path:[
+			{title:'главная', href:'#'},
+			{title:'личный кабинет', href:''}
+		]})
+		.content-wrapper
+			h1.page-container__title Личный кабинет
+			.b-profile
+				.b-profile__wrapper
+					.b-profile__row.js-profile
+						.b-profile__column
+							.b-profile-menu
+								.b-profile-menu__wrapper
+									.b-profile-menu__item.js-profile-menu.is-active  Мои заказы
+									.b-profile-menu__item.js-profile-menu Мои данные
+									.b-profile-menu__item.js-profile-menu Изменить пароль
+									.b-profile-menu__item.js-profile-menu Программа лояльности
+									.b-profile-menu__item.js-profile-menu Мои подписки
+						.b-profile__column
+							.b-profile__block.js-profile-block.is-show
+								.b-profile__title Мои заказы
+								include _blocks/orders
+							.b-profile__block.js-profile-block.js-val-container
+								.b-profile__step
+									+formField({type:'input', mode:'name required', placeholder:'Имя*', value:"Константин"})
+									+formField({type:'input', mode:'name', placeholder:'Фамилия'})
+								.b-profile__step
+									+formField({type:'input', mode:'email required', placeholder:'E-mail*', value:'email@yandex.ru', locked:'1'})
+									+formField({type:'input', mode:'phone js-phone-mask', placeholder:'Телефон'})
+								.b-profile__step
+									.b-profile__step-title Дата рождения
+									+formField({type:'date', mode:'date'})
+								.b-profile__step
+									.btn.btn--large.btn--disabled.b-profile__button Сохранить
+							.b-profile__block.js-profile-block.js-val-container
+								.b-profile__step
+									+formField({type:'password', mode:'password required', placeholder:'Новый пароль'})
+									+formField({type:'password', mode:'password-repeat required', placeholder:'Подтвердите новый пароль'})
+								.b-profile__step
+									.btn.btn--large.btn--disabled.b-profile__button Сохранить
+							.b-profile__block.js-profile-block
+								.b-profile-card
+									.b-profile-card__wrapper
+										.b-profile-card__desc Начисленными бонусами можно воспользоваться <b>на&nbsp;15-й день после покупки</b>, до&nbsp;этих пор они находятся в&nbsp;неактивном состоянии.<br>С&nbsp;полными правилами программы лояльности можно <a href="#">ознакомится тут</a>.
+										.b-profile-card__table
+											.b-profile-card__row
+												.b-profile-card__column Количество доступных баллов
+												.b-profile-card__column 500
+											.b-profile-card__row
+												.b-profile-card__column Количество неактивных баллов
+												.b-profile-card__column 0
+							.b-profile__block.js-profile-block
+								.b-profile__title Мои подписки
+								.b-profile__step
+									+formField({type:'checkbox',mode:'checkbox',label:'E-mail рассылка',checked:1})
+

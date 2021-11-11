@@ -1,0 +1,356 @@
+.b-products-list
+	&__wrapper
+		padding 20px 0 0
+		@media $phone
+			padding 30px 0 0
+		& a ^[0]__title
+			color $baseFont
+			&:hover
+				color $orange
+	&__title
+		padding-bottom 26px
+	&__item
+		display inline-block
+		vertical-align top
+		margin 0 10px
+		@media $phone
+			margin 0 3px
+			width 160px
+	&__more
+		text-align right
+		font-size 16px
+		line-height 24px
+		padding-top 24px
+		@media $phone
+			display none
+		a
+			color $hoverFont
+		span
+			font-size 13px
+			padding-left 3px
+	&__carousel
+		@media $phone
+			margin 0 -15px
+	& .slick-list
+		margin 0 -10px
+		@media $phone
+			margin 0 -3px
+	& .slick-arrow
+		position absolute
+		left -20px
+		top 45%
+		z-index 2
+		width 40px
+		height 40px
+		font-size 0
+		line-height 1
+		border 1px solid $backFont
+		border-radius 50%
+		background $white
+		&:hover
+			border-color $backFontHover
+		&:after
+			content ''
+			position absolute
+			left 15px
+			top 12px
+			z-index 3
+			transform rotate(45deg)
+			width 15px
+			height 15px
+			border-left 2px solid $baseFont
+			border-bottom 2px solid $baseFont
+	& .slick-next
+		left auto
+		right -20px
+		&:after
+			transform rotate(225deg)
+			left auto
+			right 15px
+
+.b-product-card
+	color $baseFont
+	display block
+	height 100%
+	&__wrapper
+		position relative
+		border 1px solid $backFont
+		border-radius 3px
+		padding 16px
+		display flex
+		flex-direction column
+		justify-content space-between
+		height 100%
+		@media $phone
+			padding 11px
+	&:hover &__wrapper
+		border-color $backFontHover
+	&__row
+		padding 0 0 9px /*12*/
+		display flex
+		justify-content space-between
+		align-items flex-end
+		@media $phone
+			padding 0
+		&--button
+			@media $phone
+				flex-direction column
+				align-items flex-start
+	&__image
+		position relative
+		display flex
+		align-items center
+		justify-content center
+		background none no-repeat center center
+		background-size contain
+		padding 15px 0
+		font-size 0
+		line-height 1
+		max-height 277px
+		height: 21.2vw
+		@media $tablet
+			height: 29vw
+		@media $phone
+			height: 150px
+			padding 0 0 14px
+		img
+			max-width 100%
+			max-height calc(100% - 28px)
+
+	&__promo-container
+		display: flex
+		flex-direction: column
+		position: absolute
+		top: 0
+		left: 0
+		div
+			margin-right 15px
+			@media $phone
+				margin-right 10px
+	&__colors
+		position absolute
+		// left 0
+		right: 0
+		bottom 14px
+		font-size 0
+		line-height 1
+	&__color
+		position relative
+		display inline-block
+		vertical-align top
+		width 19px
+		height 19px
+		border-radius 50%
+		margin 0 7px 0 4px
+		@media $phone
+			width 15px
+			height 15px
+			margin 0 5px 0 4px
+		&.is-active:after
+			content ''
+			position absolute
+			left -3px
+			top -3px
+			width 25px
+			height 25px
+			border 1px solid $baseFont
+			border-radius 50%
+			@media $phone
+				left -3px
+				top -3px
+				width 21px
+				height 21px
+	&__title
+		font-size 16px
+		line-height 1.5
+		transition color 0.1s
+		position: relative
+		z-index: 1
+		&:hover
+			color $hoverFont
+		@media $phone
+			font-size 12px
+			line-height 16px
+			//padding-bottom 15px
+	&__subtitle
+		font-family $MuseoM
+		font-size 12px
+		line-height 14px
+		padding 5px 0
+		//min-height 24px
+		text-transform uppercase
+		color $backFont
+		display flex
+		align-items center
+		@media $phone
+			font-size 11px
+			padding 3px 0
+	&__cost
+		font-size 0
+		line-height 1
+		flex-grow 1
+		display flex
+		flex-wrap wrap-reverse
+		align-items flex-start
+		padding-bottom 5px
+		min-height 51px
+		@media $phoneS
+			padding-bottom 10px
+	&__price
+		display inline-block
+		vertical-align top
+		font-size 18px
+		line-height 18px
+		color $hoverFont
+		padding 5px 0 0
+		margin-right 10px
+		@media $phone
+			font-size 16px
+			margin-right 3px
+			//line-height 24px
+	&__oldprice
+		position relative
+		display inline-block
+		vertical-align top
+		font-size 14px
+		line-height 18px
+		color $backFont
+		padding 5px 0 0
+		margin-right 5px
+		text-decoration line-through
+		/*&:after
+			content ''
+			position absolute
+			left 0
+			right 0
+			top calc(50% + 2px)
+			height 1px
+			background $backFont*/
+
+	&__favorite
+		position absolute
+		z-index 2
+		right 15px
+		top 15px /*26*/
+		background url('../img/icon-favorite.svg') no-repeat left top
+		width 22px
+		height 22px
+		cursor pointer
+		&:hover, &.is-active
+			background url('../img/icon-favorite-active.svg') no-repeat 1px 1px
+		&:hover
+			@media $tablet
+				background url('../img/icon-favorite.svg') no-repeat left top
+		@media $phone
+			right 8px
+			top 8px /*26*/
+			//display none
+	&__basket
+		background url('../img/icon-basket.svg') no-repeat left center
+		width 22px
+		height 32px
+		cursor pointer
+		@media $phone
+			display none
+	&__button
+		width 95px
+		height 29px
+		border 1px solid $orange
+		border-radius 3px
+		font-size 14px
+		line-height 27px;
+		text-align center
+		color $hoverFont
+		transition background 0.1s, color 0.1s
+		@media $phone
+			min-width 64px
+			width 100%
+		&:hover
+			color $white
+			background $orange
+	&__promo
+		// position absolute
+		// left 0
+		// top 0
+		font-family $MuseoM
+		font-size 16px
+		line-height 1
+		text-transform uppercase
+		display flex
+		align-items center
+		justify-content center
+		//height 50px
+		@media $phone
+			font-size 12px
+			&--new
+				color $orange
+				justify-content: flex-start
+				padding: 7px 0
+      &--sale
+				width 50px
+				height 50px
+				border-radius 50%
+				background $orange
+				margin: 7px 0
+				color $white
+			@media $phone
+				width 40px
+				height 40px
+      &--exclusive
+				justify-content: flex-start
+				line-height: 24px
+				padding: 7px 0
+.b-product-card__promo-container
+	display: block
+.b-product-card__promo
+	display: inline-flex
+	&--pos
+		display: block
+
+	&--new
+		color $orange
+		justify-content: flex-start
+		padding: 7px 0
+		font-size: 16px
+		@media $phoneL
+			font-size: 11px
+	&--sale
+		width 40px
+		height: 20px
+		line-height: 20px
+		// height 50px
+		// border-radius 50%
+		background $orange
+		margin: 7px 0
+		color $white
+		font-size: 12px
+		@media $phone
+			width 40px
+			height 40px
+			line-height: 40px
+		@media $phoneL
+			font-size: 11px
+			height: 20px
+			line-height: 20px
+	&--exclusive
+		justify-content: flex-start
+		line-height: 24px
+		padding: 7px 0
+		@media $phone
+			font-size: 11px
+.b-product-card__promo-container-exclusive
+	position: absolute
+	bottom: 15px
+	left: 0
+	font-size: 16px
+	text-transform: uppercase
+	font-family: 'museo_sans_cyrl500','Helvetica','Arial',sans-serif;
+	@media $phone
+		font-size: 11px
+.b-product__product-card-labels--pos
+	.b-product-card__promo--sale
+		font-size: 16px
+		width: 60px
+		height: 30px
+		line-height: 30px
+		text-align: center

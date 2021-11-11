@@ -1,0 +1,553 @@
+.b-product
+	&__wrapper
+		padding 15px 0 48px
+		@media $phone
+			padding 15px 0
+	&__row
+		display flex
+		&--component
+			justify-content space-between
+			@media $tablet
+				flex-direction column-reverse
+		&--between
+			justify-content space-between
+			@media $tablet
+				justify-content flex-start
+		&--specs
+			align-items center
+			padding-bottom 30px
+			@media $phone
+				flex-wrap wrap
+				padding-bottom 15px
+		&--tabs
+			padding-top 31px
+	&__column
+		width 706px
+		@media $desktop
+			//width 56.6%
+			width 534px
+		@media $tablet
+			width 100%
+		&:nth-child(2)
+			width calc(100% - 740px)
+			@media $desktop
+				//width 40.7%
+				width calc(100% - 560px)
+			@media $tablet
+				width 100%
+	&__slider
+		position: relative
+		&--tablet
+			display none
+			@media $tablet
+				margin-bottom 30px
+				display block
+			.slick-list.draggable
+				border 1px solid $backFont
+				border-radius: 3px;
+				.slick-track
+					@media $samsung9
+						max-height: 300px
+			.b-slider__item
+				border none
+				// @media $samsung9
+				// 	max-height: 300px
+	&__product-card-labels
+		position: absolute
+		top 0
+		left 0
+		width: calc(100% - 16px)
+		z-index: 1
+		top: 15px
+		left 15px
+		@media $tablet
+			max-width: 434px
+			width: calc(100vw - 41px)
+		@media $phone
+			top: 10px
+			left 10px
+		.b-product-card__favorite
+			top 0
+	&__specs
+		border-bottom 1px solid $specsGray
+		margin-bottom 7px
+		@media $tablet
+			margin-bottom 62px
+		@media $phone
+			margin-bottom 32px
+	&__title
+		font-family $MuseoM
+		font-size 28px
+		line-height 34px
+		padding-bottom 13px
+		@media $phone
+			font-size 24px
+			line-height 1.2
+	&__article, &__rating
+		margin 0 20px 10px 0
+		@media $desktop
+			margin 0 10px 10px 0
+		@media $tablet
+			margin 0 20px 10px 0
+	&__article
+		color $specsGrey
+	&__review
+		margin 0 0 10px 0
+	&__review a
+		color $specsGrey
+		text-decoration underline
+		letter-spacing -0.015em
+		transition color 0.1s
+		white-space nowrap
+		&:hover
+			color $hoverFont
+			text-decoration none
+	&__price, &__oldprice, &__available
+		margin-bottom 3px
+	&__price
+		font-size 26px
+		line-height 1
+		color $baseFont
+		margin 0 20px 0 0
+		@media $phone
+			font-size 22px
+	&__oldprice
+		position relative
+		font-size 26px
+		line-height 1
+		color $backFont
+		margin 0 25px 0 0
+		text-decoration line-through
+		@media $phone
+			font-size 18px
+		/*&:after
+			content ''
+			position absolute
+			left 0
+			right 0
+			top calc(50% - 1px)
+			border-top 2px solid $backFont*/
+	&__available
+		color $orange
+		margin 0
+	&__button
+		min-width 254px
+		width 254px
+		margin-right 38px
+		@media $desktop
+			margin-right 25px
+		@media $phone
+			position: fixed
+			bottom 0
+			left 50%
+			transform: translateX(-50%)
+			z-index: 1
+			width: 100%
+	&__bonus
+		//margin-right 20px
+		line-height 20px
+		color $specsOrange
+		transition color 0.1s
+		text-decoration underline
+		@media $phone
+			margin 8px 0 0
+		&:hover
+			color $hoverFont
+			text-decoration none
+	&__caption, &__option
+		padding 5px 3px 7px 0
+		line-height 1.2
+	&__caption
+		color $specsGrey
+	&__option
+		color $baseFont
+	&__option--link
+		text-decoration underline
+		&:hover
+			color $hoverFont
+			text-decoration none
+	&__more
+		position relative
+		display none
+		vertical-align top
+		margin 5px 0
+		line-height 1.24
+		cursor pointer
+		color $specsGrey
+		&:after
+			content ''
+			position absolute
+			left 0
+			right 0
+			bottom 0
+			border-top 1px dashed currentColor
+		&:hover
+			color $hoverFont
+		&.is-shown
+			display inline-block
+	&__properties.is-closed > div:nth-child(n+4)
+		display none
+
+	&__gallery
+		display flex
+		padding 7px 0 55px
+		@media $tablet
+			display none
+	&__info
+		padding-top 30px
+
+.b-stars
+	&__wrapper
+		display flex
+		flex-direction row-reverse
+	&__item
+		width 20px
+		height 20px
+		margin 0 4px
+		cursor pointer
+		svg
+			width 100%
+			height 100%
+			fill $backFont
+			pointer-events none
+			transition fill 0.1s
+		&.is-active svg, &.is-active ~ & svg
+			fill $specsOrange
+	&:not(.is-blocked) &__item:hover svg, &:not(.is-blocked) &__item:hover ~ & svg
+		fill $specsOrange
+	&.is-blocked &__item
+		cursor default
+
+.b-other-specs
+	flex-grow 1
+	&__wrapper
+		border-top 1px solid $specsGray
+	&__title
+		position relative
+		font-size 16px
+		line-height 1
+		padding 24px 0
+		cursor pointer
+		&:after
+			content ''
+			position absolute
+			right 3px
+			top 25px
+			width 8px
+			height 8px
+			border-left 1px solid $baseFont
+			border-bottom 1px solid $baseFont
+			transform rotate(-45deg)
+		span
+			color $specsOrange
+	&__box
+		padding 6px 0
+		display none
+	&.is-open &__box
+		display block
+	&__option
+		padding-bottom 23px
+	&__item
+		padding 3px 0
+		line-height 1.2
+		span
+			color $specsGrey
+			padding-right 4px
+		a
+			color $specsGrey
+			text-decoration underline
+			&:hover
+				color $hoverFont
+				text-decoration none
+	span&__item
+		text-transform uppercase
+		text-decoration underline
+		color $specsOrange
+		cursor pointer
+		font-family $MuseoM
+		letter-spacing 0.016em
+		&:hover
+			color $hoverFont
+			text-decoration none
+
+.b-slider
+	&__wrapper
+		width 600px
+		height 600px
+		overflow hidden
+		@media $desktop
+			width 450px
+			height 450px
+		@media $tablet
+			overflow visible
+			.slick-arrow
+				position absolute
+				left -20px
+				top 45%
+				z-index 2
+				width 40px
+				height 40px
+				font-size 0
+				line-height 1
+				border 1px solid $backFont
+				border-radius 50%
+				background $white
+				&:hover
+					border-color $backFontHover
+				&:after
+					content ''
+					position absolute
+					left 15px
+					top 12px
+					z-index 3
+					transform rotate(45deg)
+					width 15px
+					height 15px
+					border-left 2px solid $baseFont
+					border-bottom 2px solid $baseFont
+			.slick-next
+				left auto
+				right -20px
+				&:after
+					transform rotate(225deg)
+					left auto
+					right 15px
+		@media $phone
+			max-width 450px
+			max-height 450px
+			width calc(100vw - 30px)
+			height calc(100vw - 30px)
+		@media $samsung9
+			max-height 300px
+	&__wrapper--upblock
+		overflow: visible
+		width calc(90vw - 100px)
+		height calc(90vh - 140px)
+		display: flex;
+		align-items: center;
+		.slick-arrow
+			position absolute
+			left -20px
+			top 45%
+			z-index 2
+			width 40px
+			height 40px
+			font-size 0
+			line-height 1
+			border 1px solid $backFont
+			border-radius 50%
+			background $white
+			&:hover
+				border-color $backFontHover
+			&:after
+				content ''
+				position absolute
+				left 15px
+				top 12px
+				z-index 3
+				transform rotate(45deg)
+				width 15px
+				height 15px
+				border-left 2px solid $baseFont
+				border-bottom 2px solid $baseFont
+		.slick-next
+			left auto
+			right -20px
+			&:after
+				transform rotate(225deg)
+				left auto
+				right 15px
+		.b-slider__item
+			border none
+			display: flex
+			justify-content: center
+			align-items: center
+			width calc(90vw - 100px)
+			height calc(90vh - 140px)
+			@media $samsung9
+				max-height: 300px
+			img
+				max-width: 100%
+				max-height: 100%
+	&__item
+		width 600px
+		height 600px
+		border 1px solid $backFont
+		border-radius 3px
+		display flex
+		justify-content center
+		align-items center
+		font-size 0
+		line-height 1
+		@media $desktop
+			width 450px
+			height 450px
+		@media $phone
+			max-width 450px
+			max-height 450px
+			width calc(100vw - 30px)
+			height calc(100vw - 30px)
+		img
+			max-width 90%
+			max-height 90%
+			@media $desktop
+				max-width 95%
+				max-height 95%
+	&__item--upblock-open
+		cursor: zoom-in
+	&--horizontal
+		margin-right 10px
+		@media $desktop
+			margin-right 8px
+	&--horizontal &__wrapper
+		width 96px
+		@media $desktop
+			width 72px
+	&--horizontal &__item
+		width 96px
+		height 96px
+		border 1px solid $backFont
+		margin-bottom 11px
+		cursor pointer
+		@media $desktop
+			width 72px
+			height 72px
+			margin-bottom 6px
+	&--horizontal &__item.slick-current
+		border-color $specsOrange
+	&--horizontal .slick-arrow.slick-prev,
+	&--horizontal .slick-arrow.slick-next
+		position relative
+		font-size 0
+		line-height 1
+		width 100%
+		height 38px
+		@media $desktop
+			height 33px
+		&:after
+			content ''
+			position absolute
+			left 50%
+			top 12px
+			width 10px
+			height 10px
+			border-top 1px solid red
+			border-right 1px solid red
+			transform translateX(-50%) rotate(-45deg)
+			@media $desktop
+				top 10px
+	&--horizontal .slick-arrow.slick-next
+		height 26px
+		@media $desktop
+			height 24px
+		&:after
+			transform translateX(-50%) rotate(135deg)
+			bottom 12px
+			top auto
+			@media $desktop
+				bottom 10px
+	.slick-initialized .slick-slide
+		display flex
+		// @media $samsung9
+		// 	max-height: 300px
+.b-product-details
+	&__wrapper
+		padding 0 0 9px 0
+		&--limit
+			max-width 56.6%
+	&__block
+		line-height 1.74
+		padding 38px 0 20px
+		display none
+		p
+			margin-bottom 24px
+			&:last-child
+				margin-bottom 0
+		&--carousel
+			padding 51px 0 92px
+			@media $phone
+				padding-bottom 72px
+		&.is-active
+			display block
+
+.b-product-tabs
+	border-bottom 1px solid $specsGray
+	@media $phone
+		max-width calc(100% + 30px)
+		overflow hidden
+		overflow-x scroll
+		margin 0 -15px
+	&__move
+		display flex
+		@media $phone
+			padding 0 15px
+	&__item
+		position relative
+		font-family $MuseocyrR //$ClarendonR
+		font-size 22px
+		line-height 1.2
+		padding 10px 0
+		margin-right 42px
+		cursor pointer
+		white-space nowrap
+		@media $phone
+			font-size 18px
+			margin-right 0
+			padding-right 25px
+		&:after
+			content ''
+			position absolute
+			left 0
+			right 0
+			bottom -1px
+			height 3px
+			background transparent
+			@media $phone
+				right 25px
+		&.is-active:after
+			background $specsOrange
+
+.b-reviews
+	&__wrapper
+		padding 0
+		line-height 1.2
+	&__row
+		display flex
+		justify-content space-between
+	&__column
+		&:first-child
+			padding-right 15px
+	&__name
+		font-family $MuseocyrM
+		font-weight bold
+		padding 3px 0
+	&__date
+		color $specsGrey
+	&__stars
+		display inline-block
+		vertical-align top
+		padding 3px 0
+	&__desc
+		padding 20px 0 0
+	&__item
+		padding 20px 0 20px
+		border-bottom 1px solid $gray
+	&__button
+		padding 0 25px
+	&__controls
+		display flex
+		justify-content flex-start
+		border-bottom 1px solid $gray
+		padding-bottom 25px
+
+.popup-window-buttons
+	.btn
+		display inline-block
+		@media $phone
+			display block
+			width 100%
+		&:first-child
+			margin-right 10px
+			@media $phone
+				margin-right 0
+				margin-bottom 10px

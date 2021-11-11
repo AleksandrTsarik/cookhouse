@@ -1,0 +1,124 @@
+meta(content="text/html; charset=utf-8", http-equiv="Content-Type")
+meta(http-equiv="x-ua-compatible", content="ie=edge")
+meta(name="viewport", content="width=device-width, initial-scale=1")
+meta(content="yes", name="apple-mobile-web-app-capable")
+meta(name="HandheldFriendly", content="true")
+
+meta(name="title" content="")
+meta(name="description" content="")
+link(href="/f/css/datepicker.min.css", rel="stylesheet", type="text/css")
+link(href="/f/css/questionnaire.css", rel="stylesheet", type="text/css")
+block pageVar
+	-pageTitle = 'questionnaire';
+
+block content
+	.page-container
+		.q-page
+			
+			.q-page-head
+				.content-wrapper
+					.q-block
+						.q-page-head__bg
+							.content-wrapper
+								.q-page-head__img
+									img(src="/f/img/questionnaire/icon-i4l.png", alt="logo")
+						.content-wrapper
+							h2.q-page-head__title
+								| Добро пожаловать в программу лояльности «Ideas 4 You»!
+							.q-page-head__text
+								| Бонусная программа ГК Ideas 4 Retail объединяет в себе единый бонусный счет для всех брендов компании. Теперь клиенты могут копить и тратить бонусы в магазинах сети  
+								a(href="https://hamleys.ru/" target="_blank") Hamleys,
+								a(href="https://winny.ru/" target="_blank") Винни,
+								a(href="https://cookhouse.ru/" target="_blank") Cook House
+								span и 
+								a(href="https://gooodshouse.ru/" target="_blank") Goods House. 
+			.q-page-body
+				.content-wrapper
+					.q-block
+
+						.q-page-body__offer
+							.q-page-body__offer-item
+								.q-page-body__offer-img
+									img(src="/f/img/questionnaire/icon-bonus.svg", alt="bonus")
+								.q-page-body__offer-text 1 бонус=1 рубль
+
+							.q-page-body__offer-item
+								.q-page-body__offer-img
+									img(src="/f/img/questionnaire/icon-percent.svg", alt="percent")
+								.q-page-body__offer-text 
+									| до 100% оплата <br>
+									span покупок бонусами
+					form
+						.q-block
+							.content-wrapper
+								.q-page-body-form
+									.q-error
+										.q-error__text Ошибка!
+										.q-error__text Ошибка!
+									h3.q-page-body-form__title Пожалуйста, заполните все поля анкеты, чтобы использовать все возможности программы.
+									label.q-page-body-form__label
+										input.q-page-body-form__input(type="text" name="surname" placeholder="Фамилия")
+									label.q-page-body-form__label
+										input.q-page-body-form__input.q-input__error(type="text" name="name" placeholder="Имя*")
+										.q-page__error Укажите имя
+									label.q-page-body-form__label
+										input.q-page-body-form__input(type="text" name="patronymic" placeholder="Отчество")
+									label.q-page-body-form__label.js-phone-mask
+										input.q-page-body-form__input.q-input__error(type="text"  name="phone" placeholder="Тел*")
+										.q-page__error Укажите телефон
+									label.q-page-body-form__label
+										input.q-page-body-form__input.q-input__error(type="text" name="email" placeholder="Почта")
+										.q-page__error Укажите E-mail
+									label.q-page-body-form__label
+										input.q-page-body-form__input(type="text" class="calendar" name="birthday" data-multiple-dates-separator=" - " placeholder="Дата рождения")
+									.q-page-body-form__info
+										| Чтобы получить специальные подарки и привилегии, необходимо заполнить дату рождения правильно.
+
+						.q-block
+							.content-wrapper
+								.q-page-body-form
+									label.q-page-body-form__label
+										input.q-page-body-form__input(type="text" name="name-children" placeholder="Имя ребёнка")
+									label.q-page-body-form__label
+										input.q-page-body-form__input(type="text" class="calendar" name="birthday-children" data-multiple-dates-separator=" - " placeholder="Дата рождения ребенка ")
+									.q-page-body-form__btn
+										button +
+										span добавить ребёнка
+									.q-page-body-form__info
+										| Специально для маленьких гостей мы подготовили подарки и сюрпризы на день рождения. Заполните данные, чтобы их использовать.
+						.q-block
+							.content-wrapper
+								.q-page-body-consent
+									.q-page-body-consent__title Согласен на подписку
+									.q-page-body-consent__check-box
+										label.q-page-body-consent__label
+											input.q-page-body-consent__input(type="checkbox", name="e-mail")
+											span.q-page-body-consent__checked
+											| e-mail
+										label.q-page-body-consent__label
+											input.q-page-body-consent__input(type="checkbox", name="sms")
+											span.q-page-body-consent__checked
+											| sms
+									.q-page-body-consent__btn
+										button 	Отправить
+									.q-page-body-consent__row Спасибо за Ваше время.
+				.q-page-footer
+					.content-wrapper
+						h3.q-page-footer__title
+							| Добро пожаловать в мир привилегий Ideas 4 You!
+						.q-page-footer__text
+							| Хотите держать под контролем свой бонусный счет и получать сюрпризы и подарки? Тогда скачайте приложение Ideas 4 you! Только в приложении всегда актуальные скидки и предложения, а также розыгрыши подарков.
+						.q-page-footer__link
+							.q-page-footer__google
+								a(href="https://play.google.com/store/apps/details?id=com.mymall.ideas4u" target="_blank")
+									img(src="/f/img/questionnaire/google-play.png", alt="google-play")
+							.q-page-footer__apple
+								a(href="https://apps.apple.com/ru/app/ideas4you/id1572462997" target="_blank")
+									img(src="/f/img/questionnaire/apple-store.png", alt="aple-atore")
+
+								
+
+script(src="/f/js/vendor/jquery.min.js")
+script(src="/f/js/vendor/jquery.mask.min.js")
+script(src="/f//js/datepicker.js") 
+script(src="/f/js/questionnaire.js")

@@ -1,0 +1,40 @@
+extends layouts/default
+
+block pageVar
+	-pageTitle = 'Список страниц';
+
+block content
+	.page-container
+		.content-wrapper
+			div.pagelist(style="padding:50px")
+				a(href="/html/main.html") Главная страница
+				a(href="/html/catalog.html") Каталог товаров
+				a(href="/html/product.html") Карточка товара
+				a(href="/html/basket.html") Корзина
+				a(href="/html/order.html") Оформление заказа
+				a(href="/html/profile.html") Профиль
+				a(href="/html/about.html") О компании
+				a(href="/html/delivery.html") Доставка
+				a(href="/html/promo-catalog.html") Акции
+				a(href="/html/promo-inner.html") Страница акции
+				a(href="/html/thankyou.html") Спасибо за заказ
+				a(href="/html/shops.html") Адреса магазинов
+				a(href="/html/loyalty.html") Программа лояльности
+				a(href="/html/brands.html") Бренды
+				a(href="/html/contacts.html") Контакты
+				a(href="/html/kitchen.html") Кулинарная кухня
+				a(href="/html/404.html") 404 страница ошибок
+				a(href="/html/offer.html") Пользовательское соглашение
+				a(href="/html/dift-card.html") Полные правила работы с подарочными картами
+				a(href="/html/bonus.html") Bonus
+				a(href="/html/questionnaire.html") Анкета
+				a(href="/html/questionnaire-error.html") Анкета ошибки 
+				a(href="/html/questionnaire-popup.html") Анкета popup
+
+
+
+	style.
+		.pagelist a{
+			display:block;
+			padding:5px 0;
+		}

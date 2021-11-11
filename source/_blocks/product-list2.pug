@@ -1,0 +1,44 @@
+-
+	var gProducts = [{
+			title:'Набор стаканов для виски 6&nbsp;шт.&nbsp;310&nbsp;мл Aurum Crystal Cooper',
+			price:'3 690',
+			image:'/f/img/content/pic-1.png'
+		},{
+			title:'Сковорода индукционная блинная 28&nbsp;см Gastrolux со&nbsp;съемной ...',
+			price:'15 390',
+			image:'/f/img/content/pic-2.png'
+		},{
+			title:'Набор кастрюль 5&nbsp;предметов Zwilling Impulse',
+			price:'30 590',
+			image:'/f/img/content/pic-3.png'
+		},{
+			title:'Глубокая кастрюля Silampos Royal 4&nbsp;л',
+			price:'7 990',
+			image:'/f/img/content/pic-4.png'
+		},{
+			title:'Набор стаканов для виски 6&nbsp;шт.&nbsp;310&nbsp;мл Aurum Crystal Cooper',
+			price:'3 690',
+			image:'/f/img/content/pic-1.png'
+		},{
+			title:'Сковорода индукционная блинная 28&nbsp;см Gastrolux со&nbsp;съемной ...',
+			price:'15 390',
+			image:'/f/img/content/pic-2.png'
+		},{
+			title:'Набор кастрюль 5&nbsp;предметов Zwilling Impulse',
+			price:'30 590',
+			image:'/f/img/content/pic-3.png'
+		},{
+			title:'Глубокая кастрюля Silampos Royal 4&nbsp;л',
+			price:'7 990',
+			image:'/f/img/content/pic-4.png'
+		}]
+-;
+section.b-products-list
+	.content-wrapper
+		.b-products-list__wrapper
+			a(href="#")
+				h2.b-products-list__title Новинки
+			.b-products-list__carousel.js-product-carousel
+				each item in gProducts
+					.b-products-list__item
+						+productCard(item)

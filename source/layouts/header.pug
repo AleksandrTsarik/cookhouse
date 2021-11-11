@@ -1,0 +1,114 @@
+//- -
+//- 	var gMenu = ['Бренды','Для кухни','Кухонная утварь','Посуда','Для выпечки','Для гриля','Чай и&nbsp;кофе','Ножи','Вино и&nbsp;сыр','Специи','Текстиль и&nbsp;декор','Бытовая техника','Для дома','Sale'];
+//- -;
+header.header.js-header
+	.header__wrapper
+		.header__top
+			.header__top-wrapper.content-wrapper
+				.b-header-tabs
+					.b-header-tabs__item.b-header-tabs__item--cookhouse.is-active
+					a.b-header-tabs__item.b-header-tabs__item--hamleys(href="#hamleys")
+					a.b-header-tabs__item.b-header-tabs__item--goodshouse(href="#goodshouse")
+				.b-header-menu
+					.b-header-menu__mobile.js-mobile-menu
+						span
+					.b-header-menu__links
+						a.b-header-menu__item(href="#") Адреса магазинов
+						a.b-header-menu__item(href="#") Контакты
+						a.b-header-menu__item(href="#") Доставки и&nbsp;оплата
+					a.logo.b-header-menu__logo(href="#")
+					.b-header-menu__about
+						.b-header-menu__box
+							.b-header-menu__phone + 7 (495) 783-85-21
+						if !auth
+							span.b-header-menu__item.b-header-menu__item--auth
+								a(href="#" onclick="Upblock.showId('login');return(false);") Вход
+								| &nbsp;/&nbsp;
+								a(href="#" onclick="Upblock.showId('registration');return(false);") Регистрация
+						else
+							.b-header-menu__loginzone.js-loginzone-menu
+								.b-header-menu__loginzone-caption.js-loginzone-caption(href="#")
+									span Личный кабинет
+								.b-header-menu__loginzone-options
+									a.b-header-menu__loginzone-item(href="#") Мои заказы
+									a.b-header-menu__loginzone-item(href="#") Мои данные
+									a.b-header-menu__loginzone-item(href="#") Программа лояльности
+									a.b-header-menu__loginzone-item(href="#") Мои подписки 
+									a.b-header-menu__loginzone-item.b-header-menu__loginzone-item--exit(href="#")
+										span Выход
+				.b-user-action
+					//-
+					span.b-user-action__item.b-user-action__item--search.js-header-search-open
+					a.b-user-action__item.b-user-action__item--basket.js-basket-ico(data-count="10" href="#basket")
+					a.b-user-action__item.b-user-action__item--favorite(href="#favorite")
+		.header__bottom
+			.header__search.header__search--open
+				+field({type:'input',mode:'search',placeholder:'Поиск'})
+			.content-wrapper
+				.header__row
+					.header__mobile-menu.js-mobile-menu
+						span
+					.header__phone + 7 (495) 783-85-21
+					.logo.header__logo
+					.header__search
+						+field({type:'input',mode:'search',placeholder:'Поиск'})
+			.header__menu.js-header-menu
+				.header__menu-wrapper.header__menu-wrapper--smart
+					.header__menu-row
+						a.header__menu-phone(href="tel:+74957838521") + 7 (495) 783-85-21
+						.header__menu-controls
+							span.header__menu-item.header__menu-item--profile(onclick="Upblock.showId('login')")
+							a.header__menu-item.header__menu-item--favorite(href="#favorite")
+				.header__menu-wrapper.header__menu-wrapper--general-list
+				.content-wrapper.header__menu-wrapper_tm
+					include ../_blocks/top-menu
+				.header__menu-wrapper.header__menu-wrapper--mobile
+					a.header__menu-item(href="#") Адреса магазинов
+					a.header__menu-item(href="#") Контакты
+					a.header__menu-item(href="#") Доставки и&nbsp;оплата
+			
+			.header-search
+				.content-wrapper
+					.header__search.search
+							.search__wrapper
+								.search__top
+									+field({type:'input',mode:'search',placeholder:'Поиск', button:'Найти'})
+									.search__close
+										.btn.js-header-search-close Закрыть
+								.search__results
+									-
+										var resultList = ['','для пасты','для супа','обеденная','суповая','керимическая','десертная','новогодняя','подстановочная']
+									.search__results-list
+										each item in resultList
+											a.search__results-item(href="#") <span class="search__results-coincidence">тарелка</span> !{item}
+									.search__results-products
+										-
+											var products = [{
+												title:'Текстурированная форма для хлеба',
+												price:'3 000 690',
+												image:'/f/img/content/pic-1.png',
+												small: true
+											},{
+												title:'Текстурированная форма для хлеба',
+												price:'15 000 390',
+												image:'/f/img/content/pic-2.png',
+												small: true,
+											},
+											{
+												title:'Текстурированная форма для хлеба',
+												price:'30 590',
+												image:'/f/img/content/pic-3.png',
+												small: true
+											},{
+												title:'Текстурированная форма для хлеба',
+												price:'7 990',
+												image:'/f/img/content/pic-4.png',
+												small: true
+											}
+											]
+										.search__results-products-list
+											each item in products
+												.search__results-products-item
+													+productCard(item)
+
+

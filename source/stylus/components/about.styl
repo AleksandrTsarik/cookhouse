@@ -1,0 +1,92 @@
+.b-about-page
+	background url('../img/image-about.jpg') no-repeat center top
+	//background-size auto 520px
+	background-size auto 36.3vw
+	padding-top 31.3vw
+	@media $tablet
+		//background-size auto 290px
+	@media $phone
+		background-size 150% auto
+	&__wrapper
+		max-width 1036px
+		width 76.7vw
+		margin 0 auto
+		padding 54px 8%
+		background $white
+		@media $tablet
+			max-width 90%
+		@media $phone
+			width 100%
+			padding 25px 10px 0
+	&__title
+		background url('../img/logox2.svg') no-repeat center top
+		font-family $MuseocyrM
+		font-size 35px
+		line-height 1.28
+		padding 193px 0 47px
+		text-align center
+		text-transform uppercase
+		@media $phone
+			background-size 108px auto
+			background-position center 15px
+			font-size 28px
+			padding 165px 0 25px
+	&__subtitle
+		font-size 28px
+		line-height 1.2
+		padding-bottom 24px
+		@media $phone
+			font-size 20px
+	&__desc
+		font-size 16px
+		line-height 1.5
+		padding-bottom 51px
+		border-bottom 1px solid $gray
+		@media $phone
+			font-size 14px
+			padding-bottom 20px
+		p
+			margin-bottom 24px
+			@media $phone
+				margin-bottom 20px
+	&__label
+		margin 50px 0 0
+		padding-left 85px
+		font-family $MuseoM
+		font-size 24px
+		line-height 1
+		letter-spacing -0.015em
+		background url('../img/icon-instagram.svg') no-repeat left center
+		min-height 60px
+		display flex
+		align-items center
+		@media $phone
+			margin 25px 0 15px
+			font-size 16px
+
+.b-instagram
+	&__wrapper
+		padding 14px 0 120px
+		display flex
+		flex-wrap wrap
+		justify-content space-between
+		@media $desktop
+			padding-bottom 120px
+		@media $tablet
+			padding-bottom 80px
+		@media $phone
+			padding-bottom 50px
+	&__item
+		width 32.3333%
+		max-height 402px
+		margin-bottom 1.8%
+		font-size 0
+		line-height 1
+		@media $phone
+			width 49%
+			margin-bottom 2%
+		img
+			max-width 100%
+			max-height 100%
+
+

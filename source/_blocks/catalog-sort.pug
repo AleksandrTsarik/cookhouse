@@ -1,0 +1,46 @@
+section.b-catalog-sort
+	.content-wrapper
+		.b-catalog-sort__wrapper
+			.b-catalog-sort__column.b-catalog-sort__column--controls
+				.b-catalog-sort__count 54 товара
+				.b-catalog-sort__button.js-toggle-filter Фильтр
+			.b-catalog-sort__column
+				.b-catalog-sort__item.b-catalog-sort__item--shops
+					.b-catalog-sort__title Наличие в&nbsp;магазине:
+					.b-catalog-sort__box
+						+field({type:'select', mode:'sort', options:[
+							{value:0, option:'не выбрано'},
+							{value:1, option:'ТРЦ&nbsp;&laquo;Европейский&raquo;'},
+							{value:2, option:'МТК&nbsp;&laquo;Европарк&raquo;'},
+							{value:3, option:'ТЦ&nbsp;&laquo;Капитолий на&nbsp;Вернадского&raquo;'},
+							{value:4, option:'ТРЦ&nbsp;&laquo;Avenue Southwest&raquo; Gooodshouse'},
+							{value:5, option:'ТЦ&nbsp;&laquo;Дирижабль&raquo; Gooodshouse'},
+							{value:6, option:'ТЦ&nbsp;&laquo;РИО Ленинский&raquo; Gooodshouse'},
+							{value:7, option:'ТРЦ&nbsp;&laquo;РИО Севастопольский&raquo; Gooodshouse'},
+							{value:8, option:'ТРЦ&nbsp;&laquo;РИО&raquo; Коломна Gooodshouse'},
+							{value:9, option:'ТРЦ&nbsp;&laquo;Хорошо&raquo;'},
+							{value:10, option:'ТРК&nbsp;&laquo;Гранд Каньон&raquo;'},
+							{value:11, option:'ТРЦ&nbsp;&laquo;Райкин Плаза&raquo;'},
+							{value:12, option:'ТЦ&nbsp;&laquo;РИО Ленинский&raquo;'},
+						], default:{value:0, option:'не выбрано'}})
+				.b-catalog-sort__item.b-catalog-sort__item--categories
+					.b-catalog-sort__title Категории:
+					.b-catalog-sort__box
+						+field({type:'select', mode:'sort', options:[
+							{value:0, option:'Все'},
+							{value:1, option:'Сервисы'},
+							{value:2, option:'Салатники'},
+							{value:3, option:'Кружки и&nbsp;чашки'},
+							{value:4, option:'Чайники и&nbsp;кофейники'},
+						], default:{value:0, option:'Все'}})
+				.b-catalog-sort__item
+					.b-catalog-sort__title Сортировать:
+					.b-catalog-sort__box
+						+field({type:'select', mode:'sort', name: 'sorting', options:[
+							{value:'popular-desc', option:'по популярности'},
+							{value:'price-asc', option:'по возрастанию цены'},
+							{value:'price-desc', option:'по убыванию цены'},
+							{value:'sale-desc', option:'по скидке'},
+							{value:'date-desc', option:'по новинкам'}
+						], default:{value:'popular-desc', option:'по популярности'}})
+

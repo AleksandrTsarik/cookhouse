@@ -1,0 +1,51 @@
+extends layouts/default
+
+block pageVar
+	-pageTitle = 'Главная страница';
+
+block content
+	.page-container
+		include _blocks/carousel
+		include _blocks/brands
+		include _blocks/product-list
+		include _blocks/product-list2
+		-
+			var gArticle = [
+				['Как правильно собирать ланч бокс','Советы от&nbsp;экспертов как правильно собрать ланчбокс с&nbsp;собой','/f/img/content/article-1.png'],
+				['Новогодняя сервировка стола: 30&nbsp;оригинальных идей','Мы&nbsp;за&nbsp;то, чтобы красоты было как можно больше! Поэтому собрали для вас 30&nbsp;примеров сервировки, как можно украсить новогодний стол.','/f/img/content/article-2.png'],
+				['Как хранить кофе?','Как правильно хранить кофе? В&nbsp;чем? Где? При какой температуре? Все эти вопросы не&nbsp;дают покоя многим почитателям кофе по&nbsp;всему миру.','/f/img/content/article-3.png'],
+			]
+		-;
+		section.b-journal
+			.content-wrapper
+				.b-journal__wrapper
+					a(href="#")
+						h2.b-journal__title Наш журнал
+					.b-journal__list
+						each item in gArticle
+							.b-journal__article
+								+articleCard(item)
+					.b-journal-tab
+						.b-journal-tab__wrapper
+							.b-journal-tab__info
+								.b-journal-tab__title Кулинарная<br>студия
+								.b-journal-tab__desc Готовим с&nbsp;удовольствием и&nbsp;учимся правильно резать овощи и&nbsp;отправлять их&nbsp;в&nbsp;новую кастрюлю Zwilling
+								.b-journal-tab__controls
+									a.b-journal-tab__more(href="#") Читать подробнее
+
+		section.b-promo
+			.content-wrapper
+				.b-promo__wrapper
+					img.b-promo__image(src="/f/img/content/promo-back-1.jpg" alt="")
+					img.b-promo__image--mobile(src="/f/img/content/promo-back-3.jpg" alt="")
+					//-.b-promo__layout.b-promo__layout--rcr(style="background-image:url('/f/img/content/promo-back-1.jpg')")
+						.b-promo__info Премьера бренда!<br>RCR crystalite
+
+		section.b-about
+			.content-wrapper
+				.b-about__wrapper
+					.logo.b-about__logo
+					.b-about__desc В&nbsp;магазинах сети можно приобрести любые товары для приготовления еды и&nbsp;сервировки стола&nbsp;&mdash; от&nbsp;необходимых мелочей до&nbsp;малой бытовой техники. Здесь легко подобрать сезонные и&nbsp;праздничные комплекты посуды&nbsp;&mdash; для дачи или пикника, для празднования нового года или дня рождения, для создания особого настроения или для шумного праздника. Всего в&nbsp;каждом магазине предоставлено около 5&nbsp;000 наименований товаров.
+
+
+
